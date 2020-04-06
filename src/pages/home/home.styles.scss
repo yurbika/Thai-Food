@@ -12,7 +12,6 @@
   }
 
   .background {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,7 +24,11 @@
       rgba(180, 212, 123, 1) 100%
     );
     overflow: hidden;
-    // background: black;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
 
     .img-container {
       height: 100%;
@@ -33,11 +36,6 @@
       display: flex;
       align-items: center;
       padding: 35px 0;
-
-      img {
-        height: 100%;
-        width: 100%;
-      }
     }
 
     .triangle-container {
@@ -61,14 +59,6 @@
       .mirrored {
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
-      }
-    }
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-
-      .triangle-container {
-        transform: rotate(90deg);
       }
     }
   }
