@@ -4,9 +4,12 @@ import React from "react";
 import Background from "../../components/background/background.component";
 import Button from "../../components/button/button.component";
 
+//styles
+import { Container } from "./home.styles";
+
 const Home = () => (
-  <div className="container">
-    <Background />
+  <Container>
+    <Background className="background" />
     <Button
       onClick={() => {
         if (
@@ -19,7 +22,14 @@ const Home = () => (
       }}
     />
     <Button logo />
-  </div>
+    <div className="text-container">
+      <span>The Original</span>
+      <span>Thai Food</span>
+      <span>
+        Get your original thai menu <br></br>- traditional family recipe
+      </span>
+    </div>
+  </Container>
 );
 
 export default Home;

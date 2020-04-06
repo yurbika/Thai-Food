@@ -11,6 +11,7 @@ const getAdditionalButtonStyle = (props) => {
 
 export const CustomButtonContainer = styled.button`
   background: #92c162;
+  z-index: 999999;
   cursor: pointer;
   position: fixed;
   top: calc(50% - 45px);
