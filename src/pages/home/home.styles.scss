@@ -5,12 +5,14 @@
   width: 100vw;
   min-height: 500px;
   height: 100vh;
-  padding-top: 75px;
-  padding-left: 90px;
-  padding-right: 90px;
-  padding-bottom: 75px;
+  padding: 90px;
+
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+  }
 
   .background {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,10 +24,52 @@
       rgba(255, 255, 255, 1) 0%,
       rgba(180, 212, 123, 1) 100%
     );
+    overflow: hidden;
+    // background: black;
 
-    .mirrored {
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
+    .img-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding: 35px 0;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .triangle-container {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-left: 25px;
+      &.left {
+        justify-content: flex-start;
+        padding-left: 0;
+        padding-right: 25px;
+      }
+
+      .triangle {
+        height: 100%;
+        width: 100%;
+      }
+
+      .mirrored {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+
+      .triangle-container {
+        transform: rotate(90deg);
+      }
     }
   }
 }
