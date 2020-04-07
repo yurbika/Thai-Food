@@ -6,6 +6,11 @@ const getAdditionalButtonStyle = (props) => {
       left: 0;
       right: unset;
       border-radius: 0 15px 15px 0;
+      @media (max-width: 768px) {
+        top: 0;
+        bottom: unset;
+        border-radius: 0 0 15px 15px;
+      }
     `;
 };
 
@@ -23,6 +28,15 @@ export const CustomButtonContainer = styled.button`
   padding: 25px;
   border-radius: 15px 0 0 15px;
 
+  @media (max-width: 768px) {
+    top: unset;
+    width: 90px;
+    height: 60px;
+    bottom: 0;
+    padding: 15px;
+    left: calc(50% - 45px);
+    border-radius: 15px 15px 0 0;
+  }
   ${getAdditionalButtonStyle};
 `;
 

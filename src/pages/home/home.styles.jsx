@@ -16,25 +16,47 @@ export const Container = styled.div`
     width: 100%;
     height: 100%;
 
+    //nach schauen wie font size scalibar ist
+
     & :nth-child(1) {
-      margin-left: -250px;
+      margin-left: -20vw;
     }
 
     & :nth-child(2) {
-      margin-left: 275px;
+      margin-left: 25vw;
     }
 
     & :nth-child(1),
     & :nth-child(2) {
       font-weight: bold;
-      font-size: 55px;
+      font-size: 5vw;
     }
 
     & :nth-child(3),
     & :nth-child(4) {
       margin-top: 15px;
       font-weight: bold;
-      font-size: 35px;
+      font-size: 2vw;
+    }
+
+    @media (max-width: 768px) {
+      & :nth-child(1),
+      & :nth-child(2),
+      & :nth-child(3),
+      & :nth-child(4) {
+        margin: unset;
+      }
+
+      & :nth-child(1),
+      & :nth-child(2) {
+        font-size: 15vw;
+      }
+
+      & :nth-child(3),
+      & :nth-child(4) {
+        margin-top: 20px;
+        font-size: 5vw;
+      }
     }
   }
 `;
