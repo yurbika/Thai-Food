@@ -1,10 +1,29 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
+  overflow: hidden;
+  height: 100vh;
+
   .background {
     position: absolute;
     z-index: -1;
   }
+
+  .scroll-container {
+    overflow: hidden;
+  }
+
+.fade-out{
+    color: #FFFFFF;
+
+    -webkit-transition: opacity 300ms linear;
+    -moz-transition: opacity 300ms linear;
+    -ms-transition: opacity 300ms linear;
+    -o-transition: opacity 300ms linear;
+     opacity: 0;
+}
+}
+
   .text-container {
     position: absolute;
     top: 0;
