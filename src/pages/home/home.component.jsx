@@ -13,8 +13,12 @@ class Home extends React.Component {
 
     this.state = {
       scroll: false,
-      counter: 1,
+      counter: 0,
     };
+  }
+
+  componentDidMount() {
+    console.log(window.innerHeight);
   }
 
   componentDidUpdate() {
@@ -54,18 +58,24 @@ class Home extends React.Component {
           }}
         />
         <Button logo />
-        <div className="scroll-container">
-          <div
-            className={
-              "text-container " +
-              (this.state.scroll && this.state.counter !== 1 ? "fade-out" : "")
-            }
-          >
-            <span>The Original</span>
-            <span>Thai Food</span>
-            <span>
-              Get your original thai menu <br></br>- traditional family recipe
-            </span>
+        <div
+          className={
+            "scroll-container " +
+            (this.state.counter !== 0 ? `translate-${this.state.counter}` : "")
+          }
+        >
+          <div className="text-container-container">
+            <div
+              className={
+                "text-container " + (this.state.counter > 0 ? "fade-out" : "")
+              }
+            >
+              <span>The Original</span>
+              <span>Thai Food</span>
+              <span>
+                Get your original thai menu <br></br>- traditional family recipe
+              </span>
+            </div>
           </div>
           <div>
             <span>hello</span>

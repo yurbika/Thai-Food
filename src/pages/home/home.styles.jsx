@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
+  position: fixed;
   overflow: hidden;
   height: 100vh;
 
@@ -10,19 +11,36 @@ export const Container = styled.div`
   }
 
   .scroll-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+
+    & > * {
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+  .translate-1 {
+    transition: margin 1s ease-in-out;
+    margin-top: -100vh;
   }
 
-.fade-out{
-    color: #FFFFFF;
+  .fade-out {
+    color: #ffffff;
 
     -webkit-transition: opacity 300ms linear;
     -moz-transition: opacity 300ms linear;
     -ms-transition: opacity 300ms linear;
     -o-transition: opacity 300ms linear;
-     opacity: 0;
-}
-}
+    opacity: 0;
+  }
+
+  .text-container-container {
+    position: relative;
+  }
 
   .text-container {
     position: absolute;
