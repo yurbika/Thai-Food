@@ -17,6 +17,10 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    transition: margin 1s ease-in-out;
+    &.fade-in {
+      opacity: 0;
+    }
 
     & > * {
       width: 100vw;
@@ -24,18 +28,31 @@ export const Container = styled.div`
     }
   }
   .translate-1 {
-    transition: margin 1s ease-in-out;
     margin-top: -100vh;
   }
 
-  .fade-out {
-    color: #ffffff;
+  .translate-2 {
+    margin-top: -200vh;
+  }
 
+  .translate-3 {
+    margin-top: -300vh;
+  }
+
+  .fade-out {
     -webkit-transition: opacity 300ms linear;
     -moz-transition: opacity 300ms linear;
     -ms-transition: opacity 300ms linear;
     -o-transition: opacity 300ms linear;
     opacity: 0;
+  }
+
+  .fade-in {
+    -webkit-transition: opacity 1800ms linear;
+    -moz-transition: opacity 1800ms linear;
+    -ms-transition: opacity 1800ms linear;
+    -o-transition: opacity 1800ms linear;
+    opacity: 1;
   }
 
   .text-container-container {
