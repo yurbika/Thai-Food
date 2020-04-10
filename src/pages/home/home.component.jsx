@@ -12,7 +12,6 @@ class Home extends React.Component {
     super(props);
 
     this.state = {
-      scroll: false,
       counter: 0,
       scrollDirection: null,
     };

@@ -40,18 +40,20 @@ export const Container = styled.div`
   }
 
   .fade-out {
-    -webkit-transition: opacity 300ms linear;
-    -moz-transition: opacity 300ms linear;
-    -ms-transition: opacity 300ms linear;
-    -o-transition: opacity 300ms linear;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    visibility: hidden;
     opacity: 0;
   }
 
   .fade-in {
-    -webkit-transition: opacity 1800ms linear;
-    -moz-transition: opacity 1800ms linear;
-    -ms-transition: opacity 1800ms linear;
-    -o-transition: opacity 1800ms linear;
+    -webkit-transition: all 1100ms linear;
+    -moz-transition: all 1100ms linear;
+    -ms-transition: all 1100ms linear;
+    -o-transition: all 1100ms linear;
+    visibility: visible;
     opacity: 1;
   }
 
