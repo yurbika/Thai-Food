@@ -27,6 +27,17 @@ export const Container = styled.div`
     visibility: visible;
     opacity: 1;
   }
+
+  .fade-leaf-out img {
+    transition: all 180ms ease-out;
+    margin-top: -25vh;
+    visibility: hidden;
+  }
+  .fade-leaf-in img {
+    transition: all 1100ms ease 150ms;
+    margin-top: 0;
+    visibility: visible;
+  }
 `;
 
 export const ScrollContainer = styled.div`
@@ -74,6 +85,21 @@ export const FirstSlider = styled.div`
   width: 100%;
   height: 100%;
 
+  .img-container {
+    position: absolute;
+    right: 10vw;
+    top: -75px;
+    height: 250px;
+    width: 250px;
+    .fade-leaf-in {
+      margin-top: -50vh;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   & :nth-child(1) {
     margin-left: -20vw;
   }
@@ -115,3 +141,5 @@ export const FirstSlider = styled.div`
     }
   }
 `;
+
+export const ImgContainer = styled.div``;

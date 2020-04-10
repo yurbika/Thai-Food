@@ -4,6 +4,8 @@ import { debounce } from "lodash";
 import Background from "../../components/background/background.component";
 import Button from "../../components/button/button.component";
 
+import Leaf from "../../assets/home/first-page/leaf.svg";
+
 //styles
 import {
   Container,
@@ -74,6 +76,18 @@ class Home extends React.Component {
               <span>
                 Get your original thai menu <br></br>- traditional family recipe
               </span>
+              <div
+                className={
+                  "img-container " +
+                  (this.state.counter > 0
+                    ? "fade-leaf-out"
+                    : !this.state.scrollDirection
+                    ? "fade-leaf-in"
+                    : "")
+                }
+              >
+                <img src={Leaf} alt="" />
+              </div>
             </FirstSlider>
           </FirstSliderContainer>
           <div className="test">
