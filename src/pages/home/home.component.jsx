@@ -1,5 +1,5 @@
 import React from "react";
-
+import { debounce } from "lodash";
 //components
 import Background from "../../components/background/background.component";
 import Button from "../../components/button/button.component";
@@ -14,35 +14,31 @@ class Home extends React.Component {
     this.state = {
       scroll: false,
       counter: 0,
+      scrollDirection: null,
     };
   }
 
-  componentDidMount() {
-    console.log(window.innerHeight);
+  debounceEvent(...args) {
+    this.debouncedEvent = debounce(...args);
+    return (e) => {
+      e.persist();
+      return this.debouncedEvent(e);
+    };
   }
 
-  componentDidUpdate() {
-    if (this.state.scroll) {
-      setTimeout(() => {
-        this.setState({ scroll: false });
-      }, 300);
+  handleScroll = (e) => {
+    if (this.state.counter < 3 && e.deltaY > 0) {
+      this.setState({ counter: this.state.counter + 1 });
+      this.setState({ scrollDirection: true });
+    } else if (this.state.counter > 0 && e.deltaY < 0) {
+      this.setState({ counter: this.state.counter - 1 });
+      this.setState({ scrollDirection: false });
     }
-  }
+  };
 
   render() {
     return (
-      <Container
-        onWheel={(e) => {
-          if (!this.state.scroll) {
-            this.setState({ scroll: true });
-            if (this.state.counter < 4 && e.deltaY > 0) {
-              this.setState({ counter: ++this.state.counter });
-            } else if (this.state.counter > 0 && e.deltaY < 0)
-              this.setState({ counter: --this.state.counter });
-            console.log(this.state.counter);
-          }
-        }}
-      >
+      <Container onWheel={this.debounceEvent(this.handleScroll, 300)}>
         <Background className="background" />
         <Button
           onClick={() => {
@@ -59,15 +55,17 @@ class Home extends React.Component {
         />
         <Button logo />
         <div
-          className={
-            "scroll-container " +
-            (this.state.counter !== 0 ? `translate-${this.state.counter}` : "")
-          }
+          className={"scroll-container " + `translate-${this.state.counter}`}
         >
           <div className="text-container-container">
             <div
               className={
-                "text-container " + (this.state.counter > 0 ? "fade-out" : "")
+                "text-container " +
+                (this.state.counter > 0
+                  ? "fade-out"
+                  : !this.state.scrollDirection
+                  ? "fade-in"
+                  : "")
               }
             >
               <span>The Original</span>
@@ -77,8 +75,14 @@ class Home extends React.Component {
               </span>
             </div>
           </div>
+          <div className="test">
+            <span>hello 1</span>
+          </div>
           <div>
-            <span>hello</span>
+            <span>hello 2</span>
+          </div>
+          <div>
+            <span>hello 3</span>
           </div>
         </div>
       </Container>
