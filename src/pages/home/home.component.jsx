@@ -5,7 +5,12 @@ import Background from "../../components/background/background.component";
 import Button from "../../components/button/button.component";
 
 //styles
-import { Container } from "./home.styles";
+import {
+  Container,
+  ScrollContainer,
+  FirstSliderContainer,
+  FirstSlider,
+} from "./home.styles";
 
 class Home extends React.Component {
   constructor(props) {
@@ -53,18 +58,15 @@ class Home extends React.Component {
           }}
         />
         <Button logo />
-        <div
-          className={"scroll-container " + `translate-${this.state.counter}`}
-        >
-          <div className="text-container-container">
-            <div
+        <ScrollContainer className={`translate-${this.state.counter}`}>
+          <FirstSliderContainer>
+            <FirstSlider
               className={
-                "text-container " +
-                (this.state.counter > 0
+                this.state.counter > 0
                   ? "fade-out"
                   : !this.state.scrollDirection
                   ? "fade-in"
-                  : "")
+                  : ""
               }
             >
               <span>The Original</span>
@@ -72,8 +74,8 @@ class Home extends React.Component {
               <span>
                 Get your original thai menu <br></br>- traditional family recipe
               </span>
-            </div>
-          </div>
+            </FirstSlider>
+          </FirstSliderContainer>
           <div className="test">
             <span>hello 1</span>
           </div>
@@ -83,7 +85,7 @@ class Home extends React.Component {
           <div>
             <span>hello 3</span>
           </div>
-        </div>
+        </ScrollContainer>
       </Container>
     );
   }
