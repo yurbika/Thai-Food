@@ -12,32 +12,35 @@ export const Container = styled.div`
 
   //whole container
   .fade-out {
-    -webkit-transition: all 300ms linear;
-    -moz-transition: all 300ms linear;
-    -ms-transition: all 300ms linear;
-    -o-transition: all 300ms linear;
     visibility: hidden;
+    transform: translateY(-2vh);
     opacity: 0;
+    transition: transform 100ms ease-out, opacity 250ms ease,
+      visibility 260ms ease;
   }
 
   .fade-in {
-    -webkit-transition: all 1100ms linear;
-    -moz-transition: all 1100ms linear;
-    -ms-transition: all 1100ms linear;
-    -o-transition: all 1100ms linear;
     visibility: visible;
+    transform: translateY(0);
     opacity: 1;
+    transition: transform 100ms ease-out 750ms, opacity 250ms ease 750ms;
+  }
+  .fade-in-bottom {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 100ms ease-out 750ms, opacity 250ms ease 750ms;
   }
 
   /*---------------------------*/
   .fade-leaf-out img {
-    transition: all 180ms ease-out;
+    transition: all 100ms ease-out 200ms;
     margin-top: -25vh;
     visibility: hidden;
   }
 
   .fade-leaf-in img {
-    transition: all 2000ms ease;
+    transition: all 120ms ease 100ms;
     margin-top: 0;
     visibility: visible;
   }
@@ -50,9 +53,14 @@ export const ScrollContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: margin 1.2s ease-in-out;
+  transition: all 750ms ease-in-out;
+  opacity: 1;
   &.fade-in {
     opacity: 0;
+    transform: translateY(-5vh);
+  }
+  &.fade-in-bottom {
+    transform: translateY(5vh);
   }
 
   & > * {
@@ -183,8 +191,12 @@ const getAdditionalStyle = (props) => {
       height: 100vh;
       padding: 120px 90px;
 
+      img {
+        cursor: pointer;
+      }
+
       @media (max-width: 768px) {
-        padding: 30px;
+        padding: 0 30px;
       }
     `;
 };

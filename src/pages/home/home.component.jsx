@@ -35,6 +35,7 @@ class Home extends React.Component {
   }
 
   handleScroll = (e) => {
+    console.log(e.deltaY);
     if (this.state.counter < 3 && e.deltaY > 0) {
       this.setState({ counter: this.state.counter + 1 });
       this.setState({ scrollDirection: true });
@@ -44,9 +45,15 @@ class Home extends React.Component {
     }
   };
 
+  handleClasses = () => {
+    if (this.state.scrollDirection && this.state.counter > 0)
+      return "fade-in-bottom";
+    else return "fade-out";
+  };
+
   render() {
     return (
-      <Container onWheel={this.debounceEvent(this.handleScroll, 300)}>
+      <Container onWheel={this.debounceEvent(this.handleScroll, 500)}>
         <Background className="background" />
         <Button
           onClick={() => {
@@ -79,22 +86,22 @@ class Home extends React.Component {
               <span>
                 Get your original thai menu <br></br>- traditional family recipe
               </span>
-              <ImgContainer
-                topLeaf
-                className={
-                  this.state.counter > 0
-                    ? "fade-leaf-out"
-                    : !this.state.scrollDirection
-                    ? "fade-leaf-in"
-                    : ""
-                }
-              >
-                <img src={Leaf} alt="" />
-              </ImgContainer>
             </Slider>
+            <ImgContainer
+              topLeaf
+              className={
+                this.state.counter > 0
+                  ? "fade-leaf-out"
+                  : !this.state.scrollDirection
+                  ? "fade-leaf-in"
+                  : ""
+              }
+            >
+              <img src={Leaf} alt="" />
+            </ImgContainer>
           </SliderContainer>
           <SliderContainer>
-            <Slider secondSlider>
+            <Slider secondSlider className={this.handleClasses()}>
               <span>Menu</span>
               <span>created by</span>
               <span>chefs that are specialized</span>
@@ -102,7 +109,15 @@ class Home extends React.Component {
             </Slider>
           </SliderContainer>
           <SliderContainer>
-            <Slider>
+            <Slider
+              className={
+                this.state.counter > 2
+                  ? "fade-out"
+                  : !this.state.scrollDirection
+                  ? "fade-in"
+                  : ""
+              }
+            >
               <span>Direct supplies</span>
               <span>form the fines producers</span>
               <span>of thailand and the region</span>
