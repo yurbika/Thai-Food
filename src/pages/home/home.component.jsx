@@ -35,7 +35,6 @@ class Home extends React.Component {
   }
 
   handleScroll = (e) => {
-    console.log(e.deltaY);
     if (this.state.counter < 3 && e.deltaY > 0) {
       this.setState({ counter: this.state.counter + 1 });
       this.setState({ scrollDirection: true });
@@ -48,7 +47,7 @@ class Home extends React.Component {
   handleClasses = () => {
     if (this.state.scrollDirection && this.state.counter > 0)
       return "fade-in-bottom";
-    else return "fade-out";
+    else if (this.state.counter !== 1) return "";
   };
 
   render() {

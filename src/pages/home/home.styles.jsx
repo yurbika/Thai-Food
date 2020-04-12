@@ -21,15 +21,15 @@ export const Container = styled.div`
 
   .fade-in {
     visibility: visible;
-    transform: translateY(0);
+    transform: none;
     opacity: 1;
-    transition: transform 100ms ease-out 750ms, opacity 250ms ease 750ms;
+    transition: transform 450ms ease-out 750ms, opacity 350ms ease 750ms;
   }
-  .fade-in-bottom {
+  & .fade-in-bottom {
+    transition: transform 450ms ease-out 750ms, opacity 350ms ease 750ms;
     visibility: visible;
-    transform: translateY(0);
+    transform: none;
     opacity: 1;
-    transition: transform 100ms ease-out 750ms, opacity 250ms ease 750ms;
   }
 
   /*---------------------------*/
@@ -55,13 +55,6 @@ export const ScrollContainer = styled.div`
   overflow: hidden;
   transition: all 750ms ease-in-out;
   opacity: 1;
-  &.fade-in {
-    opacity: 0;
-    transform: translateY(-5vh);
-  }
-  &.fade-in-bottom {
-    transform: translateY(5vh);
-  }
 
   & > * {
     width: 100vw;
@@ -131,8 +124,12 @@ const getAdditionalSliderStyles = (props) => {
     `;
   if (props.secondSlider)
     return css`
+      position: absolute;
       font-weight: bold;
       font-size: 3vw;
+      transform: translateY(5vh);
+      opacity: 0;
+
       & > * {
         margin-bottom: 30px;
       }
@@ -140,6 +137,7 @@ const getAdditionalSliderStyles = (props) => {
       & :first-child {
         margin-top: -8vh;
       }
+
       @media (max-width: 768px) {
         font-size: 10vw;
       }
