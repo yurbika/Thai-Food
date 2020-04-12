@@ -5,13 +5,15 @@ import Background from "../../components/background/background.component";
 import Button from "../../components/button/button.component";
 
 import Leaf from "../../assets/home/first-page/leaf.svg";
+import Menu from "../../assets/home/third-page/menu.svg";
 
 //styles
 import {
   Container,
   ScrollContainer,
-  FirstSliderContainer,
-  FirstSlider,
+  SliderContainer,
+  Slider,
+  ImgContainer,
 } from "./home.styles";
 
 class Home extends React.Component {
@@ -61,8 +63,9 @@ class Home extends React.Component {
         />
         <Button logo />
         <ScrollContainer className={`translate-${this.state.counter}`}>
-          <FirstSliderContainer>
-            <FirstSlider
+          <SliderContainer>
+            <Slider
+              firstSlider
               className={
                 this.state.counter > 0
                   ? "fade-out"
@@ -76,29 +79,40 @@ class Home extends React.Component {
               <span>
                 Get your original thai menu <br></br>- traditional family recipe
               </span>
-              <div
+              <ImgContainer
+                topLeaf
                 className={
-                  "img-container " +
-                  (this.state.counter > 0
+                  this.state.counter > 0
                     ? "fade-leaf-out"
                     : !this.state.scrollDirection
                     ? "fade-leaf-in"
-                    : "")
+                    : ""
                 }
               >
                 <img src={Leaf} alt="" />
-              </div>
-            </FirstSlider>
-          </FirstSliderContainer>
-          <div className="test">
-            <span>hello 1</span>
-          </div>
-          <div>
-            <span>hello 2</span>
-          </div>
-          <div>
-            <span>hello 3</span>
-          </div>
+              </ImgContainer>
+            </Slider>
+          </SliderContainer>
+          <SliderContainer>
+            <Slider secondSlider>
+              <span>Menu</span>
+              <span>created by</span>
+              <span>chefs that are specialized</span>
+              <span>in thai food</span>
+            </Slider>
+          </SliderContainer>
+          <SliderContainer>
+            <Slider>
+              <span>Direct supplies</span>
+              <span>form the fines producers</span>
+              <span>of thailand and the region</span>
+            </Slider>
+          </SliderContainer>
+          <SliderContainer>
+            <ImgContainer menu>
+              <img src={Menu} alt="" />
+            </ImgContainer>
+          </SliderContainer>
         </ScrollContainer>
       </Container>
     );
