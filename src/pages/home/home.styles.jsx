@@ -186,12 +186,39 @@ const getAdditionalStyle = (props) => {
       transform: rotateZ(-90deg) scaleX(-1);
       height: 350px;
       width: 350px;
+      & :nth-child(2),
+      & :nth-child(3) {
+        position: absolute;
+        transform: rotateZ(-200deg) scaleX(-1);
+        top: 260px;
+        left: 80px;
+        height: 100px;
+        width: 100px;
+      }
+      & :nth-child(2) {
+        left: 35px;
+        top: 265px;
+        transform: rotateZ(-160deg) scaleX(-1);
+      }
       @media (max-width: 768px) {
         bottom: -200px;
         left: -250px;
 
         height: 250px;
         width: 250px;
+      }
+    `;
+  if (props.bottomRightLeaf)
+    return css`
+      bottom: -350px;
+      right: -150px;
+      transform-origin: 50% 0;
+      transform: rotateZ(135deg);
+      height: 300px;
+      width: 300px;
+
+      @media (max-width: 768px) {
+        display: none;
       }
     `;
   if (props.menu)

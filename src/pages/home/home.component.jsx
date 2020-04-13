@@ -5,6 +5,7 @@ import Background from "../../components/background/background.component";
 import Button from "../../components/button/button.component";
 
 import Leaf from "../../assets/home/first-page/leaf.svg";
+import Chilli from "../../assets/home/first-page/chilli.svg";
 import Menu from "../../assets/home/third-page/menu.svg";
 
 //styles
@@ -92,6 +93,20 @@ class Home extends React.Component {
             </ImgContainer>
             <ImgContainer
               bottomLeftLeaf
+              className={
+                this.state.counter > 0
+                  ? "fade-leaf-out"
+                  : !this.state.scrollDirection
+                  ? "fade-leaf-in"
+                  : ""
+              }
+            >
+              <img src={Leaf} alt="" />
+              <img src={Chilli} alt="" />
+              <img src={Chilli} alt="" />
+            </ImgContainer>
+            <ImgContainer
+              bottomRightLeaf
               className={
                 this.state.counter > 0
                   ? "fade-leaf-out"
