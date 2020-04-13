@@ -45,9 +45,14 @@ class Home extends React.Component {
   };
 
   handleClasses = () => {
-    if (this.state.scrollDirection && this.state.counter > 0)
-      return "fade-in-bottom";
-    else if (this.state.counter !== 1) return "";
+    if (
+      this.state.counter !== 1 &&
+      !this.state.scrollDirection &&
+      this.state.counter === 0
+    )
+      return "fade-out" + " fade-in-bottom";
+    if (this.state.counter !== 1) return "fade-out";
+    return "fade-in";
   };
 
   render() {
