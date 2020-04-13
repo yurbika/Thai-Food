@@ -206,6 +206,21 @@ const getAdditionalStyle = (props) => {
 
         height: 250px;
         width: 250px;
+
+        & :nth-child(2),
+        & :nth-child(3) {
+          position: absolute;
+          transform: rotateZ(-200deg) scaleX(-1);
+          top: 180px;
+          left: 65px;
+          height: 65px;
+          width: 65px;
+        }
+        & :nth-child(2) {
+          left: 35px;
+          top: 195px;
+          transform: rotateZ(-160deg) scaleX(-1);
+        }
       }
     `;
   if (props.bottomRightLeaf)
