@@ -22,7 +22,7 @@ class Home extends React.Component {
 
     this.state = {
       counter: 0,
-      scrollDirection: null,
+      scrollDirection: true,
     };
   }
 
@@ -44,14 +44,10 @@ class Home extends React.Component {
     }
   };
 
-  handleClasses = () => {
-    if (
-      this.state.counter !== 1 &&
-      !this.state.scrollDirection &&
-      this.state.counter === 0
-    )
-      return "fade-out" + " fade-in-bottom";
-    if (this.state.counter !== 1) return "fade-out";
+  handleClasses = (n) => {
+    if (this.state.counter !== n && this.state.counter === n - 1)
+      return "fade-out fade-in-bottom";
+    if (this.state.counter !== n) return "fade-out";
     return "fade-in";
   };
 
@@ -75,16 +71,7 @@ class Home extends React.Component {
         <Button logo />
         <ScrollContainer className={`translate-${this.state.counter}`}>
           <SliderContainer>
-            <Slider
-              firstSlider
-              className={
-                this.state.counter > 0
-                  ? "fade-out"
-                  : !this.state.scrollDirection
-                  ? "fade-in"
-                  : ""
-              }
-            >
+            <Slider firstSlider className={this.handleClasses(0)}>
               <span>The Original</span>
               <span>Thai Food</span>
               <span>
@@ -105,7 +92,7 @@ class Home extends React.Component {
             </ImgContainer>
           </SliderContainer>
           <SliderContainer>
-            <Slider secondSlider className={this.handleClasses()}>
+            <Slider secondSlider className={this.handleClasses(1)}>
               <span>Menu</span>
               <span>created by</span>
               <span>chefs that are specialized</span>
@@ -113,15 +100,7 @@ class Home extends React.Component {
             </Slider>
           </SliderContainer>
           <SliderContainer>
-            <Slider
-              className={
-                this.state.counter > 2
-                  ? "fade-out"
-                  : !this.state.scrollDirection
-                  ? "fade-in"
-                  : ""
-              }
-            >
+            <Slider thirdSlider className={this.handleClasses(2)}>
               <span>Direct supplies</span>
               <span>form the fines producers</span>
               <span>of thailand and the region</span>

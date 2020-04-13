@@ -121,7 +121,6 @@ const getAdditionalSliderStyles = (props) => {
       position: absolute;
       font-weight: bold;
       font-size: 3vw;
-      transform: translateY(5vh);
       opacity: 0;
 
       &.fade-in-bottom {
@@ -138,6 +137,12 @@ const getAdditionalSliderStyles = (props) => {
 
       @media (max-width: 768px) {
         font-size: 10vw;
+      }
+    `;
+  if (props.thirdSlider)
+    return css`
+      &.fade-in-bottom {
+        transform: translateY(5vh);
       }
     `;
 };
