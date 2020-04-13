@@ -90,6 +90,18 @@ class Home extends React.Component {
             >
               <img src={Leaf} alt="" />
             </ImgContainer>
+            <ImgContainer
+              bottomLeftLeaf
+              className={
+                this.state.counter > 0
+                  ? "fade-leaf-out"
+                  : !this.state.scrollDirection
+                  ? "fade-leaf-in"
+                  : ""
+              }
+            >
+              <img src={Leaf} alt="" />
+            </ImgContainer>
           </SliderContainer>
           <SliderContainer>
             <Slider secondSlider className={this.handleClasses(1)}>

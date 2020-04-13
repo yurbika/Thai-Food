@@ -164,25 +164,34 @@ export const Slider = styled.div`
 const getAdditionalStyle = (props) => {
   if (props.topLeaf)
     return css`
-      right: 10vw;
+      right: 75px;
       top: -75px;
       height: 250px;
       width: 250px;
       .fade-leaf-in {
         margin-top: -50vh;
       }
+      @media (max-width: 768px) {
+        right: 1vw;
+        top: -35px;
+        height: 150px;
+        width: 150px;
+      }
     `;
   if (props.bottomLeftLeaf)
     return css`
-      top: unset;
-      bottom: -450px;
-      left: -10vw;
+      bottom: -300px;
+      left: -250px;
       transform-origin: 50% 0;
       transform: rotateZ(-90deg) scaleX(-1);
       height: 350px;
       width: 350px;
-      .fade-leaf-in-bottom {
-        margin-bottom: -100vh;
+      @media (max-width: 768px) {
+        bottom: -200px;
+        left: -250px;
+
+        height: 250px;
+        width: 250px;
       }
     `;
   if (props.menu)
@@ -203,7 +212,7 @@ const getAdditionalStyle = (props) => {
 };
 
 export const ImgContainer = styled.div`
-  position: absolute;
+  position: fixed;
 
   img {
     width: 100%;
