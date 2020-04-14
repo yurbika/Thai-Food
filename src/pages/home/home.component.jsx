@@ -132,8 +132,7 @@ class Home extends React.Component {
           </SliderContainer>
           <SliderContainer>
             <Slider secondSlider className={this.handleClasses(1)}>
-              <span>Menu</span>
-              <span>created by</span>
+              <span>Menu created by</span>
               <span>chefs that are specialized</span>
               <span>in thai food</span>
             </Slider>

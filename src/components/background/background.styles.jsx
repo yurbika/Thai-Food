@@ -25,11 +25,16 @@ export const BackgroundContainer = styled.div`
     rgba(255, 255, 255, 1) 0%,
     rgba(180, 212, 123, 1) 100%
   );
+
   overflow: hidden;
 
   img {
     height: 100%;
     width: 100%;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 `;
 
@@ -39,6 +44,10 @@ export const BigImgContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 35px 0;
+
+  @media (max-width: 768px) {
+    padding: 0 35px;
+  }
 `;
 
 const getAdditionalStyle = (props) => {
@@ -63,4 +72,10 @@ export const TriangleContainer = styled.div`
     transform: scaleX(-1);
   }
   ${getAdditionalStyle}
+
+  @media (max-width: 768px) {
+    transform-origin: center;
+    transform: rotateZ(90deg);
+    height: 100vw;
+  }
 `;

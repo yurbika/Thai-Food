@@ -7,7 +7,7 @@ export const Container = styled.div`
 
   .background {
     position: absolute;
-    z-index: -1;
+    z-index: 1;
   }
 
   //whole container
@@ -141,19 +141,11 @@ const getAdditionalSliderStyles = (props) => {
       }
 
       & > * {
-        margin-bottom: 30px;
-      }
-
-      & :first-child {
-        margin-top: -15px;
+        margin-bottom: 15px;
       }
 
       @media (max-width: 768px) {
         font-size: 7vw;
-
-        & :first-child {
-          margin-top: -3vw;
-        }
 
         & > * {
           margin-bottom: 15px;
