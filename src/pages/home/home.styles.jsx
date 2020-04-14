@@ -52,6 +52,7 @@ export const Container = styled.div`
     visibility: visible;
   }
 
+  /*---------------------------*/
   @keyframes rollOutDiagonal {
     0% {
       opacity: 1;
@@ -81,6 +82,8 @@ export const Container = styled.div`
     animation-fill-mode: both;
     -webkit-animation-name: rollOutDiagonal;
     animation-name: rollOutDiagonal;
+    transition: all 250ms ease-out;
+    visibility: hidden;
   }
 
   .fade-lemon-in img {
@@ -90,6 +93,8 @@ export const Container = styled.div`
     animation-fill-mode: both;
     -webkit-animation-name: rollInDiagonal;
     animation-name: rollInDiagonal;
+    transition: all 250ms ease-out;
+    visibility: visible;
   }
 `;
 
@@ -128,6 +133,13 @@ export const SliderContainer = styled.div`
 const getAdditionalSliderStyles = (props) => {
   if (props.firstSlider)
     return css`
+      & :nth-child(1),
+      & :nth-child(2),
+      & :nth-child(3),
+      & :nth-child(4) {
+        z-index: 1;
+      }
+
       & :nth-child(1) {
         margin-left: -20vw;
       }
@@ -306,8 +318,8 @@ const getAdditionalStyle = (props) => {
     `;
   if (props.lemon)
     return css`
-      right: 475px;
-      top: 275px;
+      right: 25vw;
+      top: 30vh;
       height: 75px;
       width: 75px;
 
