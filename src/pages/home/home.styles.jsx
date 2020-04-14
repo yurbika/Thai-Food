@@ -38,6 +38,19 @@ export const Container = styled.div`
     margin-top: 0;
     visibility: visible;
   }
+
+  /*---------------------------*/
+  .fade-chilli-out img {
+    transition: all 250ms ease-out;
+    margin-bottom: -25vh;
+    visibility: hidden;
+  }
+
+  .fade-chilli-in img {
+    transition: all 220ms ease 220ms;
+    margin-top: 0;
+    visibility: visible;
+  }
 `;
 
 export const ScrollContainer = styled.div`
@@ -234,6 +247,21 @@ const getAdditionalStyle = (props) => {
 
       @media (max-width: 768px) {
         display: none;
+      }
+    `;
+  if (props.bottomChilli)
+    return css`
+      height: 100px;
+      width: 100px;
+      bottom: -35px;
+      left: 250px;
+
+      @media (max-width: 768px) {
+        height: 65px;
+        width: 65px;
+
+        bottom: -25px;
+        left: 50px;
       }
     `;
   if (props.menu)

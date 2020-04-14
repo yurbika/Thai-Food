@@ -106,6 +106,18 @@ class Home extends React.Component {
               <img src={Chilli} alt="" />
             </ImgContainer>
             <ImgContainer
+              bottomChilli
+              className={
+                this.state.counter > 0
+                  ? "fade-chilli-out"
+                  : !this.state.scrollDirection
+                  ? "fade-chilli-in"
+                  : ""
+              }
+            >
+              <img src={Chilli} alt="" />
+            </ImgContainer>
+            <ImgContainer
               bottomRightLeaf
               className={
                 this.state.counter > 0
