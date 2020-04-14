@@ -119,13 +119,13 @@ const getAdditionalSliderStyles = (props) => {
 
         & :nth-child(1),
         & :nth-child(2) {
-          font-size: 15vw;
+          font-size: calc(45px + 1vw);
         }
 
         & :nth-child(3),
         & :nth-child(4) {
           margin-top: 20px;
-          font-size: 5vw;
+          font-size: calc(18px + 1vw);
         }
       }
     `;
@@ -145,11 +145,19 @@ const getAdditionalSliderStyles = (props) => {
       }
 
       & :first-child {
-        margin-top: -8vh;
+        margin-top: -15px;
       }
 
       @media (max-width: 768px) {
-        font-size: 10vw;
+        font-size: 7vw;
+
+        & :first-child {
+          margin-top: -3vw;
+        }
+
+        & > * {
+          margin-bottom: 15px;
+        }
       }
     `;
   if (props.thirdSlider)
