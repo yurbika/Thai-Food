@@ -51,6 +51,46 @@ export const Container = styled.div`
     margin-top: 0;
     visibility: visible;
   }
+
+  @keyframes rollOutDiagonal {
+    0% {
+      opacity: 1;
+      transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(10vw) translateY(-25vh) rotate(720deg);
+    }
+  }
+
+  @keyframes rollInDiagonal {
+    0% {
+      opacity: 0;
+      transform: translateX(10vw) translateY(-25vh) rotate(720deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0px) translateY(0px) rotate(0deg);
+    }
+  }
+
+  .fade-lemon-out img {
+    -webkit-animation-duration: 250ms;
+    animation-duration: 250ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: rollOutDiagonal;
+    animation-name: rollOutDiagonal;
+  }
+
+  .fade-lemon-in img {
+    -webkit-animation-duration: 250ms;
+    animation-duration: 250ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: rollInDiagonal;
+    animation-name: rollInDiagonal;
+  }
 `;
 
 export const ScrollContainer = styled.div`
@@ -262,6 +302,21 @@ const getAdditionalStyle = (props) => {
 
         bottom: -25px;
         left: 50px;
+      }
+    `;
+  if (props.lemon)
+    return css`
+      right: 475px;
+      top: 275px;
+      height: 75px;
+      width: 75px;
+
+      @media (max-width: 768px) {
+        height: 45px;
+        width: 65px;
+
+        top: 125px;
+        right: 145px;
       }
     `;
   if (props.menu)

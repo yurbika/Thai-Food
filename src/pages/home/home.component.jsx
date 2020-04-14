@@ -4,8 +4,12 @@ import { debounce } from "lodash";
 import Background from "../../components/background/background.component";
 import Button from "../../components/button/button.component";
 
+//first slider
 import Leaf from "../../assets/home/first-page/leaf.svg";
 import Chilli from "../../assets/home/first-page/chilli.svg";
+import Lemon from "../../assets/home/first-page/lemon.svg";
+
+//last slider
 import Menu from "../../assets/home/third-page/menu.svg";
 
 //styles
@@ -90,6 +94,18 @@ class Home extends React.Component {
               }
             >
               <img src={Leaf} alt="" />
+            </ImgContainer>
+            <ImgContainer
+              lemon
+              className={
+                this.state.counter > 0
+                  ? "fade-lemon-out"
+                  : !this.state.scrollDirection
+                  ? "fade-lemon-in"
+                  : ""
+              }
+            >
+              <img src={Lemon} alt="" />
             </ImgContainer>
             <ImgContainer
               bottomLeftLeaf
