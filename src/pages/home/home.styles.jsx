@@ -360,7 +360,6 @@ const getAdditionalStyle = (props) => {
   if (props.menu)
     return css`
       width: 100vw;
-      min-height: 500px;
       height: 100vh;
       padding: 120px 90px;
 
@@ -369,7 +368,7 @@ const getAdditionalStyle = (props) => {
       }
 
       @media (max-width: 768px) {
-        padding: 0 30px;
+        padding: 60px;
       }
     `;
 };

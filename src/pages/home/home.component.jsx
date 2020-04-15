@@ -51,11 +51,24 @@ class Home extends React.Component {
     }
   };
 
-  handleClasses = (n) => {
+  handleSliderClasses = (n) => {
     if (this.state.counter !== n && this.state.counter === n - 1)
       return "fade-out fade-in-bottom";
     if (this.state.counter !== n) return "fade-out";
     return "fade-in";
+  };
+
+  handleAnimationClassesFirstSlider = (str) => {
+    if (this.state.counter > 0) {
+      if (str === "leaf") return "fade-leaf-out";
+      if (str === "lemon") return "fade-lemon-out";
+      if (str === "chilli" || str === "basil") return "fade-chilli-out";
+    } else if (!this.state.scrollDirection) {
+      if (str === "leaf") return "fade-leaf-in";
+      if (str === "lemon") return "fade-lemon-in";
+      if (str === "chilli" || str === "basil") return "fade-chilli-in";
+    }
+    return "";
   };
 
   render() {
@@ -78,7 +91,7 @@ class Home extends React.Component {
         <Button logo />
         <ScrollContainer className={`translate-${this.state.counter}`}>
           <SliderContainer>
-            <Slider firstSlider className={this.handleClasses(0)}>
+            <Slider firstSlider className={this.handleSliderClasses(0)}>
               <span>The Original</span>
               <span>Thai Food</span>
               <span>
@@ -99,25 +112,13 @@ class Home extends React.Component {
             </ImgContainer>
             <ImgContainer
               lemon
-              className={
-                this.state.counter > 0
-                  ? "fade-lemon-out"
-                  : !this.state.scrollDirection
-                  ? "fade-lemon-in"
-                  : ""
-              }
+              className={this.handleAnimationClassesFirstSlider("lemon")}
             >
               <img src={Lemon} alt="" />
             </ImgContainer>
             <ImgContainer
               bottomLeftLeaf
-              className={
-                this.state.counter > 0
-                  ? "fade-leaf-out"
-                  : !this.state.scrollDirection
-                  ? "fade-leaf-in"
-                  : ""
-              }
+              className={this.handleAnimationClassesFirstSlider("leaf")}
             >
               <img src={Leaf} alt="" />
               <img src={Chilli} alt="" />
@@ -125,25 +126,13 @@ class Home extends React.Component {
             </ImgContainer>
             <ImgContainer
               bottomChilli
-              className={
-                this.state.counter > 0
-                  ? "fade-chilli-out"
-                  : !this.state.scrollDirection
-                  ? "fade-chilli-in"
-                  : ""
-              }
+              className={this.handleAnimationClassesFirstSlider("chilli")}
             >
               <img src={Chilli} alt="" />
             </ImgContainer>
             <ImgContainer
               bottomRightLeaf
-              className={
-                this.state.counter > 0
-                  ? "fade-leaf-out"
-                  : !this.state.scrollDirection
-                  ? "fade-leaf-in"
-                  : ""
-              }
+              className={this.handleAnimationClassesFirstSlider("leaf")}
             >
               <img src={Leaf} alt="" />
               <img src={Tomato} alt="" />
@@ -151,26 +140,20 @@ class Home extends React.Component {
             </ImgContainer>
             <ImgContainer
               basil
-              className={
-                this.state.counter > 0
-                  ? "fade-chilli-out"
-                  : !this.state.scrollDirection
-                  ? "fade-chilli-in"
-                  : ""
-              }
+              className={this.handleAnimationClassesFirstSlider("chilli")}
             >
               <img src={Basil} alt="" />
             </ImgContainer>
           </SliderContainer>
           <SliderContainer>
-            <Slider secondSlider className={this.handleClasses(1)}>
+            <Slider secondSlider className={this.handleSliderClasses(1)}>
               <span>Menu created by</span>
               <span>chefs that are specialized</span>
               <span>in thai food</span>
             </Slider>
           </SliderContainer>
           <SliderContainer>
-            <Slider thirdSlider className={this.handleClasses(2)}>
+            <Slider thirdSlider className={this.handleSliderClasses(2)}>
               <span>Direct supplies</span>
               <span>form the fines producers</span>
               <span>of thailand and the region</span>
