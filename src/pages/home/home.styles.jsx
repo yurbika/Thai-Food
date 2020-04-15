@@ -18,7 +18,29 @@ const rollOutHorizontal = (x = "-10vw") => keyframes`
   }
   100% {
     opacity: 0;
-    transform: translateX(-10vw) rotate(360deg);
+    transform: translateX(${x}) rotate(360deg);
+  }
+`;
+
+const rollInVertical = (y = "-25vh") => keyframes`
+0% {
+  opacity: 0;
+  transform: translateY(${y}) rotate(360deg);
+}
+100% {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg);
+}
+`;
+
+const rollOutVertical = (y = "-25vh") => keyframes`
+  0% {
+    opacity: 1;
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(${y}) rotate(360deg);
   }
 `;
 
@@ -400,18 +422,36 @@ const getAdditionalStyle = (props) => {
       height: auto;
       width: 20vw;
       max-width: 200px;
+
+      @media (max-width: 768px) {
+        top: 25vh;
+        left: 40vw;
+      }
     `;
 
   if (props.leftBottomPlate)
     return css`
-      top: 100px;
-      left: 450px;
+      bottom: 15vh;
+      left: 5vw;
+      height: auto;
+      width: 17vw;
+      max-width: 200px;
+
+      @media (max-width: 768px) {
+        top: 10vh;
+        bottom: unset;
+        left: unset;
+        right: 10vw;
+      }
     `;
 
   if (props.rightTopPlate)
     return css`
-      top: 100px;
-      left: 450px;
+      bottom: 15vh;
+      right: 25vw;
+      height: auto;
+      width: 20vw;
+      max-width: 200px;
     `;
 
   if (props.plate)
@@ -457,17 +497,27 @@ export const ImgContainer = styled.div`
     animation-name: ${(props) => rollOutHorizontal(props.x)};
     transition: all 250ms ease-out;
     visibility: hidden;
+
+    @media (max-width: 768px) {
+      -webkit-animation-name: ${(props) => rollOutVertical(props.y)};
+      animation-name: ${(props) => rollOutVertical(props.y)};
+    }
   }
 
   &.fade-plate-in {
-    -webkit-animation-duration: 250ms;
-    animation-duration: 250ms;
+    -webkit-animation-duration: ${(props) => getDelayForAnimation(props.delay)};
+    animation-duration: ${(props) => getDelayForAnimation(props.delay)};
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     -webkit-animation-name: ${(props) => rollInHorizontal(props.x)};
     animation-name: ${(props) => rollInHorizontal(props.x)};
     transition: all 250ms ease-out;
     visibility: visible;
+
+    @media (max-width: 768px) {
+      -webkit-animation-name: ${(props) => rollInVertical(props.y)};
+      animation-name: ${(props) => rollInVertical(props.y)};
+    }
   }
   ${getAdditionalStyle}
 `;

@@ -165,6 +165,7 @@ class Home extends React.Component {
             </ImgContainer>
             <ImgContainer
               leftMiddlePlate
+              delay={50}
               className={
                 this.state.counter > 0
                   ? "fade-plate-out"
@@ -175,12 +176,34 @@ class Home extends React.Component {
             >
               <img src={SpaghettiPlate2} alt="" />
             </ImgContainer>
-            {/*  <ImgContainer leftBottomPlate  className={""}>
+            <ImgContainer
+              leftBottomPlate
+              delay={100}
+              className={
+                this.state.counter > 0
+                  ? "fade-plate-out"
+                  : !this.state.scrollDirection
+                  ? "fade-plate-in"
+                  : ""
+              }
+            >
               <img src={SpaghettiPlate3} alt="" />
             </ImgContainer>
-            <ImgContainer rightTopPlate  className={""}>
+            <ImgContainer
+              rightTopPlate
+              delay={150}
+              x={"10vw"}
+              y={"25vh"}
+              className={
+                this.state.counter > 0
+                  ? "fade-plate-out"
+                  : !this.state.scrollDirection
+                  ? "fade-plate-in"
+                  : ""
+              }
+            >
               <img src={SpaghettiPlate4} alt="" />
-            </ImgContainer>*/}
+            </ImgContainer>
           </SliderContainer>
           <SliderContainer>
             <Slider thirdSlider className={this.handleSliderClasses(2)}>
