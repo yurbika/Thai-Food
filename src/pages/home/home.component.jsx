@@ -11,6 +11,12 @@ import Lemon from "../../assets/home/first-page/lemon.svg";
 import Tomato from "../../assets/home/first-page/tomato.svg";
 import Basil from "../../assets/home/first-page/basil.svg";
 
+//second slider
+import SpaghettiPlate from "../../assets/home/second-page/spaghettiPlate.svg";
+import SpaghettiPlate2 from "../../assets/home/second-page/spaghettiPlate2.svg";
+import SpaghettiPlate3 from "../../assets/home/second-page/spaghettiPlate3.svg";
+import SpaghettiPlate4 from "../../assets/home/second-page/spaghettiPlate4.svg";
+
 //last slider
 import Menu from "../../assets/home/third-page/menu.svg";
 
@@ -90,7 +96,7 @@ class Home extends React.Component {
         />
         <Button logo />
         <ScrollContainer className={`translate-${this.state.counter}`}>
-          <SliderContainer>
+          {/* <SliderContainer>
             <Slider firstSlider className={this.handleSliderClasses(0)}>
               <span>The Original</span>
               <span>Thai Food</span>
@@ -100,13 +106,7 @@ class Home extends React.Component {
             </Slider>
             <ImgContainer
               topLeaf
-              className={
-                this.state.counter > 0
-                  ? "fade-leaf-out"
-                  : !this.state.scrollDirection
-                  ? "fade-leaf-in"
-                  : ""
-              }
+              className={this.handleAnimationClassesFirstSlider("leaf")}
             >
               <img src={Leaf} alt="" />
             </ImgContainer>
@@ -144,13 +144,43 @@ class Home extends React.Component {
             >
               <img src={Basil} alt="" />
             </ImgContainer>
-          </SliderContainer>
+          </SliderContainer>*/}
           <SliderContainer>
-            <Slider secondSlider className={this.handleSliderClasses(1)}>
+            <Slider secondSlider className={this.handleSliderClasses(0)}>
               <span>Menu created by</span>
               <span>chefs that are specialized</span>
               <span>in thai food</span>
             </Slider>
+            <ImgContainer
+              leftTopPlate
+              className={
+                this.state.counter > 0
+                  ? "fade-plate-out"
+                  : !this.state.scrollDirection
+                  ? "fade-plate-in"
+                  : ""
+              }
+            >
+              <img src={SpaghettiPlate} alt="" />
+            </ImgContainer>
+            <ImgContainer
+              leftMiddlePlate
+              className={
+                this.state.counter > 0
+                  ? "fade-plate-out"
+                  : !this.state.scrollDirection
+                  ? "fade-plate-in"
+                  : ""
+              }
+            >
+              <img src={SpaghettiPlate2} alt="" />
+            </ImgContainer>
+            {/*  <ImgContainer leftBottomPlate  className={""}>
+              <img src={SpaghettiPlate3} alt="" />
+            </ImgContainer>
+            <ImgContainer rightTopPlate  className={""}>
+              <img src={SpaghettiPlate4} alt="" />
+            </ImgContainer>*/}
           </SliderContainer>
           <SliderContainer>
             <Slider thirdSlider className={this.handleSliderClasses(2)}>

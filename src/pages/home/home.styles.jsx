@@ -1,4 +1,26 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+const rollInHorizontal = (x = "-10vw") => keyframes`
+0% {
+  opacity: 0;
+  transform: translateX(${x}) rotate(360deg);
+}
+100% {
+  opacity: 1;
+  transform: translateX(0) rotate(0deg);
+}
+`;
+
+const rollOutHorizontal = (x = "-10vw") => keyframes`
+  0% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-10vw) rotate(360deg);
+  }
+`;
 
 export const Container = styled.div`
   position: fixed;
@@ -7,7 +29,7 @@ export const Container = styled.div`
 
   .background {
     position: absolute;
-    z-index: 1;
+    z-index: -2;
   }
 
   //whole container
@@ -222,11 +244,15 @@ export const Slider = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
+  span {
+    z-index: 1;
+  }
 
   ${getAdditionalSliderStyles}
 `;
 
 const getAdditionalStyle = (props) => {
+  //first slider
   if (props.topLeaf)
     return css`
       right: 75px;
@@ -357,6 +383,43 @@ const getAdditionalStyle = (props) => {
         display: none;
       }
     `;
+  //second slider
+  if (props.leftTopPlate)
+    return css`
+      top: calc(15vh);
+      left: 10vw;
+      height: auto;
+      width: 20vw;
+      max-width: 200px;
+    `;
+
+  if (props.leftMiddlePlate)
+    return css`
+      top: 35vh;
+      left: 20vw;
+      height: auto;
+      width: 20vw;
+      max-width: 200px;
+    `;
+
+  if (props.leftBottomPlate)
+    return css`
+      top: 100px;
+      left: 450px;
+    `;
+
+  if (props.rightTopPlate)
+    return css`
+      top: 100px;
+      left: 450px;
+    `;
+
+  if (props.plate)
+    return css`
+      height: auto;
+      width: 20vw;
+    `;
+  //last slider
   if (props.menu)
     return css`
       width: 100vw;
@@ -373,12 +436,38 @@ const getAdditionalStyle = (props) => {
     `;
 };
 
+const getDelayForAnimation = (delay = 0, duration = 250) =>
+  delay + duration + "ms";
+
 export const ImgContainer = styled.div`
   position: fixed;
 
   img {
     width: 100%;
     height: 100%;
+  }
+
+  /*second slider animation for the plates*/
+  &.fade-plate-out {
+    -webkit-animation-duration: ${(props) => getDelayForAnimation(props.delay)};
+    animation-duration: ${(props) => getDelayForAnimation(props.delay)};
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: ${(props) => rollOutHorizontal(props.x)};
+    animation-name: ${(props) => rollOutHorizontal(props.x)};
+    transition: all 250ms ease-out;
+    visibility: hidden;
+  }
+
+  &.fade-plate-in {
+    -webkit-animation-duration: 250ms;
+    animation-duration: 250ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: ${(props) => rollInHorizontal(props.x)};
+    animation-name: ${(props) => rollInHorizontal(props.x)};
+    transition: all 250ms ease-out;
+    visibility: visible;
   }
   ${getAdditionalStyle}
 `;
