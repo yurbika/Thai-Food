@@ -1,5 +1,6 @@
 import styled, { css, keyframes } from "styled-components";
 
+//keyframe functions
 const rollInHorizontal = (x = "-10vw") => keyframes`
 0% {
   opacity: 0;
@@ -405,19 +406,31 @@ const getAdditionalStyle = (props) => {
         display: none;
       }
     `;
-  //second slider
+  /////////////////
+  //second slider//
+  /////////////////
+  //top plates
   if (props.leftTopPlate)
     return css`
-      top: calc(15vh);
-      left: 10vw;
+      top: 10vh;
+      left: 30vw;
       height: auto;
       width: 20vw;
       max-width: 200px;
     `;
 
+  if (props.rightTopPlate)
+    return css`
+      top: 10vh;
+      right: 30vw;
+      height: auto;
+      width: 10vw;
+      max-width: 200px;
+    `;
+  //middle plates
   if (props.leftMiddlePlate)
     return css`
-      top: 35vh;
+      top: 38vh;
       left: 20vw;
       height: auto;
       width: 20vw;
@@ -429,12 +442,21 @@ const getAdditionalStyle = (props) => {
       }
     `;
 
+  if (props.rightMiddlePlate)
+    return css`
+      top: 38vh;
+      right: 20vw;
+      height: auto;
+      width: 20vw;
+      max-width: 200px;
+    `;
+  //bottom plates
   if (props.leftBottomPlate)
     return css`
-      bottom: 15vh;
-      left: 5vw;
+      bottom: 12vh;
+      left: 30vw;
       height: auto;
-      width: 17vw;
+      width: 9vw;
       max-width: 200px;
 
       @media (max-width: 768px) {
@@ -445,10 +467,10 @@ const getAdditionalStyle = (props) => {
       }
     `;
 
-  if (props.rightTopPlate)
+  if (props.rightBottomPlate)
     return css`
-      bottom: 15vh;
-      right: 25vw;
+      bottom: 10vh;
+      right: 30vw;
       height: auto;
       width: 20vw;
       max-width: 200px;
@@ -459,7 +481,9 @@ const getAdditionalStyle = (props) => {
       height: auto;
       width: 20vw;
     `;
-  //last slider
+  /////////////////
+  //last slider////
+  /////////////////
   if (props.menu)
     return css`
       width: 100vw;

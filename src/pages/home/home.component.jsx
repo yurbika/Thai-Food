@@ -16,6 +16,8 @@ import SpaghettiPlate from "../../assets/home/second-page/spaghettiPlate.svg";
 import SpaghettiPlate2 from "../../assets/home/second-page/spaghettiPlate2.svg";
 import SpaghettiPlate3 from "../../assets/home/second-page/spaghettiPlate3.svg";
 import SpaghettiPlate4 from "../../assets/home/second-page/spaghettiPlate4.svg";
+import Soup from "../../assets/home/second-page/soup.svg";
+import Soup2 from "../../assets/home/second-page/soup2.svg";
 
 //last slider
 import Menu from "../../assets/home/third-page/menu.svg";
@@ -190,7 +192,7 @@ class Home extends React.Component {
               <img src={SpaghettiPlate3} alt="" />
             </ImgContainer>
             <ImgContainer
-              rightTopPlate
+              rightBottomPlate
               delay={150}
               x={"10vw"}
               y={"25vh"}
@@ -203,6 +205,36 @@ class Home extends React.Component {
               }
             >
               <img src={SpaghettiPlate4} alt="" />
+            </ImgContainer>
+            <ImgContainer
+              rightMiddlePlate
+              delay={200}
+              x={"10vw"}
+              y={"25vh"}
+              className={
+                this.state.counter > 0
+                  ? "fade-plate-out"
+                  : !this.state.scrollDirection
+                  ? "fade-plate-in"
+                  : ""
+              }
+            >
+              <img src={Soup} alt="" />
+            </ImgContainer>
+            <ImgContainer
+              rightTopPlate
+              delay={250}
+              x={"10vw"}
+              y={"25vh"}
+              className={
+                this.state.counter > 0
+                  ? "fade-plate-out"
+                  : !this.state.scrollDirection
+                  ? "fade-plate-in"
+                  : ""
+              }
+            >
+              <img src={Soup2} alt="" />
             </ImgContainer>
           </SliderContainer>
           <SliderContainer>
