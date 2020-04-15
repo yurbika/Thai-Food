@@ -297,6 +297,21 @@ const getAdditionalStyle = (props) => {
       height: 300px;
       width: 300px;
 
+      & :nth-child(2),
+      & :nth-child(3) {
+        position: absolute;
+        transform: rotateZ(-200deg) scaleX(-1);
+        top: 180px;
+        left: 105px;
+        height: 50px;
+        width: 50px;
+      }
+      & :nth-child(2) {
+        left: 40px;
+        top: 200px;
+        transform: rotateZ(-160deg) scaleX(-1);
+      }
+
       @media (max-width: 768px) {
         display: none;
       }
@@ -329,6 +344,17 @@ const getAdditionalStyle = (props) => {
 
         top: 125px;
         right: 145px;
+      }
+    `;
+  if (props.basil)
+    return css`
+      right: 200px;
+      bottom: -15px;
+      height: 75px;
+      width: 75px;
+
+      @media (max-width: 768px) {
+        display: none;
       }
     `;
   if (props.menu)

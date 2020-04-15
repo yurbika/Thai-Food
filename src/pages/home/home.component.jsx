@@ -8,6 +8,8 @@ import Button from "../../components/button/button.component";
 import Leaf from "../../assets/home/first-page/leaf.svg";
 import Chilli from "../../assets/home/first-page/chilli.svg";
 import Lemon from "../../assets/home/first-page/lemon.svg";
+import Tomato from "../../assets/home/first-page/tomato.svg";
+import Basil from "../../assets/home/first-page/basil.svg";
 
 //last slider
 import Menu from "../../assets/home/third-page/menu.svg";
@@ -144,6 +146,20 @@ class Home extends React.Component {
               }
             >
               <img src={Leaf} alt="" />
+              <img src={Tomato} alt="" />
+              <img src={Tomato} alt="" />
+            </ImgContainer>
+            <ImgContainer
+              basil
+              className={
+                this.state.counter > 0
+                  ? "fade-chilli-out"
+                  : !this.state.scrollDirection
+                  ? "fade-chilli-in"
+                  : ""
+              }
+            >
+              <img src={Basil} alt="" />
             </ImgContainer>
           </SliderContainer>
           <SliderContainer>
