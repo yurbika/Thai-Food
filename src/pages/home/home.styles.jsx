@@ -415,8 +415,12 @@ const getAdditionalStyle = (props) => {
       top: 10vh;
       left: 30vw;
       height: auto;
-      width: 20vw;
+      width: 20vh;
       max-width: 200px;
+      @media (max-width: 768px) {
+        top: 20vh;
+        left: 1.5vw;
+      }
     `;
 
   if (props.rightTopPlate)
@@ -424,56 +428,73 @@ const getAdditionalStyle = (props) => {
       top: 10vh;
       right: 30vw;
       height: auto;
-      width: 10vw;
-      max-width: 200px;
+      width: 20vh;
+      max-width: 170px;
+      @media (max-width: 768px) {
+        top: unset;
+        right: unset;
+        bottom: 20vh;
+        left: 3vw;
+      }
     `;
   //middle plates
   if (props.leftMiddlePlate)
     return css`
       top: 38vh;
-      left: 20vw;
+      left: 13vw;
       height: auto;
-      width: 20vw;
+      width: 20vh;
       max-width: 200px;
 
       @media (max-width: 768px) {
-        top: 25vh;
-        left: 40vw;
+        top: 5vh;
+        left: 39vw;
       }
     `;
 
   if (props.rightMiddlePlate)
     return css`
       top: 38vh;
-      right: 20vw;
+      right: 13vw;
       height: auto;
-      width: 20vw;
+      width: 20vh;
       max-width: 200px;
+      @media (max-width: 768px) {
+        top: unset;
+        bottom: 5vh;
+        left: 40.5vw;
+      }
     `;
-  //bottom plates
+  /////////////////
+  //bottom plates//
+  /////////////////
   if (props.leftBottomPlate)
     return css`
       bottom: 12vh;
       left: 30vw;
       height: auto;
-      width: 9vw;
-      max-width: 200px;
+      width: 17vh;
+      max-width: 170px;
 
       @media (max-width: 768px) {
-        top: 10vh;
+        top: 21vh;
         bottom: unset;
         left: unset;
-        right: 10vw;
+        right: 8vw;
       }
     `;
 
   if (props.rightBottomPlate)
     return css`
-      bottom: 10vh;
+      bottom: 10.5vh;
       right: 30vw;
       height: auto;
-      width: 20vw;
+      width: 20vh;
       max-width: 200px;
+      @media (max-width: 768px) {
+        bottom: 20vh;
+        right: 5vw;
+      }
     `;
 
   if (props.plate)

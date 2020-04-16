@@ -1,7 +1,7 @@
 import React from "react";
 
 //assets
-import logoWalking from "../../assets/elefant.gif";
+import logoWalking from "../../assets/elephant.gif";
 import BigIcon from "../../assets/big-icon-higherOpacity.svg";
 
 //styles

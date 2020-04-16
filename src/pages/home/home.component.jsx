@@ -234,6 +234,7 @@ class Home extends React.Component {
                   : ""
               }
             >
+              {/*x und y einen gemeinsamen wert finden damit es nicht immer wieder angegeben werden muss */}
               <img src={Soup2} alt="" />
             </ImgContainer>
           </SliderContainer>
