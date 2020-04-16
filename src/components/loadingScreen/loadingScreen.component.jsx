@@ -1,25 +1,20 @@
 import React from "react";
-import Lottie from "react-lottie";
 
 //assets
-import logoWalking from "../../assets/logoWalking.json";
-import BigIcon from "../../assets/big-icon.svg";
+import logoWalking from "../../assets/elefant.gif";
+import BigIcon from "../../assets/big-icon-higherOpacity.svg";
 
 //styles
 import "./loadingScreen.styles.scss";
 
 const LoadingScreen = () => {
-  const defaultOptions = {
-    animationData: logoWalking,
-  };
-
   return (
     <div className="container">
       <div className="img-container">
         <img src={BigIcon} alt="" />
       </div>
       <div className="animation-container">
-        <Lottie options={defaultOptions} />
+        <img src={logoWalking} alt="loading. . ." />
       </div>
     </div>
   );
