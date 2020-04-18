@@ -141,6 +141,37 @@ export const Container = styled.div`
     transition: all 250ms ease-out;
     visibility: visible;
   }
+  /*---------------------------*/
+
+  .fade-bowl-out img {
+    visibility: hidden;
+    transform: translateX(-2vh);
+    opacity: 0;
+    transition: transform 150ms ease-out, opacity 250ms ease-out,
+      visibility 260ms ease;
+  }
+
+  .fade-bowl-in img {
+    visibility: visible;
+    transform: none;
+    opacity: 1;
+    transition: transform 250ms ease-out, opacity 250ms ease;
+  }
+
+  .fade-ingredients-out img {
+    visibility: hidden;
+    transform: translateY(-2vh);
+    opacity: 0;
+    transition: transform 150ms ease-out, opacity 250ms ease-out,
+      visibility 260ms ease;
+  }
+
+  .fade-ingredients-in img {
+    visibility: visible;
+    transform: none;
+    opacity: 1;
+    transition: transform 450ms ease-out, opacity 500ms ease;
+  }
 `;
 
 export const ScrollContainer = styled.div`
@@ -505,11 +536,6 @@ const getAdditionalStyle = (props) => {
       }
     `;
 
-  if (props.plate)
-    return css`
-      height: auto;
-      width: 20vw;
-    `;
   ////////////////
   //third-slider//
   ////////////////

@@ -215,10 +215,22 @@ class Home extends React.Component {
               <span>form the fines producers</span>
               <span>of thailand and the region</span>
             </Slider>
-            <ImgContainer ingredients>
+            <ImgContainer
+              ingredients
+              className={
+                this.state.counter > 0
+                  ? "fade-ingredients-out"
+                  : "fade-ingredients-in"
+              }
+            >
               <img src={Ingredients} alt="" />
             </ImgContainer>
-            <ImgContainer saladBowl>
+            <ImgContainer
+              saladBowl
+              className={
+                this.state.counter > 0 ? "fade-bowl-out" : "fade-bowl-in"
+              }
+            >
               <img src={SaladBowl} alt="" />
             </ImgContainer>
           </SliderContainer>
