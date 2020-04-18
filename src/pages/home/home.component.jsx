@@ -67,17 +67,20 @@ class Home extends React.Component {
   };
 
   handleAnimationClassesFirstSlider = (str) => {
-    if (this.state.counter > 0) {
+    if (this.state.counter !== 0) {
       if (str === "leaf") return "fade-leaf-out";
       if (str === "lemon") return "fade-lemon-out";
       if (str === "chilli" || str === "basil") return "fade-chilli-out";
-    } else if (!this.state.scrollDirection) {
+    } else {
       if (str === "leaf") return "fade-leaf-in";
       if (str === "lemon") return "fade-lemon-in";
       if (str === "chilli" || str === "basil") return "fade-chilli-in";
     }
     return "";
   };
+
+  handleAnimationclassesSecondSlider = () =>
+    this.state.counter !== 1 ? "fade-plate-out" : "fade-plate-in";
 
   render() {
     return (
@@ -98,7 +101,7 @@ class Home extends React.Component {
         />
         <Button logo />
         <ScrollContainer className={`translate-${this.state.counter}`}>
-          {/* <SliderContainer>
+          <SliderContainer>
             <Slider firstSlider className={this.handleSliderClasses(0)}>
               <span>The Original</span>
               <span>Thai Food</span>
@@ -146,48 +149,30 @@ class Home extends React.Component {
             >
               <img src={Basil} alt="" />
             </ImgContainer>
-          </SliderContainer>*/}
+          </SliderContainer>
           <SliderContainer>
-            <Slider secondSlider className={this.handleSliderClasses(0)}>
+            <Slider secondSlider className={this.handleSliderClasses(1)}>
               <span>Menu created by</span>
               <span>chefs that are specialized</span>
               <span>in thai food</span>
             </Slider>
             <ImgContainer
               leftTopPlate
-              className={
-                this.state.counter > 0
-                  ? "fade-plate-out"
-                  : !this.state.scrollDirection
-                  ? "fade-plate-in"
-                  : ""
-              }
+              className={this.handleAnimationclassesSecondSlider()}
             >
               <img src={SpaghettiPlate} alt="" />
             </ImgContainer>
             <ImgContainer
               leftMiddlePlate
               delay={50}
-              className={
-                this.state.counter > 0
-                  ? "fade-plate-out"
-                  : !this.state.scrollDirection
-                  ? "fade-plate-in"
-                  : ""
-              }
+              className={this.handleAnimationclassesSecondSlider()}
             >
               <img src={SpaghettiPlate2} alt="" />
             </ImgContainer>
             <ImgContainer
               leftBottomPlate
               delay={100}
-              className={
-                this.state.counter > 0
-                  ? "fade-plate-out"
-                  : !this.state.scrollDirection
-                  ? "fade-plate-in"
-                  : ""
-              }
+              className={this.handleAnimationclassesSecondSlider()}
             >
               <img src={SpaghettiPlate3} alt="" />
             </ImgContainer>
@@ -196,13 +181,7 @@ class Home extends React.Component {
               delay={150}
               x={"10vw"}
               y={"25vh"}
-              className={
-                this.state.counter > 0
-                  ? "fade-plate-out"
-                  : !this.state.scrollDirection
-                  ? "fade-plate-in"
-                  : ""
-              }
+              className={this.handleAnimationclassesSecondSlider()}
             >
               <img src={SpaghettiPlate4} alt="" />
             </ImgContainer>
@@ -211,13 +190,7 @@ class Home extends React.Component {
               delay={200}
               x={"10vw"}
               y={"25vh"}
-              className={
-                this.state.counter > 0
-                  ? "fade-plate-out"
-                  : !this.state.scrollDirection
-                  ? "fade-plate-in"
-                  : ""
-              }
+              className={this.handleAnimationclassesSecondSlider()}
             >
               <img src={Soup} alt="" />
             </ImgContainer>
@@ -226,13 +199,7 @@ class Home extends React.Component {
               delay={250}
               x={"10vw"}
               y={"25vh"}
-              className={
-                this.state.counter > 0
-                  ? "fade-plate-out"
-                  : !this.state.scrollDirection
-                  ? "fade-plate-in"
-                  : ""
-              }
+              className={this.handleAnimationclassesSecondSlider()}
             >
               {/*x und y einen gemeinsamen wert finden damit es nicht immer wieder angegeben werden muss */}
               <img src={Soup2} alt="" />

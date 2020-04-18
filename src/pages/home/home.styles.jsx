@@ -228,7 +228,6 @@ const getAdditionalSliderStyles = (props) => {
     `;
   if (props.secondSlider)
     return css`
-      position: absolute;
       font-weight: bold;
       font-size: 3vw;
       opacity: 0;
@@ -258,9 +257,6 @@ const getAdditionalSliderStyles = (props) => {
 };
 
 export const Slider = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
   flex-direction: column;
   align-content: center;
