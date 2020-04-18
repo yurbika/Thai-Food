@@ -264,6 +264,7 @@ const getAdditionalSliderStyles = (props) => {
       width: unset;
       height: unset;
       font-size: 2.5vw;
+      margin-left: 32vw;
       &.fade-in-bottom {
         transform: translateY(5vh);
       }
@@ -514,10 +515,21 @@ const getAdditionalStyle = (props) => {
   ////////////////
   if (props.saladBowl)
     return css`
-      position: static;
-
-      width: 15vw;
+      width: 45vh;
       height: auto;
+
+      left: 25vw;
+      bottom: 8vw;
+      transform: rotateZ(-18deg);
+    `;
+  if (props.ingredients)
+    return css`
+      width: 45vh;
+      height: auto;
+
+      left: 23.5vw;
+      top: 11vw;
+      transform: rotateZ(-15deg);
     `;
 
   /////////////////

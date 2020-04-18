@@ -210,14 +210,17 @@ class Home extends React.Component {
           </SliderContainer> 
         */}
           <SliderContainer homeThirdSlider>
-            <ImgContainer saladBowl>
-              <img src={SaladBowl} alt="" />
-            </ImgContainer>
             <Slider thirdSlider className={this.handleSliderClasses(0)}>
               <span>Direct supplies</span>
               <span>form the fines producers</span>
               <span>of thailand and the region</span>
             </Slider>
+            <ImgContainer ingredients>
+              <img src={Ingredients} alt="" />
+            </ImgContainer>
+            <ImgContainer saladBowl>
+              <img src={SaladBowl} alt="" />
+            </ImgContainer>
           </SliderContainer>
           <SliderContainer>
             <ImgContainer menu>
