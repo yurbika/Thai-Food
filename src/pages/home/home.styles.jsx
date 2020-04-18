@@ -447,8 +447,7 @@ const getAdditionalStyle = (props) => {
       max-width: 200px;
 
       @media (max-width: 768px) {
-        top: 5vh;
-        left: 39vw;
+        display: none;
       }
     `;
 
@@ -460,9 +459,7 @@ const getAdditionalStyle = (props) => {
       width: 20vh;
       max-width: 200px;
       @media (max-width: 768px) {
-        top: unset;
-        bottom: 5vh;
-        left: 40.5vw;
+        display: none;
       }
     `;
   /////////////////
@@ -480,7 +477,7 @@ const getAdditionalStyle = (props) => {
         top: 21vh;
         bottom: unset;
         left: unset;
-        right: 8vw;
+        right: 5.5vw;
       }
     `;
 
@@ -493,7 +490,7 @@ const getAdditionalStyle = (props) => {
       max-width: 200px;
       @media (max-width: 768px) {
         bottom: 20vh;
-        right: 5vw;
+        right: 3.5vw;
       }
     `;
 
