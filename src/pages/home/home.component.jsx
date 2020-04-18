@@ -19,8 +19,12 @@ import SpaghettiPlate4 from "../../assets/home/second-page/spaghettiPlate4.svg";
 import Soup from "../../assets/home/second-page/soup.svg";
 import Soup2 from "../../assets/home/second-page/soup2.svg";
 
+//third slider
+import SaladBowl from "../../assets/home/third-page/salad-bowl.svg";
+import Ingredients from "../../assets/home/third-page/ingredients.svg";
+
 //last slider
-import Menu from "../../assets/home/third-page/menu.svg";
+import Menu from "../../assets/home/fourth-page/menu.svg";
 
 //styles
 import {
@@ -101,7 +105,7 @@ class Home extends React.Component {
         />
         <Button logo />
         <ScrollContainer className={`translate-${this.state.counter}`}>
-          <SliderContainer>
+          {/*<SliderContainer>
             <Slider firstSlider className={this.handleSliderClasses(0)}>
               <span>The Original</span>
               <span>Thai Food</span>
@@ -201,12 +205,15 @@ class Home extends React.Component {
               y={"25vh"}
               className={this.handleAnimationclassesSecondSlider()}
             >
-              {/*x und y einen gemeinsamen wert finden damit es nicht immer wieder angegeben werden muss */}
               <img src={Soup2} alt="" />
             </ImgContainer>
-          </SliderContainer>
-          <SliderContainer>
-            <Slider thirdSlider className={this.handleSliderClasses(2)}>
+          </SliderContainer> 
+        */}
+          <SliderContainer homeThirdSlider>
+            <ImgContainer saladBowl>
+              <img src={SaladBowl} alt="" />
+            </ImgContainer>
+            <Slider thirdSlider className={this.handleSliderClasses(0)}>
               <span>Direct supplies</span>
               <span>form the fines producers</span>
               <span>of thailand and the region</span>

@@ -171,8 +171,18 @@ export const ScrollContainer = styled.div`
   }
 `;
 
+const getAdditionalStyleSliderContainer = (props) => {
+  if (props.homeThirdSlider)
+    return css`
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    `;
+};
+
 export const SliderContainer = styled.div`
   position: relative;
+  ${getAdditionalStyleSliderContainer};
 `;
 
 const getAdditionalSliderStyles = (props) => {
@@ -250,6 +260,10 @@ const getAdditionalSliderStyles = (props) => {
     `;
   if (props.thirdSlider)
     return css`
+      align-items: flex-start;
+      width: unset;
+      height: unset;
+      font-size: 2.5vw;
       &.fade-in-bottom {
         transform: translateY(5vh);
       }
@@ -495,6 +509,17 @@ const getAdditionalStyle = (props) => {
       height: auto;
       width: 20vw;
     `;
+  ////////////////
+  //third-slider//
+  ////////////////
+  if (props.saladBowl)
+    return css`
+      position: static;
+
+      width: 15vw;
+      height: auto;
+    `;
+
   /////////////////
   //last slider////
   /////////////////
