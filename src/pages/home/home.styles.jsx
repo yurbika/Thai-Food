@@ -207,7 +207,11 @@ const getAdditionalStyleSliderContainer = (props) => {
     return css`
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: center;
+
+      @media (max-width: 768px) {
+        display: unset;
+      }
     `;
 };
 
@@ -298,6 +302,14 @@ const getAdditionalSliderStyles = (props) => {
       margin-left: 32vw;
       &.fade-in-bottom {
         transform: translateY(5vh);
+      }
+      @media (max-width: 768px) {
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        align-items: center;
+
+        font-size: calc(20px + 1vw);
       }
     `;
 };
@@ -547,6 +559,14 @@ const getAdditionalStyle = (props) => {
       left: 25vw;
       bottom: 8vw;
       transform: rotateZ(-18deg);
+      @media (max-width: 768px) {
+        transform: rotateZ(-45deg);
+
+        width: 40vh;
+        left: unset;
+        right: -10vw;
+        bottom: 2vh;
+      }
     `;
   if (props.ingredients)
     return css`
@@ -554,8 +574,15 @@ const getAdditionalStyle = (props) => {
       height: auto;
 
       left: 23.5vw;
-      top: 11vw;
+      top: 20vh;
       transform: rotateZ(-15deg);
+      @media (max-width: 768px) {
+        transform: unset;
+        width: 40vh;
+
+        left: 25%;
+        top: 10vh;
+      }
     `;
 
   /////////////////
