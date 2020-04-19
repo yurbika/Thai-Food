@@ -143,21 +143,6 @@ export const Container = styled.div`
   }
   /*---------------------------*/
 
-  .fade-bowl-out img {
-    visibility: hidden;
-    transform: translateX(-2vh);
-    opacity: 0;
-    transition: transform 150ms ease-out, opacity 250ms ease-out,
-      visibility 260ms ease;
-  }
-
-  .fade-bowl-in img {
-    visibility: visible;
-    transform: none;
-    opacity: 1;
-    transition: transform 250ms ease-out, opacity 250ms ease;
-  }
-
   .fade-ingredients-out img {
     visibility: hidden;
     transform: translateY(-2vh);
@@ -295,21 +280,15 @@ const getAdditionalSliderStyles = (props) => {
     `;
   if (props.thirdSlider)
     return css`
-      align-items: flex-start;
-      width: unset;
-      height: unset;
+      width: 100%;
+      height: 100%;
+
       font-size: 2.5vw;
-      margin-left: 32vw;
       &.fade-in-bottom {
         transform: translateY(5vh);
       }
       @media (max-width: 768px) {
-        width: 100%;
-        height: 100%;
-        margin-left: 0;
-        align-items: center;
-
-        font-size: calc(20px + 1vw);
+        font-size: calc(40px + 1vw);
       }
     `;
 };
@@ -551,37 +530,37 @@ const getAdditionalStyle = (props) => {
   ////////////////
   //third-slider//
   ////////////////
-  if (props.saladBowl)
-    return css`
-      width: 45vh;
-      height: auto;
+  // if (props.saladBowl)
+  //   return css`
+  //     width: 45vh;
+  //     height: auto;
 
-      left: 25vw;
-      bottom: 8vw;
-      transform: rotateZ(-18deg);
-      @media (max-width: 768px) {
-        transform: rotateZ(-45deg);
+  //     left: 15vw;
+  //     bottom: 8vw;
+  //     transform: rotateZ(-18deg);
+  //     @media (max-width: 1024px) {
+  //       transform: unset;
 
-        width: 40vh;
-        left: unset;
-        right: -10vw;
-        bottom: 2vh;
-      }
-    `;
+  //       width: 40vw;
+  //       left: 0;
+  //       right: 0;
+  //       margin: 0 auto;
+  //       bottom: 2vh;
+  //     }
+  //   `;
   if (props.ingredients)
     return css`
-      width: 45vh;
+      position: absolute;
+      width: 45vw;
       height: auto;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
 
-      left: 23.5vw;
-      top: 20vh;
-      transform: rotateZ(-15deg);
       @media (max-width: 768px) {
-        transform: unset;
-        width: 40vh;
-
-        left: 25%;
-        top: 10vh;
+        width: calc(100vh + 15px);
       }
     `;
 
