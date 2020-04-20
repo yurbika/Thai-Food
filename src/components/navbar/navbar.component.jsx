@@ -5,23 +5,24 @@ import { withRouter } from "react-router-dom";
 import PhoneIcon from "../../assets/navbar/phone.svg";
 
 //styles
-import "./navbar.styles.scss";
 import {
   Container,
   ContentContainer,
   OptionLink,
   OptionsContainer,
+  PhoneNumber,
+  IconContainer,
 } from "./navbar.styles";
 
 const Navbar = ({ location }) => (
   <Container>
     <ContentContainer>
-      <div className="phoneNumber">
-        <div className="icon-container">
+      <PhoneNumber>
+        <IconContainer>
           <img src={PhoneIcon} alt="Phone Number" />
-        </div>
+        </IconContainer>
         <span>+49 157 6874 3357</span>
-      </div>
+      </PhoneNumber>
       <OptionsContainer>
         <OptionLink
           className={location.pathname === "/" ? "active" : ""}

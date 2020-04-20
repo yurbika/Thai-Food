@@ -67,3 +67,26 @@ export const OptionLink = styled(Link)`
     }
   }
 `;
+
+export const PhoneNumber = styled.div`
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  height: 100%;
+  width: 75%;
+  margin-bottom: 5px;
+  @media (max-width: 550px) {
+    display: none;
+  }
+`;
+
+export const IconContainer = styled.div`
+  margin-right: 5px;
+  display: flex;
+  align-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
