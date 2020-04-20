@@ -202,6 +202,9 @@ const getAdditionalStyleSliderContainer = (props) => {
 
 export const SliderContainer = styled.div`
   position: relative;
+  * {
+    pointer-events: none;
+  }
   ${getAdditionalStyleSliderContainer};
 `;
 
@@ -288,7 +291,7 @@ const getAdditionalSliderStyles = (props) => {
         transform: translateY(5vh);
       }
       @media (max-width: 768px) {
-        font-size: calc(40px + 1vw);
+        font-size: calc(20px + 1vw);
       }
     `;
 };
@@ -301,6 +304,7 @@ export const Slider = styled.div`
   width: 100%;
   height: 100%;
   span {
+    pointer-events: none;
     z-index: 1;
   }
 
@@ -530,28 +534,10 @@ const getAdditionalStyle = (props) => {
   ////////////////
   //third-slider//
   ////////////////
-  // if (props.saladBowl)
-  //   return css`
-  //     width: 45vh;
-  //     height: auto;
-
-  //     left: 15vw;
-  //     bottom: 8vw;
-  //     transform: rotateZ(-18deg);
-  //     @media (max-width: 1024px) {
-  //       transform: unset;
-
-  //       width: 40vw;
-  //       left: 0;
-  //       right: 0;
-  //       margin: 0 auto;
-  //       bottom: 2vh;
-  //     }
-  //   `;
   if (props.ingredients)
     return css`
       position: absolute;
-      width: 45vw;
+      width: 100vw;
       height: auto;
       top: 0;
       bottom: 0;
@@ -560,7 +546,9 @@ const getAdditionalStyle = (props) => {
       margin: auto;
 
       @media (max-width: 768px) {
-        width: calc(100vh + 15px);
+        width: 180%;
+        left: -40%;
+        top: -5%;
       }
     `;
 

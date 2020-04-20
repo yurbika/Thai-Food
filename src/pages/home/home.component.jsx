@@ -20,7 +20,6 @@ import Soup from "../../assets/home/second-page/soup.svg";
 import Soup2 from "../../assets/home/second-page/soup2.svg";
 
 //third slider
-import SaladBowl from "../../assets/home/third-page/salad-bowl.svg";
 import Ingredients from "../../assets/home/third-page/ingredients.svg";
 
 //last slider
@@ -105,7 +104,7 @@ class Home extends React.Component {
         />
         <Button logo />
         <ScrollContainer className={`translate-${this.state.counter}`}>
-          {/*<SliderContainer>
+          <SliderContainer>
             <Slider firstSlider className={this.handleSliderClasses(0)}>
               <span>The Original</span>
               <span>Thai Food</span>
@@ -207,15 +206,15 @@ class Home extends React.Component {
             >
               <img src={Soup2} alt="" />
             </ImgContainer>
-          </SliderContainer> 
-        */}
+          </SliderContainer>
+
           <SliderContainer homeThirdSlider>
-            <Slider thirdSlider className={this.handleSliderClasses(0)}>
+            <Slider thirdSlider className={this.handleSliderClasses(2)}>
               <span>Direct supplies</span>
               <span>form the fines producers</span>
               <span>of thailand and the region</span>
             </Slider>
-            <ImgContainer ingredients className={""}>
+            <ImgContainer ingredients>
               <img src={Ingredients} alt="" />
             </ImgContainer>
           </SliderContainer>
