@@ -1,5 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 import { debounce } from "lodash";
 
 //components
@@ -7,6 +9,11 @@ import Background from "../../components/background/background.component";
 import Button from "../../components/button/button.component";
 import ScrollPoints from "../../components/scrollPoints/scrollPoints.component";
 
+//redux
+import { selectCounter } from "../../redux/home/home.selectors";
+import { setCounter } from "../../redux/home/home.action";
+
+//assets
 //first slider
 import Leaf from "../../assets/home/first-page/leaf.svg";
 import Chilli from "../../assets/home/first-page/chilli.svg";
@@ -43,7 +50,6 @@ class Home extends React.Component {
 
     this.state = {
       counter: 0,
-      scrollDirection: true,
     };
   }
 
@@ -58,10 +64,8 @@ class Home extends React.Component {
   handleScroll = (e) => {
     if (this.state.counter < 3 && e.deltaY > 0) {
       this.setState({ counter: this.state.counter + 1 });
-      this.setState({ scrollDirection: true });
     } else if (this.state.counter > 0 && e.deltaY < 0) {
       this.setState({ counter: this.state.counter - 1 });
-      this.setState({ scrollDirection: false });
     }
   };
 
@@ -91,7 +95,6 @@ class Home extends React.Component {
   handlePointerClick = (num) => this.setState({ counter: num });
 
   render() {
-    console.log(this.state.counter);
     const { history } = this.props;
     return (
       <Container onWheel={this.debounceEvent(this.handleScroll, 500)}>
@@ -237,4 +240,10 @@ class Home extends React.Component {
   }
 }
 
-export default withRouter(Home);
+const mapStateToProps = createStructuredSelector({ counter: selectCounter });
+
+const mapDispatchToProps = (dispatch) => ({
+  setCounter: (num) => dispatch(setCounter(num)),
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home));
