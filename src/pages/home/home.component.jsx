@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import { debounce } from "lodash";
 //components
 import Background from "../../components/background/background.component";
@@ -86,6 +87,7 @@ class Home extends React.Component {
     this.state.counter !== 1 ? "fade-plate-out" : "fade-plate-in";
 
   render() {
+    const { history } = this.props;
     return (
       <Container onWheel={this.debounceEvent(this.handleScroll, 500)}>
         <Background className="background" />
@@ -220,7 +222,7 @@ class Home extends React.Component {
           </SliderContainer>
           <SliderContainer>
             <ImgContainer menu>
-              <img src={Menu} alt="" />
+              <img src={Menu} alt="" onClick={() => history.push("/menu")} />
             </ImgContainer>
           </SliderContainer>
         </ScrollContainer>
@@ -229,4 +231,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);

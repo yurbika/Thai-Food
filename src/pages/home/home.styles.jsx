@@ -202,9 +202,7 @@ const getAdditionalStyleSliderContainer = (props) => {
 
 export const SliderContainer = styled.div`
   position: relative;
-  * {
-    pointer-events: none;
-  }
+
   ${getAdditionalStyleSliderContainer};
 `;
 

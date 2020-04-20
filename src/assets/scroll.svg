@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40.744" height="59.872" viewBox="0 0 40.744 59.872">
+  <g id="Gruppe_793" data-name="Gruppe 793" transform="translate(-939.877 -929)">
+    <path id="Pfad_46" data-name="Pfad 46" d="M0,0,18.251,18.251" transform="translate(978.5 968.5) rotate(90)" fill="none" stroke="#e76a0b" stroke-linecap="round" stroke-width="3"/>
+    <g id="Gruppe_626" data-name="Gruppe 626">
+      <path id="Pfad_47" data-name="Pfad 47" d="M0,0,18.251,18.251" transform="translate(941.999 968.5)" fill="none" stroke="#e76a0b" stroke-linecap="round" stroke-width="3"/>
+      <text id="Scroll" transform="translate(941 944)" fill="#e76a0b" font-size="15" font-family="Caudex-Bold, Caudex" font-weight="700"><tspan x="0" y="0">Scroll</tspan></text>
+      <circle id="Ellipse_6" data-name="Ellipse 6" cx="5" cy="5" r="5" transform="translate(955 953)" fill="#e76a0b"/>
+    </g>
+  </g>
+</svg>
