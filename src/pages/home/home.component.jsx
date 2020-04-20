@@ -1,9 +1,11 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 import { debounce } from "lodash";
+
 //components
 import Background from "../../components/background/background.component";
 import Button from "../../components/button/button.component";
+import ScrollPoints from "../../components/scrollPoints/scrollPoints.component";
 
 //first slider
 import Leaf from "../../assets/home/first-page/leaf.svg";
@@ -86,10 +88,14 @@ class Home extends React.Component {
   handleAnimationclassesSecondSlider = () =>
     this.state.counter !== 1 ? "fade-plate-out" : "fade-plate-in";
 
+  handlePointerClick = (num) => this.setState({ counter: num });
+
   render() {
+    console.log(this.state.counter);
     const { history } = this.props;
     return (
       <Container onWheel={this.debounceEvent(this.handleScroll, 500)}>
+        <ScrollPoints fnc={() => this.handlePointerClick} />
         <Background className="background" />
         <Button
           onClick={() => {
