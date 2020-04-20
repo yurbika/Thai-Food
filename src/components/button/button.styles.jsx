@@ -16,16 +16,16 @@ const getAdditionalButtonStyle = (props) => {
 
 export const CustomButtonContainer = styled.button`
   background: #92c162;
-  z-index: 999999;
+  z-index: 3;
   cursor: pointer;
   position: fixed;
   top: calc(50% - 45px);
   right: 0;
-  width: 135px;
-  height: 90px;
+  width: 100px;
+  height: 70px;
   outline: none;
   border: none;
-  padding: 25px;
+  padding: 10px;
   border-radius: 15px 0 0 15px;
 
   @media (max-width: 768px) {
