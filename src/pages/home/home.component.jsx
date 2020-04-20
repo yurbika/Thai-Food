@@ -45,14 +45,6 @@ import {
 } from "./home.styles";
 
 class Home extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      counter: 0,
-    };
-  }
-
   debounceEvent(...args) {
     this.debouncedEvent = debounce(...args);
     return (e) => {
@@ -62,22 +54,22 @@ class Home extends React.Component {
   }
 
   handleScroll = (e) => {
-    if (this.state.counter < 3 && e.deltaY > 0) {
-      this.setState({ counter: this.state.counter + 1 });
-    } else if (this.state.counter > 0 && e.deltaY < 0) {
-      this.setState({ counter: this.state.counter - 1 });
+    if (this.props.counter < 3 && e.deltaY > 0) {
+      this.props.setCounter(this.props.counter + 1);
+    } else if (this.props.counter > 0 && e.deltaY < 0) {
+      this.props.setCounter(this.props.counter - 1);
     }
   };
 
   handleSliderClasses = (n) => {
-    if (this.state.counter !== n && this.state.counter === n - 1)
+    if (this.props.counter !== n && this.props.counter === n - 1)
       return "fade-out fade-in-bottom";
-    if (this.state.counter !== n) return "fade-out";
+    if (this.props.counter !== n) return "fade-out";
     return "fade-in";
   };
 
   handleAnimationClassesFirstSlider = (str) => {
-    if (this.state.counter !== 0) {
+    if (this.props.counter !== 0) {
       if (str === "leaf") return "fade-leaf-out";
       if (str === "lemon") return "fade-lemon-out";
       if (str === "chilli" || str === "basil") return "fade-chilli-out";
@@ -90,15 +82,12 @@ class Home extends React.Component {
   };
 
   handleAnimationclassesSecondSlider = () =>
-    this.state.counter !== 1 ? "fade-plate-out" : "fade-plate-in";
-
-  handlePointerClick = (num) => this.setState({ counter: num });
+    this.props.counter !== 1 ? "fade-plate-out" : "fade-plate-in";
 
   render() {
     const { history } = this.props;
     return (
       <Container onWheel={this.debounceEvent(this.handleScroll, 500)}>
-        <ScrollPoints fnc={() => this.handlePointerClick} />
         <Background className="background" />
         <Button
           onClick={() => {
@@ -114,7 +103,7 @@ class Home extends React.Component {
           }}
         />
         <Button logo />
-        <ScrollContainer className={`translate-${this.state.counter}`}>
+        <ScrollContainer className={`translate-${this.props.counter}`}>
           <SliderContainer>
             <Slider firstSlider className={this.handleSliderClasses(0)}>
               <span>The Original</span>
