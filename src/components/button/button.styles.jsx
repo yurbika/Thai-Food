@@ -1,7 +1,9 @@
 import styled, { css } from "styled-components";
 
+//default button is placed right
+
 const getAdditionalButtonStyle = (props) => {
-  if (props.logo)
+  if (props.left)
     return css`
       left: 0;
       right: unset;

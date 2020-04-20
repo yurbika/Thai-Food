@@ -93,20 +93,6 @@ class Home extends React.Component {
           <ScrollPoints num={4} />
         </ScrollPointsContainer>
         <Background className="background" />
-        <Button
-          onClick={() => {
-            if (
-              !document
-                .getElementById("menu-item")
-                .classList.contains("animate")
-            ) {
-              document.getElementById("menu-item").classList.add("animate");
-            } else {
-              document.getElementById("menu-item").classList.remove("animate");
-            }
-          }}
-        />
-        <Button logo />
         <ScrollContainer className={`translate-${this.props.counter}`}>
           <SliderContainer>
             <Slider firstSlider className={this.handleSliderClasses(0)}>

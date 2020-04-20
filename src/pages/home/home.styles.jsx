@@ -627,7 +627,6 @@ export const ScrollPointsContainer = styled.div`
 
   @media (max-width: 768px) {
     right: -70px;
-    top: unset;
     bottom: 60px;
   }
 `;
