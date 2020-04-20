@@ -42,6 +42,7 @@ import {
   SliderContainer,
   Slider,
   ImgContainer,
+  ScrollPointsContainer,
 } from "./home.styles";
 
 class Home extends React.Component {
@@ -88,6 +89,9 @@ class Home extends React.Component {
     const { history } = this.props;
     return (
       <Container onWheel={this.debounceEvent(this.handleScroll, 500)}>
+        <ScrollPointsContainer>
+          <ScrollPoints num={4} />
+        </ScrollPointsContainer>
         <Background className="background" />
         <Button
           onClick={() => {

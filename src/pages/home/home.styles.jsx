@@ -285,6 +285,7 @@ const getAdditionalSliderStyles = (props) => {
       height: 100%;
 
       font-size: 2.5vw;
+      font-weight: bold;
       &.fade-in-bottom {
         transform: translateY(5vh);
       }
@@ -613,4 +614,20 @@ export const ImgContainer = styled.div`
     }
   }
   ${getAdditionalStyleImgContainer}
+`;
+
+export const ScrollPointsContainer = styled.div`
+  position: fixed;
+  z-index: 2;
+  right: -40px;
+  bottom: 75px;
+
+  transform-origin: center;
+  transform: rotateZ(90deg);
+
+  @media (max-width: 768px) {
+    right: -70px;
+    top: unset;
+    bottom: 60px;
+  }
 `;

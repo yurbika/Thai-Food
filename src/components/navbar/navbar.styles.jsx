@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.nav`
   position: fixed;
-  z-index: 9999999;
+  z-index: 1;
   width: 100%;
   padding: 60px 120px;
   top: -2px;
