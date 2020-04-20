@@ -6,7 +6,6 @@ import { debounce } from "lodash";
 
 //components
 import Background from "../../components/background/background.component";
-import Button from "../../components/button/button.component";
 import ScrollPoints from "../../components/scrollPoints/scrollPoints.component";
 
 //redux
