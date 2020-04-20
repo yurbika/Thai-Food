@@ -3,16 +3,14 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.nav`
   position: fixed;
-  display: flex;
-  justify-content: space-between;
   z-index: 9999999;
   width: 100%;
   padding: 60px 120px;
-  top: 0;
+  top: -2px;
   left: 0;
   right: 0;
   margin: 0 auto;
-  display: flex;
+
   @media (max-width: 768px) {
     padding: 5px 50px;
   }
@@ -26,12 +24,14 @@ export const ContentContainer = styled.div`
 
 export const OptionsContainer = styled.div`
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  width: 250px;
+
   @media (max-width: 768px) {
     display: none;
   }
@@ -40,10 +40,15 @@ export const OptionsContainer = styled.div`
 export const OptionLink = styled(Link)`
   padding: 10px 15px;
   text-decoration: none;
+
   & > span {
     color: #82bf65;
+    font-weight: bold;
+    display: inline-block;
   }
+
   cursor: pointer;
+  width: 100%;
   &:hover {
     span {
       color: #e76a0b;
@@ -53,7 +58,7 @@ export const OptionLink = styled(Link)`
     cursor: default;
     pointer-events: none;
     & span {
-      font-weight: bold;
+      color: #82bf65;
       padding-bottom: 0.5rem;
       border-bottom: 3px solid #82bf65;
       border-radius: 2px;
