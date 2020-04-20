@@ -55,7 +55,7 @@ export const Container = styled.div`
     z-index: -2;
   }
 
-  //whole container
+  //slider fade out/in
   .fade-out {
     visibility: hidden;
     transform: translateY(-2vh);
@@ -71,7 +71,7 @@ export const Container = styled.div`
     transition: transform 100ms ease-out 450ms, opacity 250ms ease 450ms;
   }
 
-  /*---------------------------*/
+  /*-------------first-slider-------------*/
   .fade-leaf-out img {
     transition: all 250ms ease-out;
     margin-top: -25vh;
@@ -141,7 +141,7 @@ export const Container = styled.div`
     transition: all 250ms ease-out;
     visibility: visible;
   }
-  /*---------------------------*/
+  /*----------third-slider----------------*/
 
   .fade-ingredients-out img {
     visibility: hidden;
@@ -311,7 +311,7 @@ export const Slider = styled.div`
   ${getAdditionalSliderStyles}
 `;
 
-const getAdditionalStyle = (props) => {
+const getAdditionalStyleImgContainer = (props) => {
   //first slider
   if (props.topLeaf)
     return css`
@@ -614,5 +614,5 @@ export const ImgContainer = styled.div`
       animation-name: ${(props) => rollInVertical(props.y)};
     }
   }
-  ${getAdditionalStyle}
+  ${getAdditionalStyleImgContainer}
 `;
