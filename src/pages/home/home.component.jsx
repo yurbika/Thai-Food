@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { debounce } from "lodash";
@@ -11,6 +11,9 @@ import ScrollPoints from "../../components/scrollPoints/scrollPoints.component";
 //redux
 import { selectCounter } from "../../redux/home/home.selectors";
 import { setCounter } from "../../redux/home/home.action";
+
+import { selectFirstMount } from "../../redux/app/app.selectors";
+import { setIsLoading } from "../../redux/app/app.action";
 
 //assets
 //first slider
@@ -84,8 +87,15 @@ class Home extends React.Component {
   handleAnimationclassesSecondSlider = () =>
     this.props.counter !== 1 ? "fade-plate-out" : "fade-plate-in";
 
+  componentWillMount() {
+    if (!this.props.firstMount) this.props.setIsLoading(true);
+  }
+
+  componentWillUnmount() {
+    this.props.setCounter(0);
+  }
+
   render() {
-    const { history } = this.props;
     return (
       <Container onWheel={this.debounceEvent(this.handleScroll, 500)}>
         <ScrollPointsContainer>
@@ -208,9 +218,11 @@ class Home extends React.Component {
             </ImgContainer>
           </SliderContainer>
           <SliderContainer>
-            <ImgContainer menu>
-              <img src={Menu} alt="" onClick={() => history.push("/menu")} />
-            </ImgContainer>
+            <Link to={"/menu"}>
+              <ImgContainer menu>
+                <img src={Menu} alt="" />
+              </ImgContainer>
+            </Link>
           </SliderContainer>
         </ScrollContainer>
       </Container>
@@ -218,10 +230,14 @@ class Home extends React.Component {
   }
 }
 
-const mapStateToProps = createStructuredSelector({ counter: selectCounter });
+const mapStateToProps = createStructuredSelector({
+  counter: selectCounter,
+  firstMount: selectFirstMount,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   setCounter: (num) => dispatch(setCounter(num)),
+  setIsLoading: (boolean) => dispatch(setIsLoading(boolean)),
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home));
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

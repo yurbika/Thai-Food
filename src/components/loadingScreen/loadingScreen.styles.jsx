@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
 
 const getAdditionalStyles = (props) => {
+  console.log(props.isLoading);
   if (!props.isLoading)
     return css`
-      transform: translateY(200vh);
+      transform: translateY(100vh);
     `;
 };
 
@@ -18,7 +19,7 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  transition: transform 1500ms ease-in-out;
+  transition: transform 1000ms ease-in-out;
   z-index: 10;
 
   ${getAdditionalStyles}

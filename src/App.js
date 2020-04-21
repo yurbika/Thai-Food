@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from "react";
+import { createStructuredSelector } from "reselect";
 import { Switch, Route } from "react-router-dom";
 import { connect } from "react-redux";
 
@@ -13,6 +14,7 @@ import LoadingScreen from "./components/loadingScreen/loadingScreen.component";
 
 //redux
 import { setIsLoading, setFirstMount } from "./redux/app/app.action";
+import { selectIsLoading } from "./redux/app/app.selectors";
 
 // const Home = lazy(() => {
 //   return new Promise((resolve) => {
@@ -47,9 +49,13 @@ class App extends React.Component {
   }
 }
 
+const mapStateToProps = createStructuredSelector({
+  isLoading: selectIsLoading,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   setIsLoading: (boolean) => dispatch(setIsLoading(boolean)),
   setFirstMount: () => dispatch(setFirstMount()),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
