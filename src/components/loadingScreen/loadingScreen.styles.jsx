@@ -3,19 +3,22 @@ import styled, { css } from "styled-components";
 const getAdditionalStyles = (props) => {
   if (!props.isLoading)
     return css`
-      transform: translateY(100vh);
+      transform: translateY(200vh);
     `;
 };
 
 export const Container = styled.div`
   position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  transition: transform 1000ms ease-in-out;
+  transition: transform 1500ms ease-in-out;
   z-index: 10;
 
   ${getAdditionalStyles}

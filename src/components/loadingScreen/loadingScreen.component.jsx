@@ -1,4 +1,10 @@
 import React from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+
+//redux
+import { setIsLoading } from "../../redux/app/app.action";
+import { selectIsLoading } from "../../redux/app/app.selectors";
 
 //assets
 import logoWalking from "../../assets/elephant.gif";
@@ -9,23 +15,13 @@ import "./loadingScreen.styles.scss";
 import { Container, ImgContainer, GIFContainer } from "./loadingScreen.styles";
 
 class LoadingScreen extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isLoading: false,
-    };
-  }
-
   componentDidMount() {
-    this.setState({ isLoading: true });
-
-    setTimeout(() => this.setState({ isLoading: false }), 750);
+    setTimeout(() => this.props.setIsLoading(false), 750);
   }
 
   render() {
     return (
-      <Container isLoading={this.state.isLoading}>
+      <Container isLoading={this.props.isLoading}>
         <ImgContainer>
           <img src={BigIcon} alt="" />
         </ImgContainer>
@@ -37,4 +33,12 @@ class LoadingScreen extends React.Component {
   }
 }
 
-export default LoadingScreen;
+const mapStateToProps = createStructuredSelector({
+  isLoading: selectIsLoading,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setIsLoading: (boolean) => dispatch(setIsLoading(boolean)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoadingScreen);
