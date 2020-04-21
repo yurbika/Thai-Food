@@ -6,18 +6,35 @@ import BigIcon from "../../assets/big-icon-higherOpacity.svg";
 
 //styles
 import "./loadingScreen.styles.scss";
+import { Container, ImgContainer, GIFContainer } from "./loadingScreen.styles";
 
-const LoadingScreen = () => {
-  return (
-    <div className="container">
-      <div className="img-container">
-        <img src={BigIcon} alt="" />
-      </div>
-      <div className="animation-container">
-        <img src={logoWalking} alt="loading. . ." />
-      </div>
-    </div>
-  );
-};
+class LoadingScreen extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLoading: false,
+    };
+  }
+
+  componentDidMount() {
+    this.setState({ isLoading: true });
+
+    setTimeout(() => this.setState({ isLoading: false }), 750);
+  }
+
+  render() {
+    return (
+      <Container isLoading={this.state.isLoading}>
+        <ImgContainer>
+          <img src={BigIcon} alt="" />
+        </ImgContainer>
+        <GIFContainer>
+          <img src={logoWalking} alt="loading. . ." />
+        </GIFContainer>
+      </Container>
+    );
+  }
+}
 
 export default LoadingScreen;
