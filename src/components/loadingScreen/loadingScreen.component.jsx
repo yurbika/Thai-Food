@@ -17,7 +17,6 @@ import BigIcon from "../../assets/big-icon-higherOpacity.svg";
 import theme from "../../utils/theme";
 
 //styles
-import "./loadingScreen.styles.scss";
 import { Container, ImgContainer, GIFContainer } from "./loadingScreen.styles";
 
 class LoadingScreen extends React.Component {

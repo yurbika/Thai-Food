@@ -34,7 +34,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <LoadingScreen />
+        {/*  <LoadingScreen /> */}
         <Suspense fallback={<LoadingScreen />}>
           <Navbar />
           <Button menu />
