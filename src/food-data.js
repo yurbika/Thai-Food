@@ -2,81 +2,91 @@ const FOOD_DATA = [
   {
     soup: {
       1: {
-        name:
-          "Tom Kha Gai Kokosmilksoup with Chicken, Thai-herbs and Mushrooms",
+        name: "Tom Kha Gai",
+        additionalInfo:
+          "Coconutmilk soup with chicken, thai-Herbs and mushrooms",
         price: 6,
       },
       2: {
-        name:
-          "Tom Yam Gung Scharfe Garnelensuppe mit Thai-Kräutern, Champignons und Sellerie",
+        name: "Tom Yam Gung",
+        additionalInfo:
+          "Spicy shrimp soup with thai-herbs, mushrooms und celery",
         price: 6,
       },
       3: {
-        name: "	Mama Suppe Nudelsuppe mit gehacktem Huhn und Gemüse",
+        name: "Mothers noudle soup with minced chicken and vegetables",
+        additionalInfo: null,
         price: 5,
       },
       4: {
-        name:
-          "Tom Yam Gai Scharfe Suppe mit Huhn, Thai-Kräutern,Champignons und Sellerie",
+        name: "Tom Yam Gai ",
+        additionalInfo:
+          "Spicy soup with chicken, thai-herbs, mushrooms und celery",
         price: 5.5,
       },
 
       5: {
-        name: "Gäng Jüd Glasnudelsuppe mit gehacktem Huhn und Gemüse",
+        name: "Gaeng Jued",
+        additionalInfo: "Cellophane noodles with minced chicken and vegetables",
         price: 5.5,
       },
       6: {
         name:
-          "	Vegetarische Mini-Frühlingsrollen1 mit süß-sauer Soße (10 Stück)",
+          "Vegetarian mini spring rolls with sweet-and-sour sauce (10 piece)",
+        additionalInfo: null,
         price: 4,
       },
     },
     chicken: {
       5: {
-        name:
-          "Gäng Kiowan Gai (s) Huhn mit grünem Curry, Kokosmilch und Gemüse",
+        name: "Gaeng Kio Wan Gai  ",
+        additionalInfo: "Chicken with green curry, coconutmilk and vegetables",
         price: 8,
       },
       6: {
-        name:
-          "	Gäng Kua Gai (s) Huhn mit rotem Curry, Kokosmilch und Kartoffeln",
+        name: "	Gaeng Kua Gai",
+        additionalInfo: "Chicken with red curry, coconutmilk and potatoes",
         price: 8,
       },
       7: {
-        name: "	Gäng Pet Gai (s) Huhn mit rotem Curry, Kokosmilch und Gemüse",
+        name: "	Gaeng Pet Gai ",
+        additionalInfo: "Chicken with red curry, coconutmilk and vegetables",
         price: 8,
       },
       8: {
-        name:
-          "	Panäng Gai (s) Huhn mit rotem Curry, Kokoksmilch, Limettenblätter, Champignons und Cashewnüssen",
+        name: "Panaeng Gai",
+        additionalInfo:
+          "Chicken with red curry, coconutmilk, lime leaves, mushrooms and cashew nuts",
         price: 8,
       },
       9: {
-        name: "Gai Pat Kink Huhn mit frischem Ingwer, Gemüse und Sellerie",
+        name: "Gai Pat Kink ",
+        additionalInfo: "Chicken with fresh ginger, vegetables und celery",
         price: 8,
       },
       10: {
-        name:
-          "Gai Phat Bai Krapao (s) Gehacktes Huhn mit Knoblauch-Chilies, Bohnen und Basilikum",
+        name: "Gai Phat Bai Krapao ",
+        additionalInfo: "Minced chicken with garlic-chilies, beans and basil",
         price: 8,
       },
       11: {
-        name:
-          "	Gai Phat Kratiam Prigthai Huhn in Knoblauch-Pfeffersauce und Gemüse",
+        name: "Gai Phat Kratiam Prigthai",
+        additionalInfo: " Chicken in garlic pepper sauce and vegetables",
         price: 8,
       },
       12: {
-        name:
-          "	Gai Phat Pak Namman Hoi Huhn mit Gemüse in Austernsauce und Sellerie",
+        name: "Gai Phat Pak Namman Hoi ",
+        additionalInfo: "Chicken with vegetables in oyster sauce and celery",
         price: 8,
       },
       13: {
-        name: "Gai Phat Wunsen Huhn mit Glasnudeln, Gemüse und Ei",
+        name: "Gai Phat Wunsen ",
+        additionalInfo: "Chicken with cellophane noodles, vegetables and eggs",
         price: 8,
       },
       14: {
-        name:
-          "	Gai Phat Prig Sod (s) Huhn mit Peperoni, Zwiebeln und Champignons",
+        name: "Gai Phat Prig Sod",
+        additionalInfo: "Huhn mit Peperoni, Zwiebeln und Champignons",
         price: 8,
       },
       15: {
