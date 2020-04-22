@@ -8,12 +8,12 @@ const theme = {
   },
 
   animationTimes: {
-    transformTime: 100,
-    fadeOutTime: 250,
-    scrollTime: 500,
-    firstLoadingScreenTime: 750,
-    pageChangingTime: 1500,
-    loadingScreenBetweenSites: 2500,
+    "100": 100,
+    "250": 250,
+    "500": 500,
+    "750": 750,
+    "1500": 1500,
+    "2500": 2500,
   },
 };
 

@@ -61,43 +61,45 @@ export const Container = styled.div`
     visibility: hidden;
     transform: translateY(-2vh);
     opacity: 0;
-    transition: transform ${theme.animationTimes.transformTime + "ms"} ease-out,
-      opacity ${theme.animationTimes.fadeOutTime + "ms"} ease-out,
-      visibility ${theme.animationTimes.fadeOutTime + 10 + "ms"} ease;
+    transition: transform ${theme.animationTimes["100"] + "ms"} ease-out,
+      opacity ${theme.animationTimes["250"] + "ms"} ease-out,
+      visibility ${theme.animationTimes["250"] + 10 + "ms"} ease;
   }
 
   .fade-in {
     visibility: visible;
     transform: none;
     opacity: 1;
-    transition: transform ${theme.animationTimes.transformTime + "ms"} ease-out
-        ${theme.animationTimes.scrollTime - 10 + "ms"},
-      opacity ${theme.animationTimes.fadeOutTime + "ms"} ease
-        ${theme.animationTimes.scrollTime - 10 + "ms"};
+    transition: transform ${theme.animationTimes["100"] + "ms"} ease-out
+        ${theme.animationTimes["500"] - 10 + "ms"},
+      opacity ${theme.animationTimes["250"] + "ms"} ease
+        ${theme.animationTimes["500"] - 10 + "ms"};
   }
 
   /*-------------first-slider-------------*/
   .fade-leaf-out img {
-    transition: all 250ms ease-out;
+    transition: all ${theme.animationTimes["250"] + "ms"} ease-out;
     margin-top: -25vh;
     visibility: hidden;
   }
 
   .fade-leaf-in img {
-    transition: all 120ms ease 100ms;
+    transition: all ${theme.animationTimes["100"] + 20 + "ms"} ease
+      ${theme.animationTimes["100"] + "ms"};
     margin-top: 0;
     visibility: visible;
   }
 
   /*---------------------------*/
   .fade-chilli-out img {
-    transition: all 250ms ease-out;
+    transition: all ${theme.animationTimes["250"] + "ms"} ease-out;
     margin-bottom: -25vh;
     visibility: hidden;
   }
 
   .fade-chilli-in img {
-    transition: all 220ms ease 220ms;
+    transition: all ${theme.animationTimes["250"] - 30 + "ms"} ease
+      ${theme.animationTimes["250"] - 30 + "ms"};
     margin-top: 0;
     visibility: visible;
   }
@@ -126,24 +128,24 @@ export const Container = styled.div`
   }
 
   .fade-lemon-out img {
-    -webkit-animation-duration: 250ms;
-    animation-duration: 250ms;
+    -webkit-animation-duration: ${theme.animationTimes["250"] + "ms"};
+    animation-duration: ${theme.animationTimes["250"] + "ms"};
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     -webkit-animation-name: rollOutDiagonal;
     animation-name: rollOutDiagonal;
-    transition: all 250ms ease-out;
+    transition: all ${theme.animationTimes["250"] + "ms"} ease-out;
     visibility: hidden;
   }
 
   .fade-lemon-in img {
-    -webkit-animation-duration: 250ms;
-    animation-duration: 250ms;
+    -webkit-animation-duration: ${theme.animationTimes["250"] + "ms"};
+    animation-duration: ${theme.animationTimes["250"] + "ms"};
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     -webkit-animation-name: rollInDiagonal;
     animation-name: rollInDiagonal;
-    transition: all 250ms ease-out;
+    transition: all ${theme.animationTimes["250"] + "ms"} ease-out;
     visibility: visible;
   }
   /*----------third-slider----------------*/
@@ -152,15 +154,17 @@ export const Container = styled.div`
     visibility: hidden;
     transform: translateY(-2vh);
     opacity: 0;
-    transition: transform 150ms ease-out, opacity 250ms ease-out,
-      visibility 250ms ease;
+    transition: transform ${theme.animationTimes["100"] + 50 + "ms"} ease-out,
+      opacity ${theme.animationTimes["250"] + "ms"} ease-out,
+      visibility ${theme.animationTimes["250"] + "ms"} ease;
   }
 
   .fade-ingredients-in img {
     visibility: visible;
     transform: none;
     opacity: 1;
-    transition: transform 450ms ease-out, opacity 500ms ease;
+    transition: transform ${theme.animationTimes[500] - 50 + "ms"} ease-out,
+      opacity ${theme.animationTimes[500] + "ms"} ease;
   }
 `;
 
@@ -171,7 +175,7 @@ export const ScrollContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: all ${theme.animationTimes.scrollTime + "ms"} ease-in-out;
+  transition: all ${theme.animationTimes["500"] + "ms"} ease-in-out;
   opacity: 1;
 
   & > * {
@@ -575,8 +579,10 @@ const getAdditionalStyleImgContainer = (props) => {
     `;
 };
 
-const getDelayForAnimation = (delay = 0, duration = 250) =>
-  delay + duration + "ms";
+const getDelayForAnimation = (
+  delay = 0,
+  duration = theme.animationTimes[250]
+) => delay + duration + "ms";
 
 export const ImgContainer = styled.div`
   position: fixed;
@@ -594,7 +600,7 @@ export const ImgContainer = styled.div`
     animation-fill-mode: both;
     -webkit-animation-name: ${(props) => rollOutHorizontal(props.x)};
     animation-name: ${(props) => rollOutHorizontal(props.x)};
-    transition: all 250ms ease-out;
+    transition: all ${theme.animationTimes[250] + "ms"} ease-out;
     visibility: hidden;
 
     @media (max-width: 768px) {
@@ -610,7 +616,7 @@ export const ImgContainer = styled.div`
     animation-fill-mode: both;
     -webkit-animation-name: ${(props) => rollInHorizontal(props.x)};
     animation-name: ${(props) => rollInHorizontal(props.x)};
-    transition: all 250ms ease-out;
+    transition: all ${theme.animationTimes[250] + "ms"} ease-out;
     visibility: visible;
 
     @media (max-width: 768px) {
