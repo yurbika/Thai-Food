@@ -13,18 +13,24 @@ import {
 import logoWalking from "../../assets/elephant.gif";
 import BigIcon from "../../assets/big-icon-higherOpacity.svg";
 
+//utils
+import theme from "../../utils/theme";
+
 //styles
 import "./loadingScreen.styles.scss";
 import { Container, ImgContainer, GIFContainer } from "./loadingScreen.styles";
 
 class LoadingScreen extends React.Component {
   componentDidMount() {
-    setTimeout(() => this.props.setIsLoading(false), 750);
+    setTimeout(() => this.props.setIsLoading(false), theme.animationTimes[750]);
   }
 
   componentDidUpdate() {
     if (!this.props.firstMount && this.props.isLoading)
-      setTimeout(() => this.props.setIsLoading(false), 3000);
+      setTimeout(
+        () => this.props.setIsLoading(false),
+        theme.animationTimes[3000]
+      );
   }
 
   shouldComponentUpdate(prevState) {

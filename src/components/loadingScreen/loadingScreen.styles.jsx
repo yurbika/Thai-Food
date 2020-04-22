@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
+import theme from "../../utils/theme";
 
 const fadeInStopOutAnimation = keyframes`
 0%{
@@ -17,8 +18,8 @@ const fadeInStopOutAnimation = keyframes`
 const getAdditionalStyles = (props) => {
   if (!props.firstMount && props.isLoading)
     return css`
-      -webkit-animation-duration: 2500ms;
-      animation-duration: 2500ms;
+      -webkit-animation-duration: ${theme.animationTimes[2500] + "ms"};
+      animation-duration: ${theme.animationTimes[2500] + "ms"};
       -webkit-animation-fill-mode: both;
       animation-fill-mode: both;
       -webkit-animation-name: ${fadeInStopOutAnimation};
@@ -43,7 +44,8 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  transition: transform 750ms ease-in-out, visibility 750ms ease-in-out;
+  transition: transform ${theme.animationTimes[750] + "ms"} ease-in-out,
+    visibility ${theme.animationTimes[750] + "ms"} ease-in-out;
   z-index: 10;
 
   ${getAdditionalStyles}
