@@ -42,7 +42,7 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  transition: transform 1000ms ease-in-out, visibility 1000ms ease-in-out;
+  transition: transform 750ms ease-in-out, visibility 750ms ease-in-out;
   z-index: 10;
 
   ${getAdditionalStyles}

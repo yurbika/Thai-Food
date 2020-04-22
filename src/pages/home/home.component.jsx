@@ -37,6 +37,9 @@ import Ingredients from "../../assets/home/third-page/ingredients.svg";
 //last slider
 import Menu from "../../assets/home/fourth-page/menu.svg";
 
+//utils
+import theme from "../../utils/theme";
+
 //styles
 import {
   Container,
@@ -97,7 +100,12 @@ class Home extends React.Component {
 
   render() {
     return (
-      <Container onWheel={this.debounceEvent(this.handleScroll, 500)}>
+      <Container
+        onWheel={this.debounceEvent(
+          this.handleScroll,
+          theme.animationTimes.scrollTime
+        )}
+      >
         <ScrollPointsContainer>
           <ScrollPoints num={4} />
         </ScrollPointsContainer>
@@ -158,6 +166,7 @@ class Home extends React.Component {
               <span>chefs that are specialized</span>
               <span>in thai food</span>
             </Slider>
+            {/*delays depending on scrollTime / 2 */}
             <ImgContainer
               leftTopPlate
               className={this.handleAnimationclassesSecondSlider()}
