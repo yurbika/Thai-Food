@@ -61,15 +61,19 @@ export const Container = styled.div`
     visibility: hidden;
     transform: translateY(-2vh);
     opacity: 0;
-    transition: transform 100ms ease-out, opacity 250ms ease-out,
-      visibility 260ms ease;
+    transition: transform ${theme.animationTimes.transformTime + "ms"} ease-out,
+      opacity ${theme.animationTimes.fadeOutTime + "ms"} ease-out,
+      visibility ${theme.animationTimes.fadeOutTime + 10 + "ms"} ease;
   }
 
   .fade-in {
     visibility: visible;
     transform: none;
     opacity: 1;
-    transition: transform 100ms ease-out 450ms, opacity 250ms ease 450ms;
+    transition: transform ${theme.animationTimes.transformTime + "ms"} ease-out
+        ${theme.animationTimes.scrollTime - 10 + "ms"},
+      opacity ${theme.animationTimes.fadeOutTime + "ms"} ease
+        ${theme.animationTimes.scrollTime - 10 + "ms"};
   }
 
   /*-------------first-slider-------------*/
