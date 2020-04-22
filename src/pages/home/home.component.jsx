@@ -100,12 +100,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <Container
-        onWheel={this.debounceEvent(
-          this.handleScroll,
-          theme.animationTimes.scrollTime
-        )}
-      >
+      <Container onWheel={this.debounceEvent(this.handleScroll, 500)}>
         <ScrollPointsContainer>
           <ScrollPoints num={4} />
         </ScrollPointsContainer>
@@ -166,7 +161,6 @@ class Home extends React.Component {
               <span>chefs that are specialized</span>
               <span>in thai food</span>
             </Slider>
-            {/*delays depending on scrollTime / 2 */}
             <ImgContainer
               leftTopPlate
               className={this.handleAnimationclassesSecondSlider()}

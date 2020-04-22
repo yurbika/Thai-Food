@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
+import theme from "../../utils/theme";
 
 //keyframe functions
 const rollInHorizontal = (x = "-10vw") => keyframes`
@@ -148,7 +149,7 @@ export const Container = styled.div`
     transform: translateY(-2vh);
     opacity: 0;
     transition: transform 150ms ease-out, opacity 250ms ease-out,
-      visibility 260ms ease;
+      visibility 250ms ease;
   }
 
   .fade-ingredients-in img {
@@ -166,7 +167,7 @@ export const ScrollContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: all 500ms ease-in-out;
+  transition: all ${theme.animationTimes.scrollTime + "ms"} ease-in-out;
   opacity: 1;
 
   & > * {

@@ -28,6 +28,7 @@ const getAdditionalStyles = (props) => {
   if (!props.isLoading)
     return css`
       transform: translateY(100vh);
+      visibility: hidden;
     `;
 };
 
