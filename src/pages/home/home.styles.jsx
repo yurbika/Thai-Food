@@ -168,34 +168,6 @@ export const Container = styled.div`
   }
 `;
 
-export const ScrollContainer = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  transition: all ${theme.animationTimes["500"] + "ms"} ease-in-out;
-  opacity: 1;
-
-  & > * {
-    width: 100vw;
-    height: 100vh;
-  }
-
-  &.translate-1 {
-    margin-top: -100vh;
-  }
-
-  &.translate-2 {
-    margin-top: -200vh;
-  }
-
-  &.translate-3 {
-    margin-top: -300vh;
-  }
-`;
-
 const getAdditionalStyleSliderContainer = (props) => {
   if (props.homeThirdSlider)
     return css`

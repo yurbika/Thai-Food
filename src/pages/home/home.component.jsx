@@ -6,8 +6,10 @@ import { debounce } from "lodash";
 
 //components
 import Background from "../../components/background/background.component";
+
 import ScrollPoints from "../../components/scrollPoints/scrollPoints.component";
 
+import ScrollContainer from "../../components/scroll-container/scroll-container.component";
 //redux
 import { selectCounter } from "../../redux/home/home.selectors";
 import { setCounter } from "../../redux/home/home.action";
@@ -43,7 +45,6 @@ import theme from "../../utils/theme";
 //styles
 import {
   Container,
-  ScrollContainer,
   SliderContainer,
   Slider,
   ImgContainer,
@@ -110,7 +111,7 @@ class Home extends React.Component {
           <ScrollPoints num={4} />
         </ScrollPointsContainer>
         <Background className="background" />
-        <ScrollContainer className={`translate-${this.props.counter}`}>
+        <ScrollContainer marginValue={100 * this.props.counter}>
           <SliderContainer>
             <Slider firstSlider className={this.handleSliderClasses(0)}>
               <span>The Original</span>

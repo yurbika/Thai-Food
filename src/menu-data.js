@@ -1,4 +1,4 @@
-const FOOD_DATA = [
+const MENU_DATA = [
   {
     soup: {
       1: {
@@ -235,4 +235,4 @@ const FOOD_DATA = [
   },
 ];
 
-export default FOOD_DATA;
+export default MENU_DATA;
