@@ -39,17 +39,17 @@ const FOOD_DATA = [
     },
     chicken: {
       5: {
-        name: "Gaeng Kio Wan Gai  ",
+        name: "Gaeng Kio Wan Gai",
         additionalInfo: "Chicken with green curry, coconutmilk and vegetables",
         price: 8,
       },
       6: {
-        name: "	Gaeng Kua Gai",
+        name: "Gaeng Kua Gai",
         additionalInfo: "Chicken with red curry, coconutmilk and potatoes",
         price: 8,
       },
       7: {
-        name: "	Gaeng Pet Gai ",
+        name: "Gaeng Pet Gai ",
         additionalInfo: "Chicken with red curry, coconutmilk and vegetables",
         price: 8,
       },
@@ -60,12 +60,12 @@ const FOOD_DATA = [
         price: 8,
       },
       9: {
-        name: "Gai Pat Kink ",
+        name: "Gai Pat Kink",
         additionalInfo: "Chicken with fresh ginger, vegetables and celery",
         price: 8,
       },
       10: {
-        name: "Gai Phat Bai Krapao ",
+        name: "Gai Phat Bai Krapao",
         additionalInfo: "Minced chicken with garlic-chilies, beans and basil",
         price: 8,
       },
@@ -75,12 +75,12 @@ const FOOD_DATA = [
         price: 8,
       },
       12: {
-        name: "Gai Phat Pak Namman Hoi ",
+        name: "Gai Phat Pak Namman Hoi",
         additionalInfo: "Chicken with vegetables in oyster sauce and celery",
         price: 8,
       },
       13: {
-        name: "Gai Phat Wunsen ",
+        name: "Gai Phat Wunsen",
         additionalInfo: "Chicken with cellophane noodles, vegetables and eggs",
         price: 8,
       },
@@ -101,7 +101,7 @@ const FOOD_DATA = [
         price: 8,
       },
       17: {
-        name: "	Laab Gai Gehacktes",
+        name: "Laab Gai",
         additionalInfo: "Chicken with fresh thai-herbs and lime juice",
         price: 8,
       },
@@ -123,7 +123,7 @@ const FOOD_DATA = [
         price: 8,
       },
       21: {
-        name: "	Panaeng Moo",
+        name: "Panaeng Moo",
         additionalInfo:
           "Pork with red curry, coconutmilk, lime leaves, mushrooms and cashew nuts",
         price: 8,
@@ -155,74 +155,80 @@ const FOOD_DATA = [
         price: 8,
       },
       27: {
-        name:
-          "Moo Phat Prig Sod Schweinefleisch mit Peperoni, Zwiebeln und Champignons",
+        name: "Moo Phat Prig Sod",
         additionalInfo: "Pork with hot pepper, onions and mushrooms",
         price: 8,
       },
     },
     duck: {
       28: {
-        name:
-          "	Gäng Kiowan Ped (s) Ente mit grünem Curry, Kokosmilch und Gemüse",
+        name: "Gaeng Kiowan Ped",
+        additionalInfo: "Duck with green curry, coconutmilk and vegetables",
         price: 10.5,
       },
       29: {
-        name:
-          "Gäng Kua Ped (s) Ente2 mit rotem Curry, Kokosmilch und Kartoffeln",
+        name: "Gaeng Kua Ped",
+        additionalInfo: "Duck with red curry, coconutmilk and potatoes",
         price: 10.5,
       },
       30: {
-        name:
-          "Ped Phat Pet (s) Ente2 mit Knoblauch-Chilies, Bohnen und Basilikum",
+        name: "Ped Phat Pet",
+        additionalInfo: "Duck with garlic, chilies, beans and basil",
         price: 10.5,
       },
       31: {
-        name: "	Ped Phat Ki Mao (s) Ente2 mit rotem Curry, Peperoni und Bohnen",
+        name: "Ped Phat Ki Mao",
+        additionalInfo: "Duck with red curry, hot pepper and beans",
         price: 10.5,
       },
       32: {
-        name: "Ped Phat Priew Wan Ente2 süß-sauer mit Gemüse",
+        name: "Ped Phat Priew Wan",
+        additionalInfo: "Duck with sweet-sour sauce and vegetables",
         price: 10.5,
       },
       33: {
-        name: "Phat Ped Normei Ente2 mit Spargel, Gemüse und Austernsauce	",
+        name: "Phat Ped Normei",
+        additionalInfo: "Duck with asparagus, vegetables and oyster sauce",
         price: 10.5,
       },
       34: {
-        name: "Khao Nah Ped Grob Ente2 mit Gemüse und Hausdressing",
+        name: "Khao Nah Ped Grob",
+        additionalInfo: "Duck with vegetables and house made dressing",
         price: 10.5,
       },
       35: {
-        name:
-          "Gäng Pet Ped Grob (s) Ente2 mit rotem Curry, Kokosmilch und Gemüse",
+        name: "Gaeng Pet Ped Grob",
+        additionalInfo: "Duck with red curry, coconutmilk and vegetables",
         price: 10.5,
       },
     },
 
     squid: {
       36: {
-        name:
-          "Pla Mück Kratiam Prigthai Tintenfisch in Knoblauch-Pfeffersauce und Gemüse",
+        name: "Pla Mueck Kratiam Prik Thai",
+        additionalInfo: "Squid with garlic-pepper sauce and vegetables",
         price: 8.5,
       },
       37: {
-        name:
-          "	Pla Mück Phat Pak Namman Hoi Tintenfisch mit Gemüse in Austernsauce und Sellerie",
+        name: "Pla Mueck Phat Pak Namman Hoi",
+        additionalInfo: "Squid with vegetables in oyster sauce and celery",
+
         price: 8.5,
       },
       38: {
-        name: "	Pla Mück Phat Pet (s) Tintenfisch mit Chilies und Basilikum",
+        name: "Pla Mueck Phat Pet",
+        additionalInfo: "Squid with chilies and basil",
+
         price: 8.5,
       },
       39: {
-        name:
-          "	Pla Mück Phat Prig (s) Tintenfisch mit rotem Curry, Peperoni und Bohnen",
+        name: "Pla Mueck Phat Prig",
+        additionalInfo: "Squid with red curry, hot pepper and beans",
         price: 8.5,
       },
       40: {
-        name:
-          "Gäng Kiowan Pla Mück (s) Tintenfisch mit grünem Curry, Kokosmilch und Gemüse",
+        name: "Gaeng Kiowan Pla Mueck ",
+        additionalInfo: "Squid with green curry, coconutmilk and vegetables",
         price: 8.5,
       },
     },
