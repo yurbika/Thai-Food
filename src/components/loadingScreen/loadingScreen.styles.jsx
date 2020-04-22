@@ -1,7 +1,30 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
+
+const fadeInStopOutAnimation = keyframes`
+0%{
+  transform: translateY(-100vh) ;
+  visibility: visible;
+}
+50%{
+  transform: translateY(0) ;
+}
+100%{
+  transform: translateY(100vh);
+  visibility: hidden;
+}
+`;
 
 const getAdditionalStyles = (props) => {
-  console.log(props.isLoading);
+  if (!props.firstMount && props.isLoading)
+    return css`
+      -webkit-animation-duration: 2500ms;
+      animation-duration: 2500ms;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-name: ${fadeInStopOutAnimation};
+      animation-name: ${fadeInStopOutAnimation};
+      z-index: 4;
+    `;
   if (!props.isLoading)
     return css`
       transform: translateY(100vh);
@@ -19,7 +42,7 @@ export const Container = styled.div`
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  transition: transform 1000ms ease-in-out;
+  transition: transform 1000ms ease-in-out, visibility 1000ms ease-in-out;
   z-index: 10;
 
   ${getAdditionalStyles}

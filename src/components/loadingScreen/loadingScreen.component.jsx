@@ -4,7 +4,10 @@ import { createStructuredSelector } from "reselect";
 
 //redux
 import { setIsLoading } from "../../redux/app/app.action";
-import { selectIsLoading } from "../../redux/app/app.selectors";
+import {
+  selectIsLoading,
+  selectFirstMount,
+} from "../../redux/app/app.selectors";
 
 //assets
 import logoWalking from "../../assets/elephant.gif";
@@ -19,9 +22,22 @@ class LoadingScreen extends React.Component {
     setTimeout(() => this.props.setIsLoading(false), 750);
   }
 
+  componentDidUpdate() {
+    if (!this.props.firstMount && this.props.isLoading)
+      setTimeout(() => this.props.setIsLoading(false), 3000);
+  }
+
+  shouldComponentUpdate(prevState) {
+    if (this.props.isLoading !== prevState.isLoading) return true;
+    return false;
+  }
+
   render() {
     return (
-      <Container isLoading={this.props.isLoading}>
+      <Container
+        isLoading={this.props.isLoading}
+        firstMount={this.props.firstMount}
+      >
         <ImgContainer>
           <img src={BigIcon} alt="" />
         </ImgContainer>
@@ -35,6 +51,7 @@ class LoadingScreen extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   isLoading: selectIsLoading,
+  firstMount: selectFirstMount,
 });
 
 const mapDispatchToProps = (dispatch) => ({
