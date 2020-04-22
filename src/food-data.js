@@ -10,7 +10,7 @@ const FOOD_DATA = [
       2: {
         name: "Tom Yam Gung",
         additionalInfo:
-          "Spicy shrimp soup with thai-herbs, mushrooms und celery",
+          "Spicy shrimp soup with thai-herbs, mushrooms and celery",
         price: 6,
       },
       3: {
@@ -21,7 +21,7 @@ const FOOD_DATA = [
       4: {
         name: "Tom Yam Gai ",
         additionalInfo:
-          "Spicy soup with chicken, thai-herbs, mushrooms und celery",
+          "Spicy soup with chicken, thai-herbs, mushrooms and celery",
         price: 5.5,
       },
 
@@ -61,7 +61,7 @@ const FOOD_DATA = [
       },
       9: {
         name: "Gai Pat Kink ",
-        additionalInfo: "Chicken with fresh ginger, vegetables und celery",
+        additionalInfo: "Chicken with fresh ginger, vegetables and celery",
         price: 8,
       },
       10: {
@@ -86,70 +86,78 @@ const FOOD_DATA = [
       },
       14: {
         name: "Gai Phat Prig Sod",
-        additionalInfo: "Huhn mit Peperoni, Zwiebeln und Champignons",
+        additionalInfo: "Chicken with hot peppers, onions and mushrooms",
         price: 8,
       },
       15: {
-        name: "Gai Phat Priew Wan Huhn süß-sauer mit Gemüse",
+        name: "Gai Phat Priew Wan",
+        additionalInfo: "Chicken with sweet-and-sour sauce and vegetables",
         price: 8,
       },
       16: {
-        name: "Sen Jai Phat Gai Gebratene Reisnudeln mit Huhn, Gemüse und Ei",
+        name: "Sen Jai Phat Gai",
+        additionalInfo:
+          "Roasted rice noodles with chicken, vegetables and eggs",
         price: 8,
       },
       17: {
-        name:
-          "	Laab Gai (s) Gehacktes Huhn mit frischen Thai-Kräutern und Limettensaft",
+        name: "	Laab Gai Gehacktes",
+        additionalInfo: "Chicken with fresh thai-herbs and lime juice",
         price: 8,
       },
     },
-    pig: {
+    pork: {
       18: {
-        name:
-          "	Gäng Kiowan Moo (s) Schweinefleisch mit grünem Curry, Kokosmilch und Gemüse",
+        name: "	Gaeng Kiowan Moo",
+        additionalInfo: "Pork with green curry, coconutmilk and vegetables",
         price: 8,
       },
       19: {
-        name:
-          "Gäng Kua Moo (s) Schweinefleisch mit rotem Curry, Kokosmilch und Kartoffeln",
+        name: "Gaeng Kua Moo",
+        additionalInfo: "Pork with red curry, coconutmilk and potatoes",
         price: 8,
       },
       20: {
-        name:
-          "Gäng Pet Moo (s) Schweinefleisch mit rotem Curry, Kokosmilch und Gemüse",
+        name: "Gaeng Pet Moo",
+        additionalInfo: "Pork with red curry, coconutmilk and vegetables",
         price: 8,
       },
       21: {
-        name:
-          "	Panäng Moo (s) Schweinefleisch mit rotem Curry, Kokosmilch, Limettenblätter, Champignons und Cashewnüssen",
+        name: "	Panaeng Moo",
+        additionalInfo:
+          "Pork with red curry, coconutmilk, lime leaves, mushrooms and cashew nuts",
         price: 8,
       },
       22: {
-        name:
-          "Moo Phat Pak Namman Hoi Schweinefleisch mit Gemüse in Austernsauce und Sellerie",
+        name: "Moo Phat Pak Namman Hoi",
+        additionalInfo: "Pork with vegetables in oyster sauce and celery",
         price: 8,
       },
       23: {
-        name: "Moo Phat Kink Schweinefleisch mit Ingwer und Gemüse",
+        name: "Moo Phat Kink",
+        additionalInfo: "Pork with ginger and vegetables",
         price: 8,
       },
       24: {
-        name: "Moo Phat Priew Wan Schweinefleisch, süß-sauer mit Gemüse",
+        name: "Moo Phat Priew Wan",
+        additionalInfo: "Pork with sweet-and-sour sauce and vegetables",
         price: 8,
       },
       25: {
-        name:
-          "Moo Phat Kratiam Prigthai Schweinefleisch in Knoblauch-Pfeffersauce und Gemüse",
+        name: "Moo Phat Kratiam Prigthai",
+        additionalInfo: "Pork in garlic-pepper sauce and vegetables",
+
         price: 8,
       },
       26: {
-        name:
-          "Moo Phat Ki Mao (s) Schweinefleisch mit rotem Curry, Peperoni und Bohnen",
+        name: "Moo Phat Ki Mao",
+        additionalInfo: "Pork with red curry, hot pepper and beans",
         price: 8,
       },
       27: {
         name:
-          "	Moo Phat Prig Sod (s) Schweinefleisch mit Peperoni, Zwiebeln und Champignons",
+          "Moo Phat Prig Sod Schweinefleisch mit Peperoni, Zwiebeln und Champignons",
+        additionalInfo: "Pork with hot pepper, onions and mushrooms",
         price: 8,
       },
     },
