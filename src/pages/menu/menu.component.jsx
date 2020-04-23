@@ -2,6 +2,9 @@ import React from "react";
 import Background from "../../components/background/background.component";
 import { debounce } from "lodash";
 
+//components
+import ScrollPointsWithSubpoints from "../../components/scrollPointsWithSubpoints/scrollPointsWithSubpoints.component";
+
 //data
 import MENU_DATA from "../../menu-data";
 
@@ -9,6 +12,15 @@ import MENU_DATA from "../../menu-data";
 import { Container } from "./menu.styles";
 
 class Menu extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      lengthArr: [],
+      namesArr: [],
+    };
+  }
+
   debounceEvent(...args) {
     this.debouncedEvent = debounce(...args);
     return (e) => {
@@ -25,30 +37,46 @@ class Menu extends React.Component {
     }
   };
 
+  componentDidMount() {
+    let tempLengthArr = [];
+    let tempArrayWithNames = [];
+    MENU_DATA.map((item, index) => {
+      //name
+
+      tempArrayWithNames.push(Object.keys(item).toString());
+
+      // console.log(
+      //   "inhalt:",
+      //   MENU_DATA[index][Object.keys(item).map((item) => item)]
+      // );
+      // console.log(
+      //   "länge:",
+      //   Math.ceil(
+      //     Object.keys(
+      //       MENU_DATA[index][Object.keys(item).map((item) => item)]
+      //     ).length / 8
+      //   ),
+      //   Object.keys(MENU_DATA[index][Object.keys(item).map((item) => item)])
+      //     .length
+      // );
+      tempLengthArr.push(
+        Math.ceil(
+          Object.keys(MENU_DATA[index][Object.keys(item).map((item) => item)])
+            .length / 8
+        )
+      );
+    });
+    this.setState({ lengthArr: tempLengthArr, namesArr: tempArrayWithNames });
+  }
+
   render() {
-    console.log("-------------------------------------------");
     return (
       <Container>
         <Background className="background" />
-
-        {MENU_DATA.map((item, index) => {
-          //name
-          console.log("name:", Object.keys(item).toString());
-          console.log(
-            "inhalt:",
-            MENU_DATA[index][Object.keys(item).map((item) => item)]
-          );
-          console.log(
-            "länge:",
-            Math.ceil(
-              Object.keys(
-                MENU_DATA[index][Object.keys(item).map((item) => item)]
-              ).length / 8
-            ),
-            Object.keys(MENU_DATA[index][Object.keys(item).map((item) => item)])
-              .length
-          );
-        })}
+        <ScrollPointsWithSubpoints
+          lengthArr={this.state.lengthArr}
+          namesArr={this.state.namesArr}
+        />
       </Container>
     );
   }
