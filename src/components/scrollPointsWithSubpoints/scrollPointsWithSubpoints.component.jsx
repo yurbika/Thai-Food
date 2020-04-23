@@ -4,7 +4,7 @@ import React from "react";
 import ID_GENERATOR from "../../utils/uniqueKey";
 
 //styles
-import { Point, Container, Title } from "./styles";
+import { Point, Container, Title } from "./scrollPointsWithSubpoints.styles";
 
 const ScrollPointsWithSubpoints = ({ lengthArr, namesArr }) => {
   return (
@@ -23,7 +23,8 @@ const ScrollPointsWithSubpoints = ({ lengthArr, namesArr }) => {
                 {namesArr[index].toUpperCase()}
               </Title>
               <div>
-                {Array.from({ length: length }, () => {
+                {Array.from({ length: length }, (_, i) => {
+                  console.log(index + length + i);
                   return <Point active key={ID_GENERATOR("points-")} />;
                 })}
               </div>
