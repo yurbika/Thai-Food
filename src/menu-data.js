@@ -37,6 +37,8 @@ const MENU_DATA = [
         price: 4,
       },
     },
+  },
+  {
     chicken: {
       5: {
         name: "Gaeng Kio Wan Gai",
@@ -106,6 +108,8 @@ const MENU_DATA = [
         price: 8,
       },
     },
+  },
+  {
     pork: {
       18: {
         name: "	Gaeng Kiowan Moo",
@@ -160,6 +164,8 @@ const MENU_DATA = [
         price: 8,
       },
     },
+  },
+  {
     duck: {
       28: {
         name: "Gaeng Kiowan Ped",
@@ -202,7 +208,8 @@ const MENU_DATA = [
         price: 10.5,
       },
     },
-
+  },
+  {
     squid: {
       36: {
         name: "Pla Mueck Kratiam Prik Thai",

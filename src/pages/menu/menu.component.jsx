@@ -2,6 +2,9 @@ import React from "react";
 import Background from "../../components/background/background.component";
 import { debounce } from "lodash";
 
+//data
+import MENU_DATA from "../../menu-data";
+
 //styles
 import { Container } from "./menu.styles";
 
@@ -23,9 +26,29 @@ class Menu extends React.Component {
   };
 
   render() {
+    console.log("-------------------------------------------");
     return (
       <Container>
         <Background className="background" />
+
+        {MENU_DATA.map((item, index) => {
+          //name
+          console.log("name:", Object.keys(item).toString());
+          console.log(
+            "inhalt:",
+            MENU_DATA[index][Object.keys(item).map((item) => item)]
+          );
+          console.log(
+            "länge:",
+            Math.ceil(
+              Object.keys(
+                MENU_DATA[index][Object.keys(item).map((item) => item)]
+              ).length / 8
+            ),
+            Object.keys(MENU_DATA[index][Object.keys(item).map((item) => item)])
+              .length
+          );
+        })}
       </Container>
     );
   }
