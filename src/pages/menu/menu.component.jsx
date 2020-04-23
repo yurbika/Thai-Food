@@ -9,7 +9,7 @@ import ScrollPointsWithSubpoints from "../../components/scrollPointsWithSubpoint
 import MENU_DATA from "../../menu-data";
 
 //styles
-import { Container } from "./menu.styles";
+import { Container, ScrollPointsContainer } from "./menu.styles";
 
 class Menu extends React.Component {
   constructor(props) {
@@ -73,10 +73,12 @@ class Menu extends React.Component {
     return (
       <Container>
         <Background className="background" />
-        <ScrollPointsWithSubpoints
-          lengthArr={this.state.lengthArr}
-          namesArr={this.state.namesArr}
-        />
+        <ScrollPointsContainer>
+          <ScrollPointsWithSubpoints
+            lengthArr={this.state.lengthArr}
+            namesArr={this.state.namesArr}
+          />
+        </ScrollPointsContainer>
       </Container>
     );
   }
