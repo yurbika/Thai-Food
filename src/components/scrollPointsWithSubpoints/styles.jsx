@@ -3,12 +3,30 @@ import styled, { css } from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-content: flex-start;
-
-  span {
-    font-weight: bold;
+  align-items: flex-start;
+  & * {
+    margin-bottom: 2px;
   }
 `;
+
+const getAdditionalStylesTitle = (props) =>
+  props.active
+    ? css`
+        font-weight: bold;
+        border-bottom: 2px solid #e76a0b;
+      `
+    : "";
+
+export const Title = styled.span`
+  ${getAdditionalStylesTitle}
+`;
+
+const getAdditionalStylesPoint = (props) => {
+  if (props.active)
+    return css`
+      background: #e76a0b;
+    `;
+};
 
 export const Point = styled.span`
   cursor: pointer;
@@ -19,4 +37,7 @@ export const Point = styled.span`
   border-radius: 50%;
   background: transparent;
   z-index: 1;
+  margin-top: 4px;
+
+  ${getAdditionalStylesPoint}
 `;
