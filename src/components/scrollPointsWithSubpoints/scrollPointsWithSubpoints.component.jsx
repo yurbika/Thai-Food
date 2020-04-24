@@ -8,10 +8,16 @@ import { Point, Container, Title } from "./scrollPointsWithSubpoints.styles";
 
 const ScrollPointsWithSubpoints = ({ lengthArr, namesArr }) => {
   let counter = 0;
-
   return (
     <Container>
       {lengthArr.map((length, index) => {
+        if (index === 0 && length === 1)
+          return (
+            <Title active key={ID_GENERATOR("title-points-")}>
+              {console.log(counter)}
+              {namesArr[index].toUpperCase()}
+            </Title>
+          );
         if (length === 1)
           return (
             <Title active key={ID_GENERATOR("title-points-")}>
@@ -29,7 +35,7 @@ const ScrollPointsWithSubpoints = ({ lengthArr, namesArr }) => {
               </Title>
               <div>
                 {Array.from({ length: length }, (_, i) => {
-                  console.log((counter += i));
+                  console.log(i > 0 ? (counter += 1) : counter);
                   return <Point active key={ID_GENERATOR("points-")} />;
                 })}
               </div>
