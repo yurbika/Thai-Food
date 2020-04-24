@@ -7,18 +7,7 @@ import ID_GENERATOR from "../../utils/uniqueKey";
 import { Point, Container, Title } from "./scrollPointsWithSubpoints.styles";
 
 const ScrollPointsWithSubpoints = ({ lengthArr, namesArr }) => {
-  var counter = 0;
-  const giveRightPos = (arr, index, curPos = 0, posNum = 0) => {
-    console.log(curPos, posNum);
-    if (index >= arr.length) return;
-    if (index === 0) return posNum;
-    if (lengthArr[curPos] === 0) ++curPos;
-    posNum++;
-    lengthArr[curPos] = --lengthArr[curPos];
-    giveRightPos(lengthArr, index - 1, curPos, posNum);
-  };
-
-  //  console.log(giveRightPos(lengthArr, 1));
+  let counter = 0;
 
   return (
     <Container>
