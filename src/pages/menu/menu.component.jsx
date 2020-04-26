@@ -77,16 +77,33 @@ class Menu extends React.Component {
 
         <ScrollContainer marginValue={0}>
           <SliderContainer>
-            {this.state.namesArr.map((item, index) => (
-              <Slider>
-                <span>{item}</span>
-                {Object.keys(this.state.food[index]).map((item, index) => (
-                  <div>
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </Slider>
-            ))}
+            {this.state.namesArr.map((item, index) => {
+              index = 1;
+              return (
+                <Slider>
+                  <span>{item}</span>
+                  {Object.keys(this.state.food[index]).map((item) => {
+                    return (
+                      <div>
+                        <span>{item}.</span>
+                        <span>{this.state.food[index][item]["name"]}</span>
+                        <span>
+                          {this.state.food[index][item]["additionalInfo"]}
+                        </span>
+                        <span>
+                          {Number(
+                            this.state.food[index][item]["price"]
+                          ).toLocaleString("es-Es", {
+                            minimumFractionDigits: 2,
+                          }) + " "}
+                          €
+                        </span>
+                      </div>
+                    );
+                  })}
+                </Slider>
+              );
+            })}
           </SliderContainer>
         </ScrollContainer>
       </Container>
