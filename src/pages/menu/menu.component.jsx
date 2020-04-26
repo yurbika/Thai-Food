@@ -44,7 +44,7 @@ class Menu extends React.Component {
     const objectToArray = Object.entries(object).map(([key, value]) => ({
       [key]: value,
     }));
-    console.log(chunk(objectToArray, chunkValue));
+    return chunk(objectToArray, chunkValue);
   };
 
   componentDidMount() {
@@ -75,29 +75,51 @@ class Menu extends React.Component {
     return (
       <Container>
         <Background className="background" />
-        {
+        {/*
           <ScrollPointsContainer>
             <ScrollPointsWithSubpoints
               lengthArr={this.state.lengthArr}
               namesArr={this.state.namesArr}
             />
           </ScrollPointsContainer>
-        }
+          */}
 
         <ScrollContainer marginValue={0}>
           <SliderContainer>
             {Array.from({ length: this.state.namesArr.length }, (_, index) => {
-              index = 0;
-              this.objectToChunkArray(
+              let arr = this.objectToChunkArray(
                 this.state.food[index],
                 Object.keys(this.state.food[index]).length <= 8
-                  ? null
+                  ? Object.keys(this.state.food[index]).length
                   : Object.keys(this.state.food[index]).length / 2 + 1
               );
+              console.log(arr);
               return (
                 <Slider>
                   <span>{this.state.namesArr[index]}</span>
-                  {Object.keys(this.state.food[index]).map((item) => {
+                  {arr.map((item) => (
+                    <div>
+                      {item.map((food) =>
+                        Object.keys(food).map((key) => (
+                          <React.Fragment>
+                            <span>{key}.</span>
+                            <span>{food[key]["name"]}</span>
+                            <span>{food[key]["additionalInfo"]}</span>
+                            <span>
+                              {Number(food[key]["price"]).toLocaleString(
+                                "es-Es",
+                                {
+                                  minimumFractionDigits: 2,
+                                }
+                              ) + " "}
+                              €
+                            </span>
+                          </React.Fragment>
+                        ))
+                      )}
+                    </div>
+                  ))}
+                  {/*Object.keys(this.state.food[index]).map((item) => {
                     return (
                       <div>
                         <span>{item}.</span>
@@ -115,7 +137,7 @@ class Menu extends React.Component {
                         </span>
                       </div>
                     );
-                  })}
+                  })*/}
                 </Slider>
               );
             })}
