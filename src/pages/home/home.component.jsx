@@ -216,7 +216,6 @@ class Home extends React.Component {
               <img src={Soup2} alt="" />
             </ImgContainer>
           </SliderContainer>
-
           <SliderContainer homeThirdSlider>
             <Slider thirdSlider className={this.handleSliderClasses(2)}>
               <span>Direct supplies</span>

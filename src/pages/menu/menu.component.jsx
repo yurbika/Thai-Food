@@ -1,11 +1,17 @@
 import React from "react";
-import Background from "../../components/background/background.component";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 import { debounce, chunk } from "lodash";
 
 //components
 import ScrollPointsWithSubpoints from "../../components/scrollPointsWithSubpoints/scrollPointsWithSubpoints.component";
 import ScrollContainer from "../../components/scroll-container/scroll-container.component";
 import List from "../../components/list/list.component";
+import Background from "../../components/background/background.component";
+
+//redux
+import { selectCounter } from "../../redux/menu/menu.selectors";
+import { setCounter } from "../../redux/menu/menu.action";
 
 //data
 import MENU_DATA from "../../menu-data";
@@ -73,40 +79,46 @@ class Menu extends React.Component {
   }
 
   render() {
+    const { counter } = this.props;
     return (
       <Container>
         <Background className="background" />
-        {/*
+        {
           <ScrollPointsContainer>
             <ScrollPointsWithSubpoints
               lengthArr={this.state.lengthArr}
               namesArr={this.state.namesArr}
             />
           </ScrollPointsContainer>
-          */}
-
-        <ScrollContainer marginValue={0}>
-          <SliderContainer>
-            {Array.from({ length: this.state.namesArr.length }, (_, index) => {
-              index = 1;
-              let chunkedArray = this.objectToChunkArray(
-                this.state.food[index],
-                Object.keys(this.state.food[index]).length <= 8
-                  ? Object.keys(this.state.food[index]).length
-                  : Object.keys(this.state.food[index]).length / 2 + 1
-              );
-              return (
+        }
+        {
+          //dont forget about the marign value
+        }
+        <ScrollContainer marginValue={100 * counter}>
+          {Array.from({ length: this.state.namesArr.length }, (_, index) => {
+            let chunkedArray = this.objectToChunkArray(
+              this.state.food[index],
+              Object.keys(this.state.food[index]).length <= 8
+                ? Object.keys(this.state.food[index]).length
+                : Object.keys(this.state.food[index]).length / 2 + 1
+            );
+            return (
+              <SliderContainer>
                 <Slider>
                   <span>{this.state.namesArr[index]}</span>
                   <List chunkedArray={chunkedArray} />
                 </Slider>
-              );
-            })}
-          </SliderContainer>
+              </SliderContainer>
+            );
+          })}
         </ScrollContainer>
       </Container>
     );
   }
 }
 
-export default Menu;
+const mapStateToProps = createStructuredSelector({
+  counter: selectCounter,
+});
+
+export default connect(mapStateToProps)(Menu);

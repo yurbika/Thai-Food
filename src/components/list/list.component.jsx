@@ -1,8 +1,10 @@
 import React from "react";
 
+import ScrollContainer from "../scroll-container/scroll-container.component";
+
 const List = ({ chunkedArray }) => {
   return (
-    <React.Fragment>
+    <>
       {chunkedArray.map((item) => (
         <div>
           {item.map((food) =>
@@ -22,7 +24,7 @@ const List = ({ chunkedArray }) => {
           )}
         </div>
       ))}
-    </React.Fragment>
+    </>
   );
 };
 

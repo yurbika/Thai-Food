@@ -1,4 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
+
+//redux
+import { setCounter } from "../../redux/menu/menu.action";
 
 //utils
 import ID_GENERATOR from "../../utils/uniqueKey";
@@ -46,4 +50,8 @@ const ScrollPointsWithSubpoints = ({ lengthArr, namesArr }) => {
   );
 };
 
-export default ScrollPointsWithSubpoints;
+const mapDispatchToProps = (dispatch) => ({
+  setCounter: (num) => dispatch(setCounter(num)),
+});
+
+export default connect(null, mapDispatchToProps)(ScrollPointsWithSubpoints);
