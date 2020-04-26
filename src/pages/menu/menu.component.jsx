@@ -5,6 +5,7 @@ import { debounce, chunk } from "lodash";
 //components
 import ScrollPointsWithSubpoints from "../../components/scrollPointsWithSubpoints/scrollPointsWithSubpoints.component";
 import ScrollContainer from "../../components/scroll-container/scroll-container.component";
+import List from "../../components/list/list.component";
 
 //data
 import MENU_DATA from "../../menu-data";
@@ -87,61 +88,20 @@ class Menu extends React.Component {
         <ScrollContainer marginValue={0}>
           <SliderContainer>
             {Array.from({ length: this.state.namesArr.length }, (_, index) => {
-              let arr = this.objectToChunkArray(
+              index = 1;
+              let chunkedArray = this.objectToChunkArray(
                 this.state.food[index],
                 Object.keys(this.state.food[index]).length <= 8
                   ? Object.keys(this.state.food[index]).length
                   : Object.keys(this.state.food[index]).length / 2 + 1
               );
-              console.log(arr);
               return (
                 <Slider>
                   <span>{this.state.namesArr[index]}</span>
-                  {arr.map((item) => (
-                    <div>
-                      {item.map((food) =>
-                        Object.keys(food).map((key) => (
-                          <React.Fragment>
-                            <span>{key}.</span>
-                            <span>{food[key]["name"]}</span>
-                            <span>{food[key]["additionalInfo"]}</span>
-                            <span>
-                              {Number(food[key]["price"]).toLocaleString(
-                                "es-Es",
-                                {
-                                  minimumFractionDigits: 2,
-                                }
-                              ) + " "}
-                              €
-                            </span>
-                          </React.Fragment>
-                        ))
-                      )}
-                    </div>
-                  ))}
-                  {/*Object.keys(this.state.food[index]).map((item) => {
-                    return (
-                      <div>
-                        <span>{item}.</span>
-                        <span>{this.state.food[index][item]["name"]}</span>
-                        <span>
-                          {this.state.food[index][item]["additionalInfo"]}
-                        </span>
-                        <span>
-                          {Number(
-                            this.state.food[index][item]["price"]
-                          ).toLocaleString("es-Es", {
-                            minimumFractionDigits: 2,
-                          }) + " "}
-                          €
-                        </span>
-                      </div>
-                    );
-                  })*/}
+                  <List chunkedArray={chunkedArray} />
                 </Slider>
               );
             })}
-            {/** */}
           </SliderContainer>
         </ScrollContainer>
       </Container>
