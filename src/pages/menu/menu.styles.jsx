@@ -11,6 +11,19 @@ export const Container = styled.div`
   }
 `;
 
+export const Slider = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  span {
+    pointer-events: none;
+    z-index: 1;
+  }
+`;
+
 export const ScrollPointsContainer = styled.div`
   position: fixed;
   z-index: 2;

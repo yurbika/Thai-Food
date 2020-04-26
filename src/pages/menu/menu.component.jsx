@@ -4,12 +4,14 @@ import { debounce } from "lodash";
 
 //components
 import ScrollPointsWithSubpoints from "../../components/scrollPointsWithSubpoints/scrollPointsWithSubpoints.component";
+import ScrollContainer from "../../components/scroll-container/scroll-container.component";
 
 //data
 import MENU_DATA from "../../menu-data";
 
 //styles
-import { Container, ScrollPointsContainer } from "./menu.styles";
+import { Container, ScrollPointsContainer, Slider } from "./menu.styles";
+import { SliderContainer } from "../home/home.styles";
 
 class Menu extends React.Component {
   constructor(props) {
@@ -18,6 +20,7 @@ class Menu extends React.Component {
     this.state = {
       lengthArr: [],
       namesArr: [],
+      food: [],
     };
   }
 
@@ -40,45 +43,52 @@ class Menu extends React.Component {
   componentDidMount() {
     let tempLengthArr = [];
     let tempArrayWithNames = [];
+    let tempFoodArray = [];
     MENU_DATA.map((item, index) => {
-      //name
-
       tempArrayWithNames.push(Object.keys(item).toString());
 
-      // console.log(
-      //   "inhalt:",
-      //   MENU_DATA[index][Object.keys(item).map((item) => item)]
-      // );
-      // console.log(
-      //   "länge:",
-      //   Math.ceil(
-      //     Object.keys(
-      //       MENU_DATA[index][Object.keys(item).map((item) => item)]
-      //     ).length / 8
-      //   ),
-      //   Object.keys(MENU_DATA[index][Object.keys(item).map((item) => item)])
-      //     .length
-      // );
+      tempFoodArray.push(
+        MENU_DATA[index][Object.keys(item).map((item) => item)]
+      );
       tempLengthArr.push(
         Math.ceil(
           Object.keys(MENU_DATA[index][Object.keys(item).map((item) => item)])
-            .length / 8
+            .length / 6
         )
       );
     });
-    this.setState({ lengthArr: tempLengthArr, namesArr: tempArrayWithNames });
+    this.setState({
+      lengthArr: tempLengthArr,
+      namesArr: tempArrayWithNames,
+      food: tempFoodArray,
+    });
   }
 
   render() {
     return (
       <Container>
         <Background className="background" />
-        <ScrollPointsContainer>
+        {/* <ScrollPointsContainer>
           <ScrollPointsWithSubpoints
             lengthArr={this.state.lengthArr}
             namesArr={this.state.namesArr}
           />
-        </ScrollPointsContainer>
+       </ScrollPointsContainer>*/}
+
+        <ScrollContainer marginValue={0}>
+          <SliderContainer>
+            {this.state.namesArr.map((item, index) => (
+              <Slider>
+                <span>{item}</span>
+                {Object.keys(this.state.food[index]).map((item, index) => (
+                  <div>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </Slider>
+            ))}
+          </SliderContainer>
+        </ScrollContainer>
       </Container>
     );
   }
