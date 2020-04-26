@@ -1,6 +1,6 @@
 import React from "react";
 import Background from "../../components/background/background.component";
-import { debounce } from "lodash";
+import { debounce, chunk } from "lodash";
 
 //components
 import ScrollPointsWithSubpoints from "../../components/scrollPointsWithSubpoints/scrollPointsWithSubpoints.component";
@@ -40,6 +40,13 @@ class Menu extends React.Component {
     }
   };
 
+  objectToChunkArray = (object, chunkValue) => {
+    const objectToArray = Object.entries(object).map(([key, value]) => ({
+      [key]: value,
+    }));
+    console.log(chunk(objectToArray, chunkValue));
+  };
+
   componentDidMount() {
     let tempLengthArr = [];
     let tempArrayWithNames = [];
@@ -51,7 +58,7 @@ class Menu extends React.Component {
         MENU_DATA[index][Object.keys(item).map((item) => item)]
       );
       tempLengthArr.push(
-        Math.ceil(
+        Math.floor(
           Object.keys(MENU_DATA[index][Object.keys(item).map((item) => item)])
             .length / 6
         )
@@ -68,20 +75,28 @@ class Menu extends React.Component {
     return (
       <Container>
         <Background className="background" />
-        {/* <ScrollPointsContainer>
-          <ScrollPointsWithSubpoints
-            lengthArr={this.state.lengthArr}
-            namesArr={this.state.namesArr}
-          />
-       </ScrollPointsContainer>*/}
+        {
+          <ScrollPointsContainer>
+            <ScrollPointsWithSubpoints
+              lengthArr={this.state.lengthArr}
+              namesArr={this.state.namesArr}
+            />
+          </ScrollPointsContainer>
+        }
 
         <ScrollContainer marginValue={0}>
           <SliderContainer>
-            {this.state.namesArr.map((item, index) => {
-              index = 1;
+            {Array.from({ length: this.state.namesArr.length }, (_, index) => {
+              index = 0;
+              this.objectToChunkArray(
+                this.state.food[index],
+                Object.keys(this.state.food[index]).length <= 8
+                  ? null
+                  : Object.keys(this.state.food[index]).length / 2 + 1
+              );
               return (
                 <Slider>
-                  <span>{item}</span>
+                  <span>{this.state.namesArr[index]}</span>
                   {Object.keys(this.state.food[index]).map((item) => {
                     return (
                       <div>
@@ -104,6 +119,7 @@ class Menu extends React.Component {
                 </Slider>
               );
             })}
+            {/** */}
           </SliderContainer>
         </ScrollContainer>
       </Container>
