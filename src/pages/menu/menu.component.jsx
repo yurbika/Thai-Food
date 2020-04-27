@@ -16,7 +16,12 @@ import { selectMenuCounter } from "../../redux/menu/menu.selectors";
 import MENU_DATA from "../../menu-data";
 
 //styles
-import { Container, ScrollPointsContainer, Slider } from "./menu.styles";
+import {
+  Container,
+  ScrollPointsContainer,
+  Slider,
+  Content,
+} from "./menu.styles";
 import { SliderContainer } from "../home/home.styles";
 
 class Menu extends React.Component {
@@ -103,8 +108,10 @@ class Menu extends React.Component {
             return (
               <SliderContainer>
                 <Slider>
-                  <span>{this.state.namesArr[index]}</span>
-                  <List chunkedArray={chunkedArray} />
+                  <Content>
+                    <span>{this.state.namesArr[index]}</span>
+                    <List chunkedArray={chunkedArray} />
+                  </Content>
                 </Slider>
               </SliderContainer>
             );

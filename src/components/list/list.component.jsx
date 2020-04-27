@@ -10,7 +10,7 @@ const List = ({ chunkedArray }) => {
         <Container>
           {item.map((food) =>
             Object.keys(food).map((key) => (
-              <div className="splited-container">
+              <div>
                 <span>{key}.</span>
                 <span>{food[key]["name"]}</span>
                 <span>{food[key]["additionalInfo"]}</span>

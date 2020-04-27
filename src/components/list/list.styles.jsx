@@ -1,8 +1,13 @@
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  position: relative;
-  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  overflow: hidden;
+  height: 100vh;
 `;
 
-export const ScrollContainer = styled.div``;
+export const ScrollContainer = styled.div`
+  overflow: hidden;
+`;

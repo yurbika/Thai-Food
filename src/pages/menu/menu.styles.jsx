@@ -19,9 +19,19 @@ export const Slider = styled.div`
   width: 100%;
   height: 100%;
   span {
-    pointer-events: none;
     z-index: 1;
   }
+`;
+
+export const Content = styled.div`
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 20%;
+  overflow: hidden;
 `;
 
 export const ScrollPointsContainer = styled.div`
@@ -35,3 +45,5 @@ export const ScrollPointsContainer = styled.div`
     bottom: 60px;
   }
 `;
+
+export const ListContainer = styled.div``;
