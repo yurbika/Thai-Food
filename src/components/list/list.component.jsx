@@ -2,11 +2,14 @@ import React from "react";
 
 import ScrollContainer from "../scroll-container/scroll-container.component";
 
+//styles
+import { Container } from "./list.styles";
+
 const List = ({ chunkedArray }) => {
   return (
     <>
       {chunkedArray.map((item) => (
-        <div>
+        <Container>
           {item.map((food) =>
             Object.keys(food).map((key) => (
               <div>
@@ -22,7 +25,7 @@ const List = ({ chunkedArray }) => {
               </div>
             ))
           )}
-        </div>
+        </Container>
       ))}
     </>
   );
