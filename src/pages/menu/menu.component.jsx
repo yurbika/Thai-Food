@@ -10,8 +10,7 @@ import List from "../../components/list/list.component";
 import Background from "../../components/background/background.component";
 
 //redux
-import { selectCounter } from "../../redux/menu/menu.selectors";
-import { setCounter } from "../../redux/menu/menu.action";
+import { selectMenuCounter } from "../../redux/menu/menu.selectors";
 
 //data
 import MENU_DATA from "../../menu-data";
@@ -65,7 +64,7 @@ class Menu extends React.Component {
         MENU_DATA[index][Object.keys(item).map((item) => item)]
       );
       tempLengthArr.push(
-        Math.floor(
+        Math.round(
           Object.keys(MENU_DATA[index][Object.keys(item).map((item) => item)])
             .length / 6
         )
@@ -83,14 +82,13 @@ class Menu extends React.Component {
     return (
       <Container>
         <Background className="background" />
-        {
-          <ScrollPointsContainer>
-            <ScrollPointsWithSubpoints
-              lengthArr={this.state.lengthArr}
-              namesArr={this.state.namesArr}
-            />
-          </ScrollPointsContainer>
-        }
+        <ScrollPointsContainer>
+          <ScrollPointsWithSubpoints
+            lengthArr={this.state.lengthArr}
+            namesArr={this.state.namesArr}
+          />
+        </ScrollPointsContainer>
+
         {
           //dont forget about the marign value
         }
@@ -118,7 +116,7 @@ class Menu extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  counter: selectCounter,
+  counter: selectMenuCounter,
 });
 
 export default connect(mapStateToProps)(Menu);
