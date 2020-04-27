@@ -13,6 +13,7 @@ const getAdditionalStylesTitle = (props) =>
   props.active
     ? css`
         font-weight: bold;
+        font-size: 0.7vw;
         border-bottom: 2px solid #e76a0b;
       `
     : "";
@@ -37,7 +38,23 @@ export const Point = styled.span`
   border-radius: 50%;
   background: transparent;
   z-index: 1;
-  margin-top: 4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
 
   ${getAdditionalStylesPoint}
+`;
+
+export const Button = styled.button`
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5px;
+`;
+
+export const SubpointsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
