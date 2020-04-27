@@ -2,7 +2,7 @@ import { createSelector } from "reselect";
 
 const selectMenu = (state) => state.menu;
 
-export const selectCounter = createSelector(
+export const selectMenuCounter = createSelector(
   [selectMenu],
-  (home) => home.counter
+  (menu) => menu.menuCounter
 );
