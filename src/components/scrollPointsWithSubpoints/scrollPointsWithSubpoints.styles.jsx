@@ -54,7 +54,20 @@ export const Button = styled.button`
   margin-bottom: 5px;
 `;
 
-export const SubpointsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+const getAdditionalStylesWrapper = (props) => {
+  if (props.active)
+    return css`
+      position: relative;
+      opacity: 1;
+      pointer-events: unset;
+      visibility: visible;
+    `;
+};
+
+export const PointsWrapper = styled.div`
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  position: absolute;
+  ${getAdditionalStylesWrapper}
 `;

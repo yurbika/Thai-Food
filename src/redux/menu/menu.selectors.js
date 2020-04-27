@@ -6,3 +6,8 @@ export const selectMenuCounter = createSelector(
   [selectMenu],
   (menu) => menu.menuCounter
 );
+
+export const selectMenuSubCounter = createSelector(
+  [selectMenu],
+  (menu) => menu.menuSubCounter
+);

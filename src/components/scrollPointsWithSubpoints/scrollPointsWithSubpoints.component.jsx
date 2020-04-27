@@ -1,8 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
 //redux
-import { setMenuCounter } from "../../redux/menu/menu.action";
+import {
+  setMenuCounter,
+  setMenuSubCounter,
+} from "../../redux/menu/menu.action";
+import {
+  selectMenuCounter,
+  selectMenuSubCounter,
+} from "../../redux/menu/menu.selectors";
 
 //utils
 import ID_GENERATOR from "../../utils/uniqueKey";
@@ -13,16 +21,27 @@ import {
   Container,
   Title,
   Button,
+  PointsWrapper,
 } from "./scrollPointsWithSubpoints.styles";
 
-const ScrollPointsWithSubpoints = ({ lengthArr, namesArr, setMenuCounter }) => {
+const ScrollPointsWithSubpoints = ({
+  lengthArr,
+  namesArr,
+  setMenuCounter,
+  setMenuSubCounter,
+  counter,
+  subcounter,
+}) => {
   return (
     <Container>
       {lengthArr.map((length, index) => {
         if (index === 0 && length === 1)
           return (
             <Button onClick={() => setMenuCounter(index)}>
-              <Title active key={ID_GENERATOR("title-points-")}>
+              <Title
+                active={index === counter}
+                key={ID_GENERATOR("title-points-")}
+              >
                 {namesArr[index].toUpperCase()}
               </Title>
             </Button>
@@ -30,7 +49,10 @@ const ScrollPointsWithSubpoints = ({ lengthArr, namesArr, setMenuCounter }) => {
         if (length === 1)
           return (
             <Button onClick={() => setMenuCounter(index)}>
-              <Title active key={ID_GENERATOR("title-points-")}>
+              <Title
+                active={index === counter}
+                key={ID_GENERATOR("title-points-")}
+              >
                 {namesArr[index].toUpperCase()}
               </Title>
             </Button>
@@ -39,21 +61,25 @@ const ScrollPointsWithSubpoints = ({ lengthArr, namesArr, setMenuCounter }) => {
           return (
             <div key={ID_GENERATOR("container-of-points-")}>
               <Button onClick={() => setMenuCounter(index)}>
-                <Title active key={ID_GENERATOR("title-of-points-")}>
+                <Title
+                  active={index === counter}
+                  key={ID_GENERATOR("title-of-points-")}
+                >
                   {namesArr[index].toUpperCase()}
                 </Title>
               </Button>
-              <div>
+              <PointsWrapper active={index === counter}>
                 {Array.from({ length: length }, (_, i) => {
                   return (
-                    <Button
-                      onClick={() => (i === 0 ? setMenuCounter(index) : null)}
-                    >
-                      <Point active key={ID_GENERATOR("points-")} />
+                    <Button onClick={() => setMenuSubCounter(i)}>
+                      <Point
+                        active={i === subcounter}
+                        key={ID_GENERATOR("points-")}
+                      />
                     </Button>
                   );
                 })}
-              </div>
+              </PointsWrapper>
             </div>
           );
       })}
@@ -61,8 +87,17 @@ const ScrollPointsWithSubpoints = ({ lengthArr, namesArr, setMenuCounter }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  setMenuCounter: (num) => dispatch(setMenuCounter(num)),
+const mapStateToProps = createStructuredSelector({
+  counter: selectMenuCounter,
+  subcounter: selectMenuSubCounter,
 });
 
-export default connect(null, mapDispatchToProps)(ScrollPointsWithSubpoints);
+const mapDispatchToProps = (dispatch) => ({
+  setMenuCounter: (num) => dispatch(setMenuCounter(num)),
+  setMenuSubCounter: (num) => dispatch(setMenuSubCounter(num)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ScrollPointsWithSubpoints);
