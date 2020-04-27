@@ -1,18 +1,16 @@
 import React from "react";
 
-import ScrollContainer from "../scroll-container/scroll-container.component";
-
 //styles
-import { Container } from "./list.styles";
+import { Container, ScrollContainer } from "./list.styles";
 
 const List = ({ chunkedArray }) => {
   return (
-    <>
+    <ScrollContainer>
       {chunkedArray.map((item) => (
         <Container>
           {item.map((food) =>
             Object.keys(food).map((key) => (
-              <div>
+              <div className="splited-container">
                 <span>{key}.</span>
                 <span>{food[key]["name"]}</span>
                 <span>{food[key]["additionalInfo"]}</span>
@@ -27,7 +25,7 @@ const List = ({ chunkedArray }) => {
           )}
         </Container>
       ))}
-    </>
+    </ScrollContainer>
   );
 };
 

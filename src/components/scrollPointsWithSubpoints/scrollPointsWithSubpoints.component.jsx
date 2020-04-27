@@ -16,17 +16,13 @@ import {
 } from "./scrollPointsWithSubpoints.styles";
 
 const ScrollPointsWithSubpoints = ({ lengthArr, namesArr, setMenuCounter }) => {
-  let counter = 0;
-  console.log("lengthArray", lengthArr);
   return (
     <Container>
       {lengthArr.map((length, index) => {
-        console.log(length, "array");
         if (index === 0 && length === 1)
           return (
             <Button onClick={() => setMenuCounter(index)}>
               <Title active key={ID_GENERATOR("title-points-")}>
-                {console.log(counter)}
                 {namesArr[index].toUpperCase()}
               </Title>
             </Button>
@@ -35,7 +31,6 @@ const ScrollPointsWithSubpoints = ({ lengthArr, namesArr, setMenuCounter }) => {
           return (
             <Button onClick={() => setMenuCounter(index)}>
               <Title active key={ID_GENERATOR("title-points-")}>
-                {console.log((counter = ++counter))}
                 {namesArr[index].toUpperCase()}
               </Title>
             </Button>
@@ -45,15 +40,15 @@ const ScrollPointsWithSubpoints = ({ lengthArr, namesArr, setMenuCounter }) => {
             <div key={ID_GENERATOR("container-of-points-")}>
               <Button onClick={() => setMenuCounter(index)}>
                 <Title active key={ID_GENERATOR("title-of-points-")}>
-                  {console.log((counter = ++counter))}
                   {namesArr[index].toUpperCase()}
                 </Title>
               </Button>
               <div>
                 {Array.from({ length: length }, (_, i) => {
-                  console.log(i > 0 ? (counter += 1) : counter);
                   return (
-                    <Button>
+                    <Button
+                      onClick={() => (i === 0 ? setMenuCounter(index) : null)}
+                    >
                       <Point active key={ID_GENERATOR("points-")} />
                     </Button>
                   );
