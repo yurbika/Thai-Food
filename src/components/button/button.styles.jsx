@@ -25,7 +25,6 @@ export const CustomButtonContainer = styled.button`
   right: 0;
   width: 100px;
   height: 70px;
-  outline: none;
   border: none;
   padding: 10px;
   border-radius: 15px 0 0 15px;
