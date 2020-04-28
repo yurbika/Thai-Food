@@ -17,7 +17,10 @@ import {
 const Navbar = ({ location }) => (
   <Container aria-label={"Main"} tabIndex={0}>
     <ContentContainer>
-      <PhoneNumber tabIndex={0} aria-label={"Phone number"}>
+      <PhoneNumber
+        tabIndex={0}
+        aria-label={"Phone number, navigation element 1 of 4"}
+      >
         <IconContainer>
           <img src={PhoneIcon} alt="" />
         </IconContainer>
@@ -28,19 +31,19 @@ const Navbar = ({ location }) => (
           className={location.pathname === "/" ? "active" : ""}
           to="/"
         >
-          <span>Home</span>
+          <span aria-label={"Home, navigation element 2 of 4"}>Home</span>
         </OptionLink>
         <OptionLink
           className={location.pathname === "/menu" ? "active" : ""}
           to="/menu"
         >
-          <span>Menu</span>
+          <span aria-label={"Menu, navigation element 3 of 4"}>Menu</span>
         </OptionLink>
         <OptionLink
           className={location.pathname === "/contact" ? "active" : ""}
           to="/contact"
         >
-          <span>Contact</span>
+          <span aria-label={"Contact, navigation element 4 of 4"}>Contact</span>
         </OptionLink>
       </OptionsContainer>
     </ContentContainer>

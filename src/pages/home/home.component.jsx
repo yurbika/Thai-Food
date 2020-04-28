@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { debounce } from "lodash";
+import { LiveAnnouncer, LiveMessage } from "react-aria-live";
 
 //components
 import Background from "../../components/background/background.component";
@@ -108,144 +109,154 @@ class Home extends React.Component {
           theme.animationTimes["500"]
         )}
       >
-        <ScrollPointsContainer>
-          <ScrollPoints num={4} />
-        </ScrollPointsContainer>
-        <Background className="background" />
-        <ScrollContainer marginValue={100 * this.props.counter}>
-          <SliderContainer active={this.props.counter === 0}>
-            <Slider
-              firstSlider
-              className={this.handleSliderClasses(0)}
-              tabIndex={0}
-            >
-              <span>The Original</span>
-              <span>Thai Food</span>
-              <span>
-                Get your original thai menu <br></br>- traditional family recipe
-              </span>
-            </Slider>
-            <ImgContainer
-              topLeaf
-              className={this.handleAnimationClassesFirstSlider("leaf")}
-            >
-              <img src={Leaf} alt="" />
-            </ImgContainer>
-            <ImgContainer
-              lemon
-              className={this.handleAnimationClassesFirstSlider("lemon")}
-            >
-              <img src={Lemon} alt="" />
-            </ImgContainer>
-            <ImgContainer
-              bottomLeftLeaf
-              className={this.handleAnimationClassesFirstSlider("leaf")}
-            >
-              <img src={Leaf} alt="" />
-              <img src={Chilli} alt="" />
-              <img src={Chilli} alt="" />
-            </ImgContainer>
-            <ImgContainer
-              bottomChilli
-              className={this.handleAnimationClassesFirstSlider("chilli")}
-            >
-              <img src={Chilli} alt="" />
-            </ImgContainer>
-            <ImgContainer
-              bottomRightLeaf
-              className={this.handleAnimationClassesFirstSlider("leaf")}
-            >
-              <img src={Leaf} alt="" />
-              <img src={Tomato} alt="" />
-              <img src={Tomato} alt="" />
-            </ImgContainer>
-            <ImgContainer
-              basil
-              className={this.handleAnimationClassesFirstSlider("chilli")}
-            >
-              <img src={Basil} alt="" />
-            </ImgContainer>
-          </SliderContainer>
-          <SliderContainer active={this.props.counter === 1}>
-            <Slider
-              secondSlider
-              className={this.handleSliderClasses(1)}
-              tabIndex={0}
-            >
-              <span>Menu created by</span>
-              <span>chefs that are specialized</span>
-              <span>in thai food</span>
-            </Slider>
-            <ImgContainer
-              leftTopPlate
-              className={this.handleAnimationclassesSecondSlider()}
-            >
-              <img src={SpaghettiPlate} alt="" />
-            </ImgContainer>
-            <ImgContainer
-              leftMiddlePlate
-              delay={50}
-              className={this.handleAnimationclassesSecondSlider()}
-            >
-              <img src={SpaghettiPlate2} alt="" />
-            </ImgContainer>
-            <ImgContainer
-              leftBottomPlate
-              delay={100}
-              className={this.handleAnimationclassesSecondSlider()}
-            >
-              <img src={SpaghettiPlate3} alt="" />
-            </ImgContainer>
-            <ImgContainer
-              rightBottomPlate
-              delay={150}
-              x={"10vw"}
-              y={"25vh"}
-              className={this.handleAnimationclassesSecondSlider()}
-            >
-              <img src={SpaghettiPlate4} alt="" />
-            </ImgContainer>
-            <ImgContainer
-              rightMiddlePlate
-              delay={200}
-              x={"10vw"}
-              y={"25vh"}
-              className={this.handleAnimationclassesSecondSlider()}
-            >
-              <img src={Soup} alt="" />
-            </ImgContainer>
-            <ImgContainer
-              rightTopPlate
-              delay={250}
-              x={"10vw"}
-              y={"25vh"}
-              className={this.handleAnimationclassesSecondSlider()}
-            >
-              <img src={Soup2} alt="" />
-            </ImgContainer>
-          </SliderContainer>
-          <SliderContainer homeThirdSlider active={this.props.counter === 2}>
-            <Slider
-              thirdSlider
-              className={this.handleSliderClasses(2)}
-              tabIndex={0}
-            >
-              <span>Direct supplies</span>
-              <span>form the fines producers</span>
-              <span>of thailand and the region</span>
-            </Slider>
-            <ImgContainer ingredients>
-              <img src={Ingredients} alt="" />
-            </ImgContainer>
-          </SliderContainer>
-          <SliderContainer active={this.props.counter === 3}>
-            <Link to="/menu">
-              <ImgContainer menu>
-                <img src={Menu} alt="To the menu" />
+        <LiveAnnouncer>
+          <LiveMessage
+            message={"Slider changed to" + this.props.counter}
+            aria-live="polite"
+          />
+          <ScrollPointsContainer>
+            <ScrollPoints num={4} />
+          </ScrollPointsContainer>
+          <Background className="background" />
+          <ScrollContainer marginValue={100 * this.props.counter}>
+            <SliderContainer active={this.props.counter === 0}>
+              <Slider
+                firstSlider
+                className={this.handleSliderClasses(0)}
+                tabIndex={0}
+              >
+                <span>The Original</span>
+                <span>Thai Food</span>
+                <span>
+                  Get your original thai menu <br></br>- traditional family
+                  recipe
+                </span>
+              </Slider>
+              <ImgContainer
+                topLeaf
+                className={this.handleAnimationClassesFirstSlider("leaf")}
+              >
+                <img src={Leaf} alt="" />
               </ImgContainer>
-            </Link>
-          </SliderContainer>
-        </ScrollContainer>
+              <ImgContainer
+                lemon
+                className={this.handleAnimationClassesFirstSlider("lemon")}
+              >
+                <img src={Lemon} alt="" />
+              </ImgContainer>
+              <ImgContainer
+                bottomLeftLeaf
+                className={this.handleAnimationClassesFirstSlider("leaf")}
+              >
+                <img src={Leaf} alt="" />
+                <img src={Chilli} alt="" />
+                <img src={Chilli} alt="" />
+              </ImgContainer>
+              <ImgContainer
+                bottomChilli
+                className={this.handleAnimationClassesFirstSlider("chilli")}
+              >
+                <img src={Chilli} alt="" />
+              </ImgContainer>
+              <ImgContainer
+                bottomRightLeaf
+                className={this.handleAnimationClassesFirstSlider("leaf")}
+              >
+                <img src={Leaf} alt="" />
+                <img src={Tomato} alt="" />
+                <img src={Tomato} alt="" />
+              </ImgContainer>
+              <ImgContainer
+                basil
+                className={this.handleAnimationClassesFirstSlider("chilli")}
+              >
+                <img src={Basil} alt="" />
+              </ImgContainer>
+            </SliderContainer>
+            <SliderContainer
+              active={this.props.counter === 1}
+              aria-live="assertive"
+            >
+              <Slider
+                secondSlider
+                className={this.handleSliderClasses(1)}
+                tabIndex={0}
+              >
+                <span>Menu created by</span>
+                <span>chefs that are specialized</span>
+                <span>in thai food</span>
+              </Slider>
+              <ImgContainer
+                leftTopPlate
+                className={this.handleAnimationclassesSecondSlider()}
+              >
+                <img src={SpaghettiPlate} alt="" />
+              </ImgContainer>
+              <ImgContainer
+                leftMiddlePlate
+                delay={50}
+                className={this.handleAnimationclassesSecondSlider()}
+              >
+                <img src={SpaghettiPlate2} alt="" />
+              </ImgContainer>
+              <ImgContainer
+                leftBottomPlate
+                delay={100}
+                className={this.handleAnimationclassesSecondSlider()}
+              >
+                <img src={SpaghettiPlate3} alt="" />
+              </ImgContainer>
+              <ImgContainer
+                rightBottomPlate
+                delay={150}
+                x={"10vw"}
+                y={"25vh"}
+                className={this.handleAnimationclassesSecondSlider()}
+              >
+                <img src={SpaghettiPlate4} alt="" />
+              </ImgContainer>
+              <ImgContainer
+                rightMiddlePlate
+                delay={200}
+                x={"10vw"}
+                y={"25vh"}
+                className={this.handleAnimationclassesSecondSlider()}
+              >
+                <img src={Soup} alt="" />
+              </ImgContainer>
+              <ImgContainer
+                rightTopPlate
+                delay={250}
+                x={"10vw"}
+                y={"25vh"}
+                className={this.handleAnimationclassesSecondSlider()}
+              >
+                <img src={Soup2} alt="" />
+              </ImgContainer>
+            </SliderContainer>
+            <SliderContainer homeThirdSlider active={this.props.counter === 2}>
+              <Slider
+                thirdSlider
+                className={this.handleSliderClasses(2)}
+                tabIndex={0}
+              >
+                <span>Direct supplies</span>
+                <span>form the fines producers</span>
+                <span>of thailand and the region</span>
+              </Slider>
+              <ImgContainer ingredients>
+                <img src={Ingredients} alt="" />
+              </ImgContainer>
+            </SliderContainer>
+            <SliderContainer active={this.props.counter === 3}>
+              <Link to="/menu">
+                <ImgContainer menu>
+                  <img src={Menu} alt="To the menu" />
+                </ImgContainer>
+              </Link>
+            </SliderContainer>
+          </ScrollContainer>
+        </LiveAnnouncer>
       </Container>
     );
   }

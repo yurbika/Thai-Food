@@ -9,6 +9,7 @@
     "lodash": "^4.17.15",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
+    "react-aria-live": "^2.0.5",
     "react-dom": "^16.13.1",
     "react-id-generator": "^3.0.0",
     "react-redux": "^7.2.0",

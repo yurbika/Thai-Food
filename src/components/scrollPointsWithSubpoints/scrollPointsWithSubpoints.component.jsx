@@ -33,7 +33,7 @@ const ScrollPointsWithSubpoints = ({
   subcounter,
 }) => {
   return (
-    <Container>
+    <Container tabIndex={0} aria-label={"Slider"}>
       {lengthArr.map((length, index) => {
         if (index === 0 && length === 1)
           return (
@@ -46,6 +46,11 @@ const ScrollPointsWithSubpoints = ({
             >
               <Title
                 active={index === counter}
+                aria-label={
+                  index === counter
+                    ? namesArr[index] + " is current slider"
+                    : null
+                }
                 key={ID_GENERATOR("title-points-")}
               >
                 {namesArr[index].toUpperCase()}
@@ -64,6 +69,11 @@ const ScrollPointsWithSubpoints = ({
               <Title
                 active={index === counter}
                 key={ID_GENERATOR("title-points-")}
+                aria-label={
+                  index === counter
+                    ? namesArr[index] + " is current slider"
+                    : null
+                }
               >
                 {namesArr[index].toUpperCase()}
               </Title>
@@ -82,6 +92,11 @@ const ScrollPointsWithSubpoints = ({
                 <Title
                   active={index === counter}
                   key={ID_GENERATOR("title-of-points-")}
+                  aria-label={
+                    index === counter
+                      ? namesArr[index] + " is current slider"
+                      : null
+                  }
                 >
                   {namesArr[index].toUpperCase()}
                 </Title>
@@ -96,6 +111,15 @@ const ScrollPointsWithSubpoints = ({
                       <Point
                         active={i === subcounter}
                         key={ID_GENERATOR("points-")}
+                        aria-label={
+                          i === subcounter
+                            ? namesArr[index] +
+                              " is current slider," +
+                              " page " +
+                              i +
+                              " is selected"
+                            : null
+                        }
                       />
                     </Button>
                   );
