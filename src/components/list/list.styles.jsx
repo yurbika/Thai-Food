@@ -26,7 +26,6 @@ const getAdditionalStyles = (props) => {
 };
 
 export const ScrollContainer = styled.div`
-  overflow: hidden;
   transition: all ${theme.animationTimes["500"] + "ms"} ease-in-out;
   opacity: 1;
 

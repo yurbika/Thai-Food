@@ -67,7 +67,6 @@ class Menu extends React.Component {
     let tempFoodArray = [];
     MENU_DATA.map((item, index) => {
       tempArrayWithNames.push(Object.keys(item).toString());
-
       tempFoodArray.push(
         MENU_DATA[index][Object.keys(item).map((item) => item)]
       );
@@ -77,6 +76,7 @@ class Menu extends React.Component {
             .length / 6
         )
       );
+      return 0;
     });
     this.setState({
       lengthArr: tempLengthArr,

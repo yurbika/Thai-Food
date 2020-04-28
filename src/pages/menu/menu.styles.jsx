@@ -18,6 +18,7 @@ export const Slider = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
+
   span {
     z-index: 1;
   }
@@ -30,7 +31,7 @@ export const Content = styled.div`
   left: 0;
   right: 0;
   text-align: center;
-  height: 20%;
+  height: 25%;
   overflow: hidden;
 `;
 

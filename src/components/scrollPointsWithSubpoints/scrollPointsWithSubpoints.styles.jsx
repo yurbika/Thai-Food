@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import theme from "../../utils/theme";
 
 export const Container = styled.nav`
   display: flex;
@@ -14,7 +15,7 @@ const getAdditionalStylesTitle = (props) =>
     ? css`
         font-weight: bold;
         font-size: 0.7vw;
-        border-bottom: 2px solid #e76a0b;
+        border-bottom: 2px solid ${theme.colors.darkOrange};
       `
     : "";
 
@@ -25,7 +26,7 @@ export const Title = styled.span`
 const getAdditionalStylesPoint = (props) => {
   if (props.active)
     return css`
-      background: #e76a0b;
+      background: ${theme.colors.darkOrange};
     `;
 };
 
@@ -34,7 +35,7 @@ export const Point = styled.span`
   display: block;
   height: 20px;
   width: 20px;
-  border: 2px solid #e76a0b;
+  border: 2px solid ${theme.colors.darkOrange};
   border-radius: 50%;
   background: transparent;
   z-index: 1;
@@ -49,8 +50,6 @@ export const Button = styled.button`
   outline: none;
   border: none;
   background: none;
-  width: 100%;
-  height: 100%;
   margin-bottom: 5px;
 `;
 
@@ -65,6 +64,8 @@ const getAdditionalStylesWrapper = (props) => {
 };
 
 export const PointsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;

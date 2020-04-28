@@ -118,7 +118,7 @@ const ScrollPointsWithSubpoints = ({
                               " page " +
                               i +
                               " is selected"
-                            : null
+                            : "Select page" + i + "  of " + namesArr[index]
                         }
                       />
                     </Button>
