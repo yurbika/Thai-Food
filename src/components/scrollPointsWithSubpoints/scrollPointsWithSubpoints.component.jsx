@@ -42,6 +42,7 @@ const ScrollPointsWithSubpoints = ({
                 setMenuCounter(index);
                 setMenuSubCounter(0);
               }}
+              key={ID_GENERATOR("subpoints-button-")}
             >
               <Title
                 active={index === counter}
@@ -58,6 +59,7 @@ const ScrollPointsWithSubpoints = ({
                 setMenuCounter(index);
                 setMenuSubCounter(0);
               }}
+              key={ID_GENERATOR("subpoints-button-")}
             >
               <Title
                 active={index === counter}
@@ -75,6 +77,7 @@ const ScrollPointsWithSubpoints = ({
                   setMenuCounter(index);
                   setMenuSubCounter(0);
                 }}
+                key={ID_GENERATOR("subpoints-button-")}
               >
                 <Title
                   active={index === counter}
@@ -86,7 +89,10 @@ const ScrollPointsWithSubpoints = ({
               <PointsWrapper active={index === counter}>
                 {Array.from({ length: length }, (_, i) => {
                   return (
-                    <Button onClick={() => setMenuSubCounter(i)}>
+                    <Button
+                      onClick={() => setMenuSubCounter(i)}
+                      key={ID_GENERATOR("subpoints-button-")}
+                    >
                       <Point
                         active={i === subcounter}
                         key={ID_GENERATOR("points-")}

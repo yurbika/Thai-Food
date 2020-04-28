@@ -12,6 +12,9 @@ import Background from "../../components/background/background.component";
 //redux
 import { selectMenuCounter } from "../../redux/menu/menu.selectors";
 
+//utils
+import ID_GENERATOR from "../../utils/uniqueKey";
+
 //data
 import MENU_DATA from "../../menu-data";
 
@@ -93,10 +96,6 @@ class Menu extends React.Component {
             namesArr={this.state.namesArr}
           />
         </ScrollPointsContainer>
-
-        {
-          //dont forget about the marign value
-        }
         <ScrollContainer marginValue={100 * counter}>
           {Array.from({ length: this.state.namesArr.length }, (_, index) => {
             let chunkedArray = this.objectToChunkArray(
@@ -106,11 +105,19 @@ class Menu extends React.Component {
                 : Object.keys(this.state.food[index]).length / 2 + 1
             );
             return (
-              <SliderContainer active={index === counter}>
-                <Slider>
-                  <Content>
-                    <span>{this.state.namesArr[index]}</span>
-                    <List chunkedArray={chunkedArray} />
+              <SliderContainer
+                active={index === counter}
+                key={ID_GENERATOR("menu-slider-container-")}
+              >
+                <Slider key={ID_GENERATOR("menu-slider-")}>
+                  <Content key={ID_GENERATOR("menu-content-wrapper-")}>
+                    <span key={ID_GENERATOR("menu-food-section-")}>
+                      {this.state.namesArr[index]}
+                    </span>
+                    <List
+                      chunkedArray={chunkedArray}
+                      key={ID_GENERATOR("menu-food-section-list-")}
+                    />
                   </Content>
                 </Slider>
               </SliderContainer>

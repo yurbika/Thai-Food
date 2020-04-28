@@ -45,5 +45,3 @@ export const ScrollPointsContainer = styled.div`
     bottom: 60px;
   }
 `;
-
-export const ListContainer = styled.div``;
