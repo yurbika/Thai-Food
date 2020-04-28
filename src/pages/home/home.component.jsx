@@ -113,7 +113,11 @@ class Home extends React.Component {
         <Background className="background" />
         <ScrollContainer marginValue={100 * this.props.counter}>
           <SliderContainer active={this.props.counter === 0}>
-            <Slider firstSlider className={this.handleSliderClasses(0)}>
+            <Slider
+              firstSlider
+              className={this.handleSliderClasses(0)}
+              tabIndex={0}
+            >
               <span>The Original</span>
               <span>Thai Food</span>
               <span>
@@ -162,12 +166,15 @@ class Home extends React.Component {
             </ImgContainer>
           </SliderContainer>
           <SliderContainer active={this.props.counter === 1}>
-            <Slider secondSlider className={this.handleSliderClasses(1)}>
+            <Slider
+              secondSlider
+              className={this.handleSliderClasses(1)}
+              tabIndex={0}
+            >
               <span>Menu created by</span>
               <span>chefs that are specialized</span>
               <span>in thai food</span>
             </Slider>
-            {/*delays depending on scrollTime / 2 */}
             <ImgContainer
               leftTopPlate
               className={this.handleAnimationclassesSecondSlider()}
@@ -217,7 +224,11 @@ class Home extends React.Component {
             </ImgContainer>
           </SliderContainer>
           <SliderContainer homeThirdSlider active={this.props.counter === 2}>
-            <Slider thirdSlider className={this.handleSliderClasses(2)}>
+            <Slider
+              thirdSlider
+              className={this.handleSliderClasses(2)}
+              tabIndex={0}
+            >
               <span>Direct supplies</span>
               <span>form the fines producers</span>
               <span>of thailand and the region</span>
@@ -227,9 +238,9 @@ class Home extends React.Component {
             </ImgContainer>
           </SliderContainer>
           <SliderContainer active={this.props.counter === 3}>
-            <Link to={"/menu"}>
+            <Link to="/menu">
               <ImgContainer menu>
-                <img src={Menu} alt="" />
+                <img src={Menu} alt="To the menu" />
               </ImgContainer>
             </Link>
           </SliderContainer>

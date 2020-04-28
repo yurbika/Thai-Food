@@ -18,7 +18,14 @@ const ScrollPoints = ({ num = 4, counter, setCounter }) => {
       {Array.apply(null, new Array(num)).map((item, index) => {
         return (
           <Point
+            role="button"
             tabIndex={0}
+            aria-pressed={index === counter ? "true" : "false"}
+            aria-label={
+              index === counter
+                ? "Current page slider is" + index
+                : "Change current page slider to" + index
+            }
             active={counter === index}
             key={ID_GENERATOR("scroll-points-")}
             onClick={() => setCounter(index)}

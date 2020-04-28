@@ -17,7 +17,7 @@ class Button extends React.Component {
     const { children, ...props } = this.props;
     return (
       <CustomButtonContainer
-        aria-haspopup={this.props.menu ? true : false}
+        aria-haspopup={this.props.menu ? "true" : "false"}
         {...props}
         onClick={() => {
           if (props.menu) this.setState({ menuOpen: !this.state.menuOpen });

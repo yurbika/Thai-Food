@@ -15,13 +15,13 @@ import {
 } from "./navbar.styles";
 
 const Navbar = ({ location }) => (
-  <Container aria-label={"Main Navigation"}>
+  <Container aria-label={"Main"} tabIndex={0}>
     <ContentContainer>
-      <PhoneNumber>
+      <PhoneNumber tabIndex={0} aria-label={"Phone number"}>
         <IconContainer>
-          <img src={PhoneIcon} alt="Phone Number" />
+          <img src={PhoneIcon} alt="" />
         </IconContainer>
-        <span>+49 157 6874 3357</span>
+        <span tabIndex={0}>+49 157 6874 3357</span>
       </PhoneNumber>
       <OptionsContainer>
         <OptionLink

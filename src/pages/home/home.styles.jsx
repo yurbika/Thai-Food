@@ -46,7 +46,7 @@ const rollOutVertical = (y = "-25vh") => keyframes`
   }
 `;
 
-export const Container = styled.div`
+export const Container = styled.main`
   position: fixed;
   overflow: hidden;
   height: 100vh;
