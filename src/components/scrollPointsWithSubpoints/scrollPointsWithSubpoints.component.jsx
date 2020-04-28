@@ -37,7 +37,12 @@ const ScrollPointsWithSubpoints = ({
       {lengthArr.map((length, index) => {
         if (index === 0 && length === 1)
           return (
-            <Button onClick={() => setMenuCounter(index)}>
+            <Button
+              onClick={() => {
+                setMenuCounter(index);
+                setMenuSubCounter(0);
+              }}
+            >
               <Title
                 active={index === counter}
                 key={ID_GENERATOR("title-points-")}
@@ -48,7 +53,12 @@ const ScrollPointsWithSubpoints = ({
           );
         if (length === 1)
           return (
-            <Button onClick={() => setMenuCounter(index)}>
+            <Button
+              onClick={() => {
+                setMenuCounter(index);
+                setMenuSubCounter(0);
+              }}
+            >
               <Title
                 active={index === counter}
                 key={ID_GENERATOR("title-points-")}
@@ -60,7 +70,12 @@ const ScrollPointsWithSubpoints = ({
         else
           return (
             <div key={ID_GENERATOR("container-of-points-")}>
-              <Button onClick={() => setMenuCounter(index)}>
+              <Button
+                onClick={() => {
+                  setMenuCounter(index);
+                  setMenuSubCounter(0);
+                }}
+              >
                 <Title
                   active={index === counter}
                   key={ID_GENERATOR("title-of-points-")}

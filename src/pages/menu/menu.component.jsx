@@ -106,7 +106,7 @@ class Menu extends React.Component {
                 : Object.keys(this.state.food[index]).length / 2 + 1
             );
             return (
-              <SliderContainer>
+              <SliderContainer active={index === counter}>
                 <Slider>
                   <Content>
                     <span>{this.state.namesArr[index]}</span>
