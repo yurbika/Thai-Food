@@ -66,6 +66,7 @@ class Home extends React.Component {
     } else if (this.props.counter > 0 && e.deltaY < 0) {
       this.props.setCounter(this.props.counter - 1);
     }
+    return;
   };
 
   handleSliderClasses = (n) => {

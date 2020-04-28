@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import theme from "../../utils/theme";
 
 export const Container = styled.nav`
   position: fixed;
@@ -42,7 +43,7 @@ export const OptionLink = styled(Link)`
   text-decoration: none;
 
   & > span {
-    color: #82bf65;
+    color: ${theme.colors.green};
     font-weight: bold;
     display: inline-block;
   }
@@ -51,16 +52,16 @@ export const OptionLink = styled(Link)`
   width: 100%;
   &:hover {
     span {
-      color: #e76a0b;
+      color: ${theme.colors.darkOrange};
     }
   }
   &.active {
     cursor: default;
     pointer-events: none;
     & span {
-      color: #82bf65;
+      color: ${theme.colors.green};
       padding-bottom: 0.5rem;
-      border-bottom: 3px solid #82bf65;
+      border-bottom: 3px solid ${theme.colors.green};
       border-radius: 2px;
       letter-spacing: 0.5px;
       transition: all 0.3s ease-in;

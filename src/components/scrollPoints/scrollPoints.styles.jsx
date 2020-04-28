@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import theme from "../../utils/theme";
 
 export const Container = styled.nav`
   display: flex;
@@ -9,7 +10,7 @@ export const Container = styled.nav`
 const getAdditionalStylesPoint = (props) => {
   if (props.active)
     return css`
-      background: #e76a0b;
+      background: ${theme.colors.darkOrange};
     `;
 };
 
@@ -19,7 +20,7 @@ export const Point = styled.span`
   margin: 0.7rem;
   height: 20px;
   width: 20px;
-  border: 3px solid #e76a0b;
+  border: 3px solid ${theme.colors.darkOrange};
   border-radius: 50%;
   background: transparent;
   z-index: 1;

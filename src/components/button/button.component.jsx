@@ -14,23 +14,24 @@ class Button extends React.Component {
   }
 
   render() {
-    const { children, ...props } = this.props;
+    const { ...props } = this.props;
     return (
       <CustomButtonContainer
-        aria-haspopup={this.props.menu ? "true" : "false"}
+        aria-label="popup menu button"
+        aria-haspopup={props.menu ? "true" : "false"}
         {...props}
         onClick={() => {
           if (props.menu) this.setState({ menuOpen: !this.state.menuOpen });
         }}
       >
         {props.menu ? (
-          <HamburgerMenu>
+          <HamburgerMenu aria-label="hamburger-menu">
             <HamburgerMenuItems
               className={this.state.menuOpen ? "animate" : ""}
             />
           </HamburgerMenu>
         ) : (
-          children
+          props.children
         )}
       </CustomButtonContainer>
     );
