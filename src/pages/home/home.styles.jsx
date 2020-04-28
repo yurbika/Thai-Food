@@ -169,20 +169,35 @@ export const Container = styled.div`
 `;
 
 const getAdditionalStyleSliderContainer = (props) => {
-  if (props.homeThirdSlider)
+  if (props.homeThirdSlider && props.active)
     return css`
       display: flex;
       align-items: center;
       justify-content: center;
+      visibility: visible;
+      & * {
+        visibility: visible;
+      }
 
       @media (max-width: 768px) {
         display: unset;
+      }
+    `;
+  if (props.active)
+    return css`
+      visibility: visible;
+      & * {
+        visibility: visible;
       }
     `;
 };
 
 export const SliderContainer = styled.div`
   position: relative;
+  visibility: hidden;
+  & * {
+    visibility: hidden;
+  }
 
   ${getAdditionalStyleSliderContainer};
 `;

@@ -112,7 +112,7 @@ class Home extends React.Component {
         </ScrollPointsContainer>
         <Background className="background" />
         <ScrollContainer marginValue={100 * this.props.counter}>
-          <SliderContainer>
+          <SliderContainer active={this.props.counter === 0}>
             <Slider firstSlider className={this.handleSliderClasses(0)}>
               <span>The Original</span>
               <span>Thai Food</span>
@@ -161,7 +161,7 @@ class Home extends React.Component {
               <img src={Basil} alt="" />
             </ImgContainer>
           </SliderContainer>
-          <SliderContainer>
+          <SliderContainer active={this.props.counter === 1}>
             <Slider secondSlider className={this.handleSliderClasses(1)}>
               <span>Menu created by</span>
               <span>chefs that are specialized</span>
@@ -216,7 +216,7 @@ class Home extends React.Component {
               <img src={Soup2} alt="" />
             </ImgContainer>
           </SliderContainer>
-          <SliderContainer homeThirdSlider>
+          <SliderContainer homeThirdSlider active={this.props.counter === 2}>
             <Slider thirdSlider className={this.handleSliderClasses(2)}>
               <span>Direct supplies</span>
               <span>form the fines producers</span>
@@ -226,7 +226,7 @@ class Home extends React.Component {
               <img src={Ingredients} alt="" />
             </ImgContainer>
           </SliderContainer>
-          <SliderContainer>
+          <SliderContainer active={this.props.counter === 3}>
             <Link to={"/menu"}>
               <ImgContainer menu>
                 <img src={Menu} alt="" />
