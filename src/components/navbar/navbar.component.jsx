@@ -15,7 +15,7 @@ import {
 } from "./navbar.styles";
 
 const Navbar = ({ location }) => (
-  <Container>
+  <Container aria-label={"Main Navigation"}>
     <ContentContainer>
       <PhoneNumber>
         <IconContainer>
