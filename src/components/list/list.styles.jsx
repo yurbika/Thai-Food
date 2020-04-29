@@ -15,7 +15,10 @@ export const Container = styled.div`
   height: 100vh;
   visibility: hidden;
   & > * {
-    font-size: calc(10px + 1vw);
+    font-size: calc(4px + 1vw);
+    @media (max-width: 768px) {
+      font-size: calc(5px + 1vh);
+    }
   }
 
   ${getAdditionalStylesContainer}
@@ -29,6 +32,7 @@ const getAdditionalStyles = (props) => {
 };
 
 export const ScrollContainer = styled.div`
+  width: 100%;
   display: inline-flex;
   flex-direction: column;
   transition: all ${theme.animationTimes["500"] + "ms"} ease-in-out;
@@ -42,7 +46,7 @@ export const FoodNameAndTranslation = styled.span`
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 50%;
+  width: 85%;
 `;
 
 export const FoodName = styled.span`
@@ -53,12 +57,17 @@ export const Row = styled.p`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
   & > * {
-    margin: 5px;
     flex-grow: 1;
+    margin-bottom: 15px;
   }
 `;
 
 export const FoodNameTranslation = styled.span`
   font-weight: 100;
+  font-size: calc(1px + 1vw);
+  @media (max-width: 768px) {
+    font-size: calc(4px + 1vh);
+  }
 `;

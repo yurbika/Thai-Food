@@ -27,13 +27,13 @@ export const Slider = styled.section`
 export const Content = styled.div`
   display: inline-flex;
   flex-direction: column;
-  min-height: 175px;
-  max-height: 450px;
   overflow: hidden;
-  padding: 90px;
+  justify-items: center;
+  align-items: center;
+  padding: 15vh 25vw;
 
   @media (max-width: 768px) {
-    padding: 50px 15px;
+    padding: 75px 10vw;
   }
 `;
 
@@ -44,13 +44,12 @@ export const ScrollPointsContainer = styled.div`
   bottom: 0px;
 
   @media (max-width: 768px) {
-    right: -70px;
-    bottom: 60px;
   }
 `;
 
 export const FoodName = styled.h1`
   margin-bottom: 10px;
+  font-size: calc(20px + 1vw);
 
   @media (max-width: 768px) {
     margin-bottom: 0;
