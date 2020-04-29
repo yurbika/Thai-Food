@@ -72,7 +72,7 @@ class Menu extends React.Component {
         MENU_DATA[index][Object.keys(item).map((item) => item)]
       );
       tempLengthArr.push(
-        Math.round(
+        Math.ceil(
           Object.keys(MENU_DATA[index][Object.keys(item).map((item) => item)])
             .length / 6
         )
@@ -101,9 +101,9 @@ class Menu extends React.Component {
           {Array.from({ length: this.state.namesArr.length }, (_, index) => {
             let chunkedArray = this.objectToChunkArray(
               this.state.food[index],
-              Object.keys(this.state.food[index]).length <= 8
+              Object.keys(this.state.food[index]).length <= 6
                 ? Object.keys(this.state.food[index]).length
-                : Object.keys(this.state.food[index]).length / 2 + 1
+                : Object.keys(this.state.food[index]).length / 2
             );
             return (
               <SliderContainer

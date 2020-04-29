@@ -14,7 +14,6 @@ const getAdditionalStylesTitle = (props) =>
   props.active
     ? css`
         font-weight: bold;
-        font-size: 0.7vw;
         border-bottom: 2px solid ${theme.colors.darkOrange};
       `
     : "";
