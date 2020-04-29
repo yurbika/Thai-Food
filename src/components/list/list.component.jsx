@@ -14,7 +14,8 @@ import {
   ScrollContainer,
   FoodNameAndTranslation,
   Row,
-  Span,
+  FoodNameTranslation,
+  FoodName,
 } from "./list.styles";
 
 const List = ({ chunkedArray, subcounter }) => {
@@ -28,23 +29,25 @@ const List = ({ chunkedArray, subcounter }) => {
           {item.map((food) =>
             Object.keys(food).map((key, index) => (
               <Row key={ID_GENERATOR("food-row-")}>
-                <Span key={ID_GENERATOR("food-number-")}>{key}.</Span>
+                <span key={ID_GENERATOR("food-number-")}>{key}.</span>
                 <FoodNameAndTranslation>
-                  <span key={ID_GENERATOR("food-name-")}>
+                  <FoodName key={ID_GENERATOR("food-name-")}>
                     {food[key]["name"]}
-                  </span>
+                  </FoodName>
                   {!!food[key]["additionalInfo"] ? (
-                    <span key={ID_GENERATOR("food-additional-info-")}>
+                    <FoodNameTranslation
+                      key={ID_GENERATOR("food-additional-info-")}
+                    >
                       {food[key]["additionalInfo"]}
-                    </span>
+                    </FoodNameTranslation>
                   ) : null}
                 </FoodNameAndTranslation>
-                <Span key={ID_GENERATOR("food-price-")}>
+                <span key={ID_GENERATOR("food-price-")}>
                   {Number(food[key]["price"]).toLocaleString("es-Es", {
                     minimumFractionDigits: 2,
                   }) + " "}
                   €
-                </Span>
+                </span>
               </Row>
             ))
           )}

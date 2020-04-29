@@ -30,6 +30,11 @@ export const Content = styled.div`
   min-height: 175px;
   max-height: 450px;
   overflow: hidden;
+  padding: 90px;
+
+  @media (max-width: 768px) {
+    padding: 50px 15px;
+  }
 `;
 
 export const ScrollPointsContainer = styled.div`
@@ -46,4 +51,8 @@ export const ScrollPointsContainer = styled.div`
 
 export const FoodName = styled.h1`
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 0;
+  }
 `;
