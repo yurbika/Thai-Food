@@ -32,7 +32,7 @@ export const CustomButtonContainer = styled.button`
   @media (max-width: 768px) {
     top: unset;
     width: 90px;
-    height: 60px;
+    height: 45px;
     bottom: 0;
     padding: 15px;
     left: calc(50% - 45px);
