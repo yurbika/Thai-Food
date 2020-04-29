@@ -12,7 +12,7 @@ import ID_GENERATOR from "../../utils/uniqueKey";
 import {
   Container,
   ScrollContainer,
-  FoodNameAndTranslation,
+  FoodNameAndTranslationContainer,
   Row,
   FoodNameTranslation,
   FoodName,
@@ -30,7 +30,7 @@ const List = ({ chunkedArray, subcounter }) => {
             Object.keys(food).map((key, index) => (
               <Row key={ID_GENERATOR("food-row-")}>
                 <span key={ID_GENERATOR("food-number-")}>{key}.</span>
-                <FoodNameAndTranslation>
+                <FoodNameAndTranslationContainer>
                   <FoodName key={ID_GENERATOR("food-name-")}>
                     {food[key]["name"]}
                   </FoodName>
@@ -41,7 +41,7 @@ const List = ({ chunkedArray, subcounter }) => {
                       {food[key]["additionalInfo"]}
                     </FoodNameTranslation>
                   ) : null}
-                </FoodNameAndTranslation>
+                </FoodNameAndTranslationContainer>
                 <span key={ID_GENERATOR("food-price-")}>
                   {Number(food[key]["price"]).toLocaleString("es-Es", {
                     minimumFractionDigits: 2,

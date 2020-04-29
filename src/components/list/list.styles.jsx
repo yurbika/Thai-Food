@@ -17,7 +17,7 @@ export const Container = styled.div`
   & > * {
     font-size: calc(4px + 1vw);
     @media (max-width: 768px) {
-      font-size: calc(5px + 1vh);
+      font-size: calc(12px + 1vw);
     }
   }
 
@@ -42,11 +42,12 @@ export const ScrollContainer = styled.div`
   ${getAdditionalStyles}
 `;
 
-export const FoodNameAndTranslation = styled.span`
+export const FoodNameAndTranslationContainer = styled.span`
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 85%;
+  justify-items: flex-start;
+  width: 50%;
 `;
 
 export const FoodName = styled.span`
@@ -61,6 +62,9 @@ export const Row = styled.p`
   & > * {
     flex-grow: 1;
     margin-bottom: 15px;
+    @media (max-width: 768px) {
+      margin-bottom: 4px;
+    }
   }
 `;
 
@@ -68,6 +72,6 @@ export const FoodNameTranslation = styled.span`
   font-weight: 100;
   font-size: calc(1px + 1vw);
   @media (max-width: 768px) {
-    font-size: calc(4px + 1vh);
+    font-size: calc(6.5px + 1vw);
   }
 `;
