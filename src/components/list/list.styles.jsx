@@ -47,7 +47,9 @@ export const FoodNameAndTranslationContainer = styled.span`
   flex-direction: column;
   align-items: flex-start;
   justify-items: flex-start;
+  text-align: start;
   width: 50%;
+  margin-left: 5px;
 `;
 
 export const FoodName = styled.span`
@@ -58,6 +60,7 @@ export const Row = styled.p`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  text-align: end;
 
   & > * {
     flex-grow: 1;
@@ -71,6 +74,7 @@ export const Row = styled.p`
 export const FoodNameTranslation = styled.span`
   font-weight: 100;
   font-size: calc(1px + 1vw);
+
   @media (max-width: 768px) {
     font-size: calc(6.5px + 1vw);
   }

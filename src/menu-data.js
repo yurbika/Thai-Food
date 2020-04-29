@@ -112,7 +112,7 @@ const MENU_DATA = [
   {
     pork: {
       18: {
-        name: "	Gaeng Kiowan Moo",
+        name: "Gaeng Kiowan Moo",
         additionalInfo: "Pork with green curry, coconutmilk and vegetables",
         price: 8,
       },
