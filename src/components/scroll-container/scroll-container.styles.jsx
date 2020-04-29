@@ -8,7 +8,7 @@ const getAdditionalStyles = (props) => {
     `;
 };
 
-export const Container = styled.div`
+export const Container = styled.main`
   position: absolute;
   top: 0;
   left: 0;

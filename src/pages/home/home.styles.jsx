@@ -46,7 +46,7 @@ const rollOutVertical = (y = "-25vh") => keyframes`
   }
 `;
 
-export const Container = styled.main`
+export const Container = styled.div`
   position: fixed;
   overflow: hidden;
   height: 100vh;
@@ -291,7 +291,7 @@ const getAdditionalSliderStyles = (props) => {
     `;
 };
 
-export const Slider = styled.div`
+export const Slider = styled.section`
   display: flex;
   flex-direction: column;
   align-content: center;

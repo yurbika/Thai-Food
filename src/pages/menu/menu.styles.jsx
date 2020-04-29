@@ -16,22 +16,19 @@ export const Slider = styled.div`
   flex-direction: column;
   align-content: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 
-  span {
+  * span {
     z-index: 1;
   }
 `;
 
 export const Content = styled.div`
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
-  height: 25%;
+  display: inline-flex;
+  flex-direction: column;
+  min-height: 175px;
+  height: 30%;
   overflow: hidden;
 `;
 
@@ -45,4 +42,8 @@ export const ScrollPointsContainer = styled.div`
     right: -70px;
     bottom: 60px;
   }
+`;
+
+export const FoodName = styled.h2`
+  margin-bottom: 10px;
 `;

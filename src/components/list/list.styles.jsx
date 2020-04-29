@@ -9,12 +9,15 @@ const getAdditionalStylesContainer = (props) => {
 };
 
 export const Container = styled.div`
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-content: space-between;
   height: 100vh;
   visibility: hidden;
-
+  & > div {
+    display: inline-block;
+    width: auto;
+  }
   ${getAdditionalStylesContainer}
 `;
 
@@ -26,8 +29,11 @@ const getAdditionalStyles = (props) => {
 };
 
 export const ScrollContainer = styled.div`
+  display: inline-flex;
+  flex-direction: column;
   transition: all ${theme.animationTimes["500"] + "ms"} ease-in-out;
   opacity: 1;
+  pointer-events: none;
 
   ${getAdditionalStyles}
 `;

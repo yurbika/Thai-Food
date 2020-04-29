@@ -24,6 +24,7 @@ import {
   ScrollPointsContainer,
   Slider,
   Content,
+  FoodName,
 } from "./menu.styles";
 import { SliderContainer } from "../home/home.styles";
 
@@ -111,9 +112,9 @@ class Menu extends React.Component {
               >
                 <Slider key={ID_GENERATOR("menu-slider-")}>
                   <Content key={ID_GENERATOR("menu-content-wrapper-")}>
-                    <span key={ID_GENERATOR("menu-food-section-")}>
-                      {this.state.namesArr[index]}
-                    </span>
+                    <FoodName key={ID_GENERATOR("menu-food-section-")}>
+                      {this.state.namesArr[index].toUpperCase()}
+                    </FoodName>
                     <List
                       chunkedArray={chunkedArray}
                       key={ID_GENERATOR("menu-food-section-list-")}
