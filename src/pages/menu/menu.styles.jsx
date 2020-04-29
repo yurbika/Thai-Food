@@ -11,7 +11,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Slider = styled.div`
+export const Slider = styled.section`
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -28,7 +28,7 @@ export const Content = styled.div`
   display: inline-flex;
   flex-direction: column;
   min-height: 175px;
-  height: 30%;
+  max-height: 450px;
   overflow: hidden;
 `;
 
@@ -44,6 +44,6 @@ export const ScrollPointsContainer = styled.div`
   }
 `;
 
-export const FoodName = styled.h2`
+export const FoodName = styled.h1`
   margin-bottom: 10px;
 `;

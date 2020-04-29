@@ -9,7 +9,13 @@ import { selectMenuSubCounter } from "../../redux/menu/menu.selectors";
 import ID_GENERATOR from "../../utils/uniqueKey";
 
 //styles
-import { Container, ScrollContainer } from "./list.styles";
+import {
+  Container,
+  ScrollContainer,
+  FoodNameAndTranslation,
+  Row,
+  Span,
+} from "./list.styles";
 
 const List = ({ chunkedArray, subcounter }) => {
   return (
@@ -21,23 +27,25 @@ const List = ({ chunkedArray, subcounter }) => {
         >
           {item.map((food) =>
             Object.keys(food).map((key, index) => (
-              <div key={ID_GENERATOR("food-row-")}>
-                <span key={ID_GENERATOR("food-number-")}>{key}.</span>
-                <span key={ID_GENERATOR("food-name-")}>
-                  {food[key]["name"]}
-                </span>
-                {!!food[key]["additionalInfo"] ? (
-                  <span key={ID_GENERATOR("food-additional-info-")}>
-                    {food[key]["additionalInfo"]}
+              <Row key={ID_GENERATOR("food-row-")}>
+                <Span key={ID_GENERATOR("food-number-")}>{key}.</Span>
+                <FoodNameAndTranslation>
+                  <span key={ID_GENERATOR("food-name-")}>
+                    {food[key]["name"]}
                   </span>
-                ) : null}
-                <span key={ID_GENERATOR("food-price-")}>
+                  {!!food[key]["additionalInfo"] ? (
+                    <span key={ID_GENERATOR("food-additional-info-")}>
+                      {food[key]["additionalInfo"]}
+                    </span>
+                  ) : null}
+                </FoodNameAndTranslation>
+                <Span key={ID_GENERATOR("food-price-")}>
                   {Number(food[key]["price"]).toLocaleString("es-Es", {
                     minimumFractionDigits: 2,
                   }) + " "}
                   €
-                </span>
-              </div>
+                </Span>
+              </Row>
             ))
           )}
         </Container>

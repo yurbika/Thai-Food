@@ -37,3 +37,21 @@ export const ScrollContainer = styled.div`
 
   ${getAdditionalStyles}
 `;
+
+export const FoodNameAndTranslation = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 650px;
+`;
+
+export const Row = styled.p`
+  & > * {
+    margin: 5px;
+  }
+`;
+
+export const Span = styled.span`
+  display: inline-block;
+  width: 65px;
+`;
