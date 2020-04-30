@@ -3,6 +3,9 @@ import theme from "../../utils/theme";
 
 export const Container = styled.nav`
   display: inline-flex;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const getAdditionalStylesPoint = (props) => {

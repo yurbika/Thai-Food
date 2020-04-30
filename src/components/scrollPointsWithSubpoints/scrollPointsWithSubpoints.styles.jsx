@@ -4,7 +4,7 @@ import theme from "../../utils/theme";
 export const Container = styled.nav`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   & * {
     margin-right: 2px;
   }

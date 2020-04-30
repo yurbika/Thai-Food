@@ -627,7 +627,9 @@ export const ScrollPointsContainer = styled.div`
     display: block;
   }
   @media (max-width: 768px) {
-    right: -70px;
-    bottom: 60px;
+    right: -5px;
+    left: unset;
+    margin: 0;
+    bottom: 15px;
   }
 `;
