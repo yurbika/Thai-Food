@@ -30,10 +30,10 @@ export const Content = styled.div`
   overflow: hidden;
   justify-items: center;
   align-items: center;
-  padding: 15vh 25vw;
+  padding: 90px 25vw;
 
   @media (max-width: 768px) {
-    padding: 45px 10px;
+    padding: 45px 12vw;
   }
 `;
 
@@ -41,9 +41,19 @@ export const ScrollPointsContainer = styled.div`
   position: fixed;
   z-index: 2;
   right: 0;
-  bottom: 0px;
+  left: 0;
+  margin: 0 auto;
+  display: inline-block;
+  bottom: 25px;
 
+  & > span {
+    display: block;
+  }
   @media (max-width: 768px) {
+    right: -5px;
+    left: unset;
+    margin: 0;
+    bottom: 5px;
   }
 `;
 

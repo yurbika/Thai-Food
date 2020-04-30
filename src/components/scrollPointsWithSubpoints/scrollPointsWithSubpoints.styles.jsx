@@ -2,11 +2,14 @@ import styled, { css } from "styled-components";
 import theme from "../../utils/theme";
 
 export const Container = styled.nav`
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
   & * {
     margin-right: 2px;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
   }
 `;
 
