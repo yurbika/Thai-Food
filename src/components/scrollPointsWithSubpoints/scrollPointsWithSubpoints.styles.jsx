@@ -3,10 +3,10 @@ import theme from "../../utils/theme";
 
 export const Container = styled.nav`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   & * {
-    margin-bottom: 2px;
+    margin-right: 2px;
   }
 `;
 
@@ -62,7 +62,7 @@ const getAdditionalStylesWrapper = (props) => {
 
 export const PointsWrapper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   opacity: 0;
   pointer-events: none;
   visibility: hidden;

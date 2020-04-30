@@ -42,7 +42,9 @@ class Menu extends React.Component {
       sliderContentSize:
         window.innerWidth <= 320
           ? 3
-          : window.innerWidth <= 992 && window.innerHeight <= 320
+          : window.innerWidth <= 360
+          ? 4
+          : window.innerWidth <= 992 && window.innerHeight <= 450
           ? 3
           : 6,
     };
@@ -66,11 +68,16 @@ class Menu extends React.Component {
   };
 
   handleResize = () =>
-    window.innerWidth <= 320
-      ? 3
-      : window.innerWidth <= 992 && window.innerHeight <= 320
-      ? 3
-      : 6;
+    this.setState({
+      sliderContentSize:
+        window.innerWidth <= 320
+          ? 3
+          : window.innerWidth <= 360
+          ? 4
+          : window.innerWidth <= 992 && window.innerHeight <= 450
+          ? 3
+          : 6,
+    });
 
   objectToChunkArray = (object, chunkValue) => {
     const objectToArray = Object.entries(object).map(([key, value]) => ({

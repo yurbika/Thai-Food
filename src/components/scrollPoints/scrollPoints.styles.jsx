@@ -2,9 +2,7 @@ import styled, { css } from "styled-components";
 import theme from "../../utils/theme";
 
 export const Container = styled.nav`
-  display: flex;
-  width: 100%;
-  height: 100%;
+  display: inline-flex;
 `;
 
 const getAdditionalStylesPoint = (props) => {

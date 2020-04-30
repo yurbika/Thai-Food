@@ -617,12 +617,15 @@ export const ImgContainer = styled.div`
 export const ScrollPointsContainer = styled.div`
   position: fixed;
   z-index: 2;
-  right: -40px;
-  bottom: 75px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  display: inline-block;
+  bottom: 25px;
 
-  transform-origin: center;
-  transform: rotateZ(90deg);
-
+  & > span {
+    display: block;
+  }
   @media (max-width: 768px) {
     right: -70px;
     bottom: 60px;
