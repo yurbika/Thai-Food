@@ -38,8 +38,6 @@ export const Point = styled.span`
   border-radius: 50%;
   background: transparent;
   z-index: 1;
-  margin-top: 2px;
-  margin-bottom: 2px;
 
   ${getAdditionalStylesPoint}
 `;

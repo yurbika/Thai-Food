@@ -39,6 +39,7 @@ class Menu extends React.Component {
       namesArr: [],
       //corrosponding menu
       food: [],
+      sliderContentSize: window.innerWidth <= 320 ? 4 : 6,
     };
   }
 
@@ -59,6 +60,11 @@ class Menu extends React.Component {
     }
   };
 
+  handleResize = () =>
+    window.innerWidth <= 320
+      ? this.setState({ sliderContentSize: 4 })
+      : this.setState({ sliderContentSize: 6 });
+
   objectToChunkArray = (object, chunkValue) => {
     const objectToArray = Object.entries(object).map(([key, value]) => ({
       [key]: value,
@@ -67,6 +73,9 @@ class Menu extends React.Component {
   };
 
   componentDidMount() {
+    this.handleResize();
+    window.addEventListener("resize", this.handleResize);
+
     let tempsliderCountArr = [];
     let tempArrayWithNames = [];
     let tempFoodArray = [];
@@ -81,7 +90,7 @@ class Menu extends React.Component {
       tempsliderCountArr.push(
         Math.ceil(
           Object.keys(MENU_DATA[index][Object.keys(item).map((item) => item)])
-            .length / 6
+            .length / this.state.sliderContentSize
         )
       );
       return 0;
@@ -91,6 +100,10 @@ class Menu extends React.Component {
       namesArr: tempArrayWithNames,
       food: tempFoodArray,
     });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
   }
 
   render() {
@@ -106,15 +119,17 @@ class Menu extends React.Component {
         </ScrollPointsContainer>
         <ScrollContainer marginValue={100 * counter}>
           {
-            //names of the data are the keys so namesArr.length already contains how many sliders it should appear
+            //names of the data are the keys so namesArr.length already contains how many sliders should appear
             Array.from({ length: this.state.namesArr.length }, (_, index) => {
               //each page should contain only 6 items if its bigger than chunk it
               let chunkedArray = this.objectToChunkArray(
                 this.state.food[index],
-                Object.keys(this.state.food[index]).length <= 6
+                Object.keys(this.state.food[index]).length <=
+                  this.state.sliderContentSize
                   ? Object.keys(this.state.food[index]).length
                   : Object.keys(this.state.food[index]).length /
-                      (Object.keys(this.state.food[index]).length / 6)
+                      (Object.keys(this.state.food[index]).length /
+                        this.state.sliderContentSize)
               );
               return (
                 <SliderContainer
