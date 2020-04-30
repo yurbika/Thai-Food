@@ -33,12 +33,16 @@ class Menu extends React.Component {
     super(props);
 
     this.state = {
-      lengthArr: [],
+      //how many slider should appear for each data
+      sliderCountArr: [],
+      // food names
       namesArr: [],
+      //corrosponding menu
       food: [],
     };
   }
 
+  //debounces mouse scroll event
   debounceEvent(...args) {
     this.debouncedEvent = debounce(...args);
     return (e) => {
@@ -63,15 +67,18 @@ class Menu extends React.Component {
   };
 
   componentDidMount() {
-    let tempLengthArr = [];
+    let tempsliderCountArr = [];
     let tempArrayWithNames = [];
     let tempFoodArray = [];
     MENU_DATA.map((item, index) => {
+      //gets the names
       tempArrayWithNames.push(Object.keys(item).toString());
+      //gets the menu
       tempFoodArray.push(
         MENU_DATA[index][Object.keys(item).map((item) => item)]
       );
-      tempLengthArr.push(
+      //gets the slider count
+      tempsliderCountArr.push(
         Math.ceil(
           Object.keys(MENU_DATA[index][Object.keys(item).map((item) => item)])
             .length / 6
@@ -80,7 +87,7 @@ class Menu extends React.Component {
       return 0;
     });
     this.setState({
-      lengthArr: tempLengthArr,
+      sliderCountArr: tempsliderCountArr,
       namesArr: tempArrayWithNames,
       food: tempFoodArray,
     });
@@ -93,37 +100,42 @@ class Menu extends React.Component {
         <Background className="background" />
         <ScrollPointsContainer>
           <ScrollPointsWithSubpoints
-            lengthArr={this.state.lengthArr}
+            sliderCountArr={this.state.sliderCountArr}
             namesArr={this.state.namesArr}
           />
         </ScrollPointsContainer>
         <ScrollContainer marginValue={100 * counter}>
-          {Array.from({ length: this.state.namesArr.length }, (_, index) => {
-            let chunkedArray = this.objectToChunkArray(
-              this.state.food[index],
-              Object.keys(this.state.food[index]).length <= 6
-                ? Object.keys(this.state.food[index]).length
-                : Object.keys(this.state.food[index]).length / 2
-            );
-            return (
-              <SliderContainer
-                active={index === counter}
-                key={ID_GENERATOR("menu-slider-container-")}
-              >
-                <Slider key={ID_GENERATOR("menu-slider-")}>
-                  <Content key={ID_GENERATOR("menu-content-wrapper-")}>
-                    <FoodName key={ID_GENERATOR("menu-food-section-")}>
-                      {this.state.namesArr[index].toUpperCase()}
-                    </FoodName>
-                    <List
-                      chunkedArray={chunkedArray}
-                      key={ID_GENERATOR("menu-food-section-list-")}
-                    />
-                  </Content>
-                </Slider>
-              </SliderContainer>
-            );
-          })}
+          {
+            //names of the data are the keys so namesArr.length already contains how many sliders it should appear
+            Array.from({ length: this.state.namesArr.length }, (_, index) => {
+              //each page should contain only 6 items if its bigger than chunk it
+              let chunkedArray = this.objectToChunkArray(
+                this.state.food[index],
+                Object.keys(this.state.food[index]).length <= 6
+                  ? Object.keys(this.state.food[index]).length
+                  : Object.keys(this.state.food[index]).length /
+                      (Object.keys(this.state.food[index]).length / 6)
+              );
+              return (
+                <SliderContainer
+                  active={index === counter}
+                  key={ID_GENERATOR("menu-slider-container-")}
+                >
+                  <Slider key={ID_GENERATOR("menu-slider-")}>
+                    <Content key={ID_GENERATOR("menu-content-wrapper-")}>
+                      <FoodName key={ID_GENERATOR("menu-food-section-")}>
+                        {this.state.namesArr[index].toUpperCase()}
+                      </FoodName>
+                      <List
+                        chunkedArray={chunkedArray}
+                        key={ID_GENERATOR("menu-food-section-list-")}
+                      />
+                    </Content>
+                  </Slider>
+                </SliderContainer>
+              );
+            })
+          }
         </ScrollContainer>
       </Container>
     );

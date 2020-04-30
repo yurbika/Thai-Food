@@ -25,7 +25,7 @@ import {
 } from "./scrollPointsWithSubpoints.styles";
 
 const ScrollPointsWithSubpoints = ({
-  lengthArr,
+  sliderCountArr,
   namesArr,
   setMenuCounter,
   setMenuSubCounter,
@@ -34,7 +34,7 @@ const ScrollPointsWithSubpoints = ({
 }) => {
   return (
     <Container tabIndex={0} aria-label={"Slider"}>
-      {lengthArr.map((length, index) => {
+      {sliderCountArr.map((length, index) => {
         if (index === 0 && length === 1)
           return (
             <Button
