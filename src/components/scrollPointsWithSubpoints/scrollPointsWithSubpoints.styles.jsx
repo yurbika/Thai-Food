@@ -67,5 +67,12 @@ export const PointsWrapper = styled.div`
   pointer-events: none;
   visibility: hidden;
   position: absolute;
+  margin-bottom: 0;
+
   ${getAdditionalStylesWrapper}
+`;
+
+export const TitleWithPoints = styled.div`
+  margin-bottom: 0;
+  display: inline-block;
 `;

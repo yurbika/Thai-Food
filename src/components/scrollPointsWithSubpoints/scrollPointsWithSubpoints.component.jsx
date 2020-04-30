@@ -22,6 +22,7 @@ import {
   Title,
   Button,
   PointsWrapper,
+  TitleWithPoints,
 } from "./scrollPointsWithSubpoints.styles";
 
 const ScrollPointsWithSubpoints = ({
@@ -81,7 +82,7 @@ const ScrollPointsWithSubpoints = ({
           );
         else
           return (
-            <div key={ID_GENERATOR("container-of-points-")}>
+            <TitleWithPoints key={ID_GENERATOR("container-of-points-")}>
               <Button
                 onClick={() => {
                   setMenuCounter(index);
@@ -125,7 +126,7 @@ const ScrollPointsWithSubpoints = ({
                   );
                 })}
               </PointsWrapper>
-            </div>
+            </TitleWithPoints>
           );
       })}
     </Container>
