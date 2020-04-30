@@ -6,7 +6,7 @@ export const Container = styled.nav`
   flex-direction: row;
   align-items: center;
   & * {
-    margin-right: 2px;
+    margin-right: 5px;
   }
   @media (max-width: 768px) {
     flex-direction: column;
@@ -51,6 +51,10 @@ export const Button = styled.button`
   border: none;
   background: none;
   margin-bottom: 5px;
+
+  span {
+    margin: 0;
+  }
 `;
 
 const getAdditionalStylesWrapper = (props) => {
@@ -76,6 +80,6 @@ export const PointsWrapper = styled.div`
 `;
 
 export const TitleWithPoints = styled.div`
-  margin-bottom: 0;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
 `;
