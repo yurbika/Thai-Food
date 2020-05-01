@@ -11,6 +11,7 @@ import Background from "../../components/background/background.component";
 
 //redux
 import { selectMenuCounter } from "../../redux/menu/menu.selectors";
+
 import {
   setMenuCounter,
   setMenuSubCounter,
@@ -19,6 +20,7 @@ import {
 //utils
 import ID_GENERATOR from "../../utils/uniqueKey";
 import filterData from "../../menu-data/menu-data.utils";
+import theme from "../../utils/theme";
 
 //styles
 import {
@@ -62,10 +64,14 @@ class Menu extends React.Component {
   }
 
   handleScroll = (e) => {
-    if (this.props.counter < 3 && e.deltaY > 0) {
-      this.props.setCounter(this.props.counter + 1);
+    if (this.props.counter < this.state.namesArr.length - 1 && e.deltaY > 0) {
+      this.props.setMenuCounter(this.props.counter + 1);
+      this.props.setMenuSubCounter(0);
     } else if (this.props.counter > 0 && e.deltaY < 0) {
-      this.props.setCounter(this.props.counter - 1);
+      this.props.setMenuCounter(this.props.counter - 1);
+      this.props.setMenuSubCounter(
+        this.state.sliderCountArr[this.props.counter] - 1
+      );
     }
   };
 
@@ -115,7 +121,12 @@ class Menu extends React.Component {
   render() {
     const { counter } = this.props;
     return (
-      <Container>
+      <Container
+        onWheel={this.debounceEvent(
+          this.handleScroll,
+          theme.animationTimes["500"]
+        )}
+      >
         <Background className="background" />
         <ScrollPointsContainer>
           <ScrollPointsWithSubpoints
@@ -127,7 +138,7 @@ class Menu extends React.Component {
           {
             //names of the data are the keys so namesArr.length already contains how many sliders should appear
             Array.from({ length: this.state.namesArr.length }, (_, index) => {
-              //each page should contain only 6 items if its bigger than chunk it
+              //each page should contain only x amount of items if its bigger than chunk it
               let chunkedArray = this.objectToChunkArray(
                 this.state.food[index],
                 Object.keys(this.state.food[index]).length <=
