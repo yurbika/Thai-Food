@@ -10,7 +10,10 @@ import List from "../../components/list/list.component";
 import Background from "../../components/background/background.component";
 
 //redux
-import { selectMenuCounter } from "../../redux/menu/menu.selectors";
+import {
+  selectMenuCounter,
+  selectMenuSubCounter,
+} from "../../redux/menu/menu.selectors";
 
 import {
   setMenuCounter,
@@ -65,8 +68,13 @@ class Menu extends React.Component {
 
   handleScroll = (e) => {
     if (this.props.counter < this.state.namesArr.length - 1 && e.deltaY > 0) {
-      this.props.setMenuCounter(this.props.counter + 1);
-      this.props.setMenuSubCounter(0);
+      if (
+        this.props.subcounter ===
+        this.state.sliderCountArr[this.props.counter] - 1
+      ) {
+        this.props.setMenuCounter(this.props.counter + 1);
+        this.props.setMenuSubCounter(0);
+      } else this.props.setMenuSubCounter(this.props.subcounter + 1);
     } else if (this.props.counter > 0 && e.deltaY < 0) {
       this.props.setMenuCounter(this.props.counter - 1);
       this.props.setMenuSubCounter(
@@ -108,6 +116,11 @@ class Menu extends React.Component {
       namesArr: filterData().namesArr,
       food: filterData().foodArr,
     });
+  }
+
+  shouldComponentUpdate(nextProps) {
+    if (this.props.subcounter !== nextProps.subcounter) return false;
+    else return true;
   }
 
   componentWillUnmount() {
@@ -176,6 +189,7 @@ class Menu extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   counter: selectMenuCounter,
+  subcounter: selectMenuSubCounter,
 });
 
 const mapDispatchToProps = (dispatch) => ({
