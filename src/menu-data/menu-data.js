@@ -19,7 +19,7 @@ const MENU_DATA = [
         price: 5,
       },
       4: {
-        name: "Tom Yam Gai ",
+        name: "Tom Yam Gai",
         additionalInfo:
           "Spicy soup with chicken, thai-herbs, mushrooms and celery",
         price: 5.5,

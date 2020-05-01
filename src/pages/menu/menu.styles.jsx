@@ -30,10 +30,10 @@ export const Content = styled.div`
   overflow: hidden;
   justify-items: center;
   align-items: center;
-  padding: 90px 25vw;
+  padding: 120px 20vw;
 
   @media (max-width: 768px) {
-    padding: 45px 12vw;
+    padding: 42px 14vw;
   }
 `;
 
@@ -62,6 +62,7 @@ export const FoodName = styled.h1`
   font-size: calc(20px + 1vw);
 
   @media (max-width: 768px) {
-    margin-bottom: 0;
+    margin-bottom: 5px;
+    font-size: calc(18px + 1vw);
   }
 `;

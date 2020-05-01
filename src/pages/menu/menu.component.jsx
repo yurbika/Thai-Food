@@ -11,6 +11,10 @@ import Background from "../../components/background/background.component";
 
 //redux
 import { selectMenuCounter } from "../../redux/menu/menu.selectors";
+import {
+  setMenuCounter,
+  setMenuSubCounter,
+} from "../../redux/menu/menu.action";
 
 //utils
 import ID_GENERATOR from "../../utils/uniqueKey";
@@ -102,6 +106,10 @@ class Menu extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.handleResize);
+    const { setMenuCounter, setMenuSubCounter } = this.props;
+
+    setMenuSubCounter(0);
+    setMenuCounter(0);
   }
 
   render() {
@@ -159,4 +167,9 @@ const mapStateToProps = createStructuredSelector({
   counter: selectMenuCounter,
 });
 
-export default connect(mapStateToProps)(Menu);
+const mapDispatchToProps = (dispatch) => ({
+  setMenuCounter: (num) => dispatch(setMenuCounter(num)),
+  setMenuSubCounter: (num) => dispatch(setMenuSubCounter(num)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);
