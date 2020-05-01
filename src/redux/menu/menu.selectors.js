@@ -11,8 +11,3 @@ export const selectMenuSubCounter = createSelector(
   [selectMenu],
   (menu) => menu.menuSubCounter
 );
-
-export const selectSliderCountArray = createSelector(
-  [selectMenu],
-  (menu) => menu.sliderCountArr
-);

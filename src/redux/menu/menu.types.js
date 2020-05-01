@@ -1,7 +1,6 @@
 const MenuActionTypes = {
   SET_MENU_COUNTER: "SET_MENU_COUNTER",
   SET_MENU_SUB_COUNTER: "SET_MENU_SUB_COUNTER",
-  SET_SLIDER_COUNT_ARRAY: "SET_SLIDER_COUNT_ARRAY",
 };
 
 export default MenuActionTypes;

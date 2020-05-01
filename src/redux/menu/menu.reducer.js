@@ -3,7 +3,6 @@ import MenuActionTypes from "./menu.types";
 const INITIAL_STATE = {
   menuCounter: 0,
   menuSubCounter: 0,
-  sliderCountArr: [],
 };
 
 const menuReducer = (state = INITIAL_STATE, action) => {
@@ -15,11 +14,7 @@ const menuReducer = (state = INITIAL_STATE, action) => {
         ...state,
         menuSubCounter: action.payload,
       };
-    case MenuActionTypes.SET_SLIDER_COUNT_ARRAY:
-      return {
-        ...state,
-        sliderCountArr: action.payload,
-      };
+
     default:
       return state;
   }
