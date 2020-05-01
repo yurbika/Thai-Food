@@ -10,7 +10,6 @@ import {
 import {
   selectMenuCounter,
   selectMenuSubCounter,
-  selectSliderCountArray,
 } from "../../redux/menu/menu.selectors";
 
 //utils
@@ -27,14 +26,19 @@ import {
 } from "./scrollPointsWithSubpoints.styles";
 
 class ScrollPointsWithSubpoints extends React.Component {
-  componentDidUpdate() {
-    const {
-      sliderCountArr,
-      setMenuSubCounter,
-      counter,
-      subcounter,
-    } = this.props;
-    if (subcounter > sliderCountArr[counter]) setMenuSubCounter(subcounter - 1);
+  constructor() {
+    super();
+
+    this.state = {};
+  }
+
+  static getDerivedStateFromProps(props, state) {
+    const { sliderCountArr, setMenuSubCounter, counter, subcounter } = props;
+
+    if (subcounter > sliderCountArr[counter] - 1)
+      setMenuSubCounter(sliderCountArr[counter] - 1);
+
+    return null;
   }
 
   render() {
@@ -46,6 +50,7 @@ class ScrollPointsWithSubpoints extends React.Component {
       counter,
       subcounter,
     } = this.props;
+
     return (
       <Container tabIndex={0} aria-label={"Slider"}>
         {sliderCountArr.map((length, index) => {
@@ -150,7 +155,6 @@ class ScrollPointsWithSubpoints extends React.Component {
 const mapStateToProps = createStructuredSelector({
   counter: selectMenuCounter,
   subcounter: selectMenuSubCounter,
-  sliderCountArr: selectSliderCountArray,
 });
 
 const mapDispatchToProps = (dispatch) => ({
