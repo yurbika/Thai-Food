@@ -67,7 +67,12 @@ class Menu extends React.Component {
   }
 
   handleScroll = (e) => {
-    if (this.props.counter < this.state.namesArr.length - 1 && e.deltaY > 0) {
+    if (
+      (this.props.counter < this.state.namesArr.length - 1 ||
+        this.props.subcounter !==
+          this.state.sliderCountArr[this.props.counter] - 1) &&
+      e.deltaY > 0
+    ) {
       if (
         this.props.subcounter ===
         this.state.sliderCountArr[this.props.counter] - 1
@@ -75,7 +80,10 @@ class Menu extends React.Component {
         this.props.setMenuCounter(this.props.counter + 1);
         this.props.setMenuSubCounter(0);
       } else this.props.setMenuSubCounter(this.props.subcounter + 1);
-    } else if (this.props.counter > 0 && e.deltaY < 0) {
+    } else if (
+      (this.props.counter > 0 || this.props.subcounter !== 0) &&
+      e.deltaY < 0
+    ) {
       if (this.props.subcounter === 0) {
         this.props.setMenuCounter(this.props.counter - 1);
         this.props.setMenuSubCounter(
@@ -102,12 +110,24 @@ class Menu extends React.Component {
     });
   };
 
+  handleSliderClasses = (n) => {
+    console.log(n);
+    if (this.props.counter !== n && this.props.counter === n - 1)
+      return "fade-out fade-in-bottom";
+    if (this.props.counter !== n) return "fade-out";
+    return "fade-in";
+  };
+
   objectToChunkArray = (object, chunkValue) => {
     const objectToArray = Object.entries(object).map(([key, value]) => ({
       [key]: value,
     }));
     return chunk(objectToArray, chunkValue);
   };
+
+  ////////////////////////
+  ///////life cycle///////
+  ////////////////////////
 
   componentDidMount() {
     this.handleResize();

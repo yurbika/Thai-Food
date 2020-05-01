@@ -77,6 +77,10 @@ export const PointsWrapper = styled.div`
   margin-bottom: 0;
 
   ${getAdditionalStylesWrapper}
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const TitleWithPoints = styled.div`

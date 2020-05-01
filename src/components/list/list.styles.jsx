@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 import theme from "../../utils/theme";
 
 const getAdditionalStylesContainer = (props) => {
-  console.log(props);
   if (props.active)
     return css`
       visibility: visible;
