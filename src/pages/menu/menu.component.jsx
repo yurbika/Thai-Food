@@ -76,10 +76,12 @@ class Menu extends React.Component {
         this.props.setMenuSubCounter(0);
       } else this.props.setMenuSubCounter(this.props.subcounter + 1);
     } else if (this.props.counter > 0 && e.deltaY < 0) {
-      this.props.setMenuCounter(this.props.counter - 1);
-      this.props.setMenuSubCounter(
-        this.state.sliderCountArr[this.props.counter] - 1
-      );
+      if (this.props.subcounter === 0) {
+        this.props.setMenuCounter(this.props.counter - 1);
+        this.props.setMenuSubCounter(
+          this.state.sliderCountArr[this.props.counter] - 1
+        );
+      } else this.props.setMenuSubCounter(this.props.subcounter - 1);
     }
   };
 
