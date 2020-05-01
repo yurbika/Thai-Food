@@ -32,7 +32,6 @@ const getAdditionalStyles = (props) => {
 };
 
 export const ScrollContainer = styled.div`
-  width: 100%;
   display: inline-flex;
   flex-direction: column;
   transition: all ${theme.animationTimes["500"] + "ms"} ease-in-out;
