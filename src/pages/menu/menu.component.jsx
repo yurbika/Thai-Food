@@ -10,21 +10,11 @@ import List from "../../components/list/list.component";
 import Background from "../../components/background/background.component";
 
 //redux
-import {
-  selectMenuCounter,
-  selectMenuSubCounter,
-  selectSliderCountArray,
-} from "../../redux/menu/menu.selectors";
-import {
-  setSliderCounterArray,
-  setMenuSubCounter,
-} from "../../redux/menu/menu.action";
+import { selectMenuCounter } from "../../redux/menu/menu.selectors";
 
 //utils
 import ID_GENERATOR from "../../utils/uniqueKey";
-
-//data
-import MENU_DATA from "../../menu-data";
+import filterData from "../../menu-data/menu-data.utils";
 
 //styles
 import {
@@ -41,6 +31,8 @@ class Menu extends React.Component {
     super(props);
 
     this.state = {
+      //how many slider should appear for each data
+      sliderCountArr: [],
       // food names
       namesArr: [],
       //corrosponding menu
@@ -84,25 +76,10 @@ class Menu extends React.Component {
           ? 3
           : 6,
     });
-    let tempsliderCountArr = [];
-    let tempArrayWithNames = [];
-    let tempFoodArray = [];
-    MENU_DATA.map((item, index) => {
-      //gets the names
-      tempArrayWithNames.push(Object.keys(item).toString());
-      //gets the menu
-      tempFoodArray.push(
-        MENU_DATA[index][Object.keys(item).map((item) => item)]
-      );
-      //gets the slider count
-      tempsliderCountArr.push(
-        Math.ceil(
-          Object.keys(MENU_DATA[index][Object.keys(item).map((item) => item)])
-            .length / this.state.sliderContentSize
-        )
-      );
+
+    this.setState({
+      sliderCountArr: filterData().sliderCount,
     });
-    this.props.setSliderCounterArray(tempsliderCountArr);
   };
 
   objectToChunkArray = (object, chunkValue) => {
@@ -116,31 +93,11 @@ class Menu extends React.Component {
     this.handleResize();
     window.addEventListener("resize", this.handleResize);
 
-    let tempsliderCountArr = [];
-    let tempArrayWithNames = [];
-    let tempFoodArray = [];
-    MENU_DATA.map((item, index) => {
-      //gets the names
-      tempArrayWithNames.push(Object.keys(item).toString());
-      //gets the menu
-      tempFoodArray.push(
-        MENU_DATA[index][Object.keys(item).map((item) => item)]
-      );
-      //gets the slider count
-      tempsliderCountArr.push(
-        Math.ceil(
-          Object.keys(MENU_DATA[index][Object.keys(item).map((item) => item)])
-            .length / this.state.sliderContentSize
-        )
-      );
-      return 0;
-    });
     this.setState({
-      namesArr: tempArrayWithNames,
-      food: tempFoodArray,
+      sliderCountArr: filterData().sliderCount,
+      namesArr: filterData().namesArr,
+      food: filterData().foodArr,
     });
-
-    this.props.setSliderCounterArray(tempsliderCountArr);
   }
 
   componentWillUnmount() {
@@ -149,12 +106,14 @@ class Menu extends React.Component {
 
   render() {
     const { counter } = this.props;
-
     return (
       <Container>
         <Background className="background" />
         <ScrollPointsContainer>
-          <ScrollPointsWithSubpoints namesArr={this.state.namesArr} />
+          <ScrollPointsWithSubpoints
+            sliderCountArr={this.state.sliderCountArr}
+            namesArr={this.state.namesArr}
+          />
         </ScrollPointsContainer>
         <ScrollContainer marginValue={100 * counter}>
           {
@@ -198,13 +157,6 @@ class Menu extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   counter: selectMenuCounter,
-  subcounter: selectMenuSubCounter,
-  sliderCountArr: selectSliderCountArray,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  setSliderCounterArray: (arr) => dispatch(setSliderCounterArray(arr)),
-  setMenuSubCounter: (num) => dispatch(setMenuSubCounter(num)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Menu);
+export default connect(mapStateToProps)(Menu);
