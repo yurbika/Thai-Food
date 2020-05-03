@@ -249,11 +249,13 @@ class Home extends React.Component {
               </ImgContainer>
             </SliderContainer>
             <SliderContainer active={this.props.counter === 3}>
-              <Link to="/menu">
-                <ImgContainer menu>
-                  <img src={Menu} alt="To the menu" />
-                </ImgContainer>
-              </Link>
+              <Slider>
+                <Link to="/menu">
+                  <ImgContainer menu>
+                    <img src={Menu} alt="To the menu" />
+                  </ImgContainer>
+                </Link>
+              </Slider>
             </SliderContainer>
           </ScrollContainer>
         </LiveAnnouncer>

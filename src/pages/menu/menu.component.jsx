@@ -188,8 +188,14 @@ class Menu extends React.Component {
                   key={ID_GENERATOR("menu-slider-container-")}
                 >
                   <Slider key={ID_GENERATOR("menu-slider-")}>
-                    <Content key={ID_GENERATOR("menu-content-wrapper-")}>
-                      <FoodName key={ID_GENERATOR("menu-food-section-")}>
+                    <Content
+                      key={ID_GENERATOR("menu-content-wrapper-")}
+                      tabIndex={0}
+                    >
+                      <FoodName
+                        key={ID_GENERATOR("menu-food-section-")}
+                        tabIndex={0}
+                      >
                         {this.state.namesArr[index].toUpperCase()}
                       </FoodName>
                       <List

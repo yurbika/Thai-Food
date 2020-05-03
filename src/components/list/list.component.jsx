@@ -40,20 +40,23 @@ class List extends React.Component {
             {item.map((food) =>
               Object.keys(food).map((key, index) => (
                 <Row key={ID_GENERATOR("food-row-")}>
-                  <span key={ID_GENERATOR("food-number-")}>{key}.</span>
+                  <span key={ID_GENERATOR("food-number-")} tabIndex={0}>
+                    {key}.
+                  </span>
                   <FoodNameAndTranslationContainer>
-                    <FoodName key={ID_GENERATOR("food-name-")}>
+                    <FoodName key={ID_GENERATOR("food-name-")} tabIndex={0}>
                       {food[key]["name"]}
                     </FoodName>
                     {!!food[key]["additionalInfo"] ? (
                       <FoodNameTranslation
                         key={ID_GENERATOR("food-additional-info-")}
+                        tabIndex={0}
                       >
                         {food[key]["additionalInfo"]}
                       </FoodNameTranslation>
                     ) : null}
                   </FoodNameAndTranslationContainer>
-                  <span key={ID_GENERATOR("food-price-")}>
+                  <span key={ID_GENERATOR("food-price-")} tabIndex={0}>
                     {Number(food[key]["price"]).toLocaleString("es-Es", {
                       minimumFractionDigits: 2,
                     }) + " "}

@@ -552,6 +552,7 @@ const getAdditionalStyleImgContainer = (props) => {
   /////////////////
   if (props.menu)
     return css`
+      position: static;
       width: 100vw;
       height: 100vh;
       padding: 120px 90px;
