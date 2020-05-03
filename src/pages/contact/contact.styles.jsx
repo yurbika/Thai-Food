@@ -22,6 +22,10 @@ export const Content = styled.main`
   padding: 120px;
   width: 100%;
   height: 100%;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 export const Info = styled.div`
@@ -71,11 +75,22 @@ export const ImgContainer = styled.div`
     border-radius: 15px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.35);
   }
+  @media (max-width: 768px) {
+    width: 50vw;
+    height: auto;
+    margin-bottom: 15px;
+  }
 `;
 
 export const Wrapper = styled.div`
   display: inline-flex;
   & > * {
     margin-right: 15px;
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    & > * {
+      margin-bottom: 15px;
+    }
   }
 `;
