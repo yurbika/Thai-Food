@@ -14,11 +14,12 @@ import {
   selectMenuCounter,
   selectMenuSubCounter,
 } from "../../redux/menu/menu.selectors";
-
 import {
   setMenuCounter,
   setMenuSubCounter,
 } from "../../redux/menu/menu.action";
+
+import { setIsLoading } from "../../redux/app/app.action";
 
 //utils
 import ID_GENERATOR from "../../utils/uniqueKey";
@@ -128,6 +129,10 @@ class Menu extends React.Component {
   ///////life cycle///////
   ////////////////////////
 
+  componentWillMount() {
+    if (!this.props.firstMount) this.props.setIsLoading(true);
+  }
+
   componentDidMount() {
     this.handleResize();
     window.addEventListener("resize", this.handleResize);
@@ -222,6 +227,7 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = (dispatch) => ({
   setMenuCounter: (num) => dispatch(setMenuCounter(num)),
   setMenuSubCounter: (num) => dispatch(setMenuSubCounter(num)),
+  setIsLoading: (boolean) => dispatch(setIsLoading(boolean)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Menu);

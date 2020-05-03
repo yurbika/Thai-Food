@@ -12,6 +12,7 @@ import Navbar from "./components/navbar/navbar.component";
 import Button from "./components/button/button.component";
 import LoadingScreen from "./components/loadingScreen/loadingScreen.component";
 import Popup from "./components/popup/popup.component";
+import Contact from "./pages/contact/contact.component";
 
 //redux
 import { setIsLoading, setFirstMount } from "./redux/app/app.action";
@@ -45,6 +46,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/menu" component={Menu} />
+            <Route exact path="/contact" component={Contact} />
           </Switch>
         </Suspense>
       </div>
