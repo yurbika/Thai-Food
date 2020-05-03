@@ -1,7 +1,7 @@
 import PopupActionTypes from "./popup.types";
 
 const INITIAL_STATE = {
-  showPopup: false,
+  showPopup: true,
 };
 
 const popupReducer = (state = INITIAL_STATE, action) => {

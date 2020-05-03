@@ -37,7 +37,34 @@ export const ImgContainer = styled.div`
   bottom: 0;
   margin: auto;
   padding: 100px;
+  z-index: -1;
 
   width: 100vw;
   height: 100vh;
+`;
+
+export const PopupNavigation = styled.nav`
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  width: 100vw;
+  height: 100vh;
+  list-style: none;
+  padding: 120px;
+  font-size: calc(40px + 1vw);
+  a {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  span {
+    display: inline-block;
+    cursor: pointer;
+    border-bottom: 5px solid transparent;
+
+    &:hover {
+      border-bottom: 5px solid ${theme.colors.darkOrange};
+    }
+  }
 `;
