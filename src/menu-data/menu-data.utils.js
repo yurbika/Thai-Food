@@ -1,7 +1,7 @@
 import MENU_DATA from "./menu-data";
 
 const filterData = (
-  sliderContentSize = window.innerWidth <= 320
+  size = window.innerWidth <= 320
     ? 3
     : window.innerWidth <= 360
     ? 4
@@ -22,7 +22,7 @@ const filterData = (
     sliderCount.push(
       Math.ceil(
         Object.keys(MENU_DATA[index][Object.keys(item).map((item) => item)])
-          .length / sliderContentSize
+          .length / size
       )
     );
 
