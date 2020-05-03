@@ -30,8 +30,9 @@ export const OptionsContainer = styled.div`
   right: 0;
   margin: 0 auto;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.8);
+  background: ${theme.colors.darkGreen};
   width: 250px;
+  margin-top: -10px;
 
   @media (max-width: 768px) {
     display: none;
@@ -39,17 +40,18 @@ export const OptionsContainer = styled.div`
 `;
 
 export const OptionLink = styled(Link)`
-  padding: 10px 15px;
+  margin: 5px 15px;
   text-decoration: none;
-
-  & > span {
-    color: ${theme.colors.green};
-    font-weight: bold;
-    display: inline-block;
-  }
-
   cursor: pointer;
   width: 100%;
+
+  & > span {
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    margin: 5px 0;
+  }
+
   &:hover {
     span {
       color: ${theme.colors.darkOrange};
@@ -59,10 +61,9 @@ export const OptionLink = styled(Link)`
     cursor: default;
     pointer-events: none;
     & span {
-      color: ${theme.colors.green};
-      padding-bottom: 0.5rem;
-      border-bottom: 3px solid ${theme.colors.green};
-      border-radius: 2px;
+      color: white;
+      padding-bottom: 2px;
+      border-bottom: 3px solid white;
       letter-spacing: 0.5px;
       transition: all 0.3s ease-in;
     }

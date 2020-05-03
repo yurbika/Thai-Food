@@ -41,8 +41,12 @@ class Button extends React.Component {
             <HamburgerMenuItems className={showPopup ? "animate" : ""} />
           </HamburgerMenu>
         ) : (
-          <Link to="/" onClick={() => (showPopup ? togglePopup() : null)}>
-            <img src={Logo} alt="" />
+          <Link
+            to="/"
+            aria-label="Home"
+            onClick={() => (showPopup ? togglePopup() : null)}
+          >
+            <img src={Logo} alt="" tabIndex={-1} />
           </Link>
         )}
       </CustomButtonContainer>

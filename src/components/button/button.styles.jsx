@@ -34,6 +34,11 @@ export const CustomButtonContainer = styled.button`
     height: 100%;
   }
 
+  a {
+    width: 100%;
+    height: 100%;
+  }
+
   @media (max-width: 768px) {
     top: unset;
     width: 90px;
