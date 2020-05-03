@@ -12,6 +12,7 @@ import BigIcon from "../../assets/big-icon-higherOpacity.svg";
 
 //utils
 import filterData from "../../menu-data/menu-data.utils";
+import ID_GENERATOR from "../../utils/uniqueKey";
 
 //styles
 import { Container, ImgContainer, PopupNavigation } from "./popup.styles";
@@ -22,9 +23,29 @@ class Popup extends React.Component {
 
     this.state = {
       namesArr: filterData().namesArr,
+      normalSize: false,
     };
   }
 
+  handlePopupResize = () => {
+    if (window.innerWidth > 768)
+      this.setState({
+        normalSize: true,
+      });
+    else
+      this.setState({
+        normalSize: false,
+      });
+  };
+
+  componentDidMount() {
+    this.handlePopupResize();
+    window.addEventListener("resize", this.handlePopupResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handlePopupResize);
+  }
   render() {
     const { togglePopup, setMenuCounter, ...props } = this.props;
     return (
@@ -34,18 +55,51 @@ class Popup extends React.Component {
         </ImgContainer>
 
         <PopupNavigation>
-          {this.state.namesArr.map((item, index) => (
-            <Link to="/menu">
-              <span
+          {this.state.normalSize ? (
+            this.state.namesArr.map((item, index) => (
+              <Link to="/menu" key={ID_GENERATOR("popup-link-")}>
+                <span
+                  key={ID_GENERATOR("popup-span-")}
+                  onClick={() => {
+                    togglePopup();
+                    setMenuCounter(index);
+                  }}
+                >
+                  {item.toUpperCase()}
+                </span>
+              </Link>
+            ))
+          ) : (
+            <React.Fragment key={ID_GENERATOR("popup-fragment-")}>
+              <Link
+                to="/"
                 onClick={() => {
                   togglePopup();
-                  setMenuCounter(index);
                 }}
+                key={ID_GENERATOR("popup-link-")}
               >
-                {item.toUpperCase()}
-              </span>
-            </Link>
-          ))}
+                Home
+              </Link>
+              <Link
+                to="/menu"
+                onClick={() => {
+                  togglePopup();
+                }}
+                key={ID_GENERATOR("popup-link-")}
+              >
+                Menu
+              </Link>
+              <Link
+                to="/contact"
+                onClick={() => {
+                  togglePopup();
+                }}
+                key={ID_GENERATOR("popup-link-")}
+              >
+                Contact
+              </Link>
+            </React.Fragment>
+          )}
         </PopupNavigation>
       </Container>
     );

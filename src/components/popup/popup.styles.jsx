@@ -41,6 +41,10 @@ export const ImgContainer = styled.div`
 
   width: 100vw;
   height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 export const PopupNavigation = styled.nav`
@@ -65,6 +69,15 @@ export const PopupNavigation = styled.nav`
 
     &:hover {
       border-bottom: 5px solid ${theme.colors.darkOrange};
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0;
+    justify-content: center;
+
+    & > * {
+      margin-bottom: 15px;
     }
   }
 `;
