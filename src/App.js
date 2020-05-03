@@ -11,11 +11,13 @@ import Menu from "./pages/menu/menu.component";
 import Navbar from "./components/navbar/navbar.component";
 import Button from "./components/button/button.component";
 import LoadingScreen from "./components/loadingScreen/loadingScreen.component";
+import Popup from "./components/popup/popup.component";
 
 //redux
 import { setIsLoading, setFirstMount } from "./redux/app/app.action";
 import { selectIsLoading } from "./redux/app/app.selectors";
 
+import { selectShowPopup } from "./redux/popup/popup.selectors";
 // const Home = lazy(() => {
 //   return new Promise((resolve) => {
 //     setTimeout(() => resolve(import("./pages/home/home.component")), 1500);
@@ -35,6 +37,7 @@ class App extends React.Component {
     return (
       <div className="App">
         {/*  <LoadingScreen /> */}
+        <Popup active={this.props.showPopup} />
         <Suspense fallback={<LoadingScreen />}>
           <Navbar />
           <Button menu />
@@ -51,6 +54,7 @@ class App extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   isLoading: selectIsLoading,
+  showPopup: selectShowPopup,
 });
 
 const mapDispatchToProps = (dispatch) => ({
