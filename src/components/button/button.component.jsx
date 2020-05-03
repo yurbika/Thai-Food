@@ -1,5 +1,12 @@
 import React from "react";
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
+//redux
+import { togglePopup } from "../../redux/popup/popup.action";
+import { selectShowPopup } from "../../redux/popup/popup.selectors";
+
+//styles
 import {
   CustomButtonContainer,
   HamburgerMenu,
@@ -14,7 +21,7 @@ class Button extends React.Component {
   }
 
   render() {
-    const { ...props } = this.props;
+    const { togglePopup, showPopup, ...props } = this.props;
     return (
       <CustomButtonContainer
         tabIndex={props.menu ? 0 : -1}
@@ -22,14 +29,12 @@ class Button extends React.Component {
         aria-haspopup={props.menu ? "true" : null}
         {...props}
         onClick={() => {
-          if (props.menu) this.setState({ menuOpen: !this.state.menuOpen });
+          if (props.menu) togglePopup();
         }}
       >
         {props.menu ? (
           <HamburgerMenu>
-            <HamburgerMenuItems
-              className={this.state.menuOpen ? "animate" : ""}
-            />
+            <HamburgerMenuItems className={showPopup ? "animate" : ""} />
           </HamburgerMenu>
         ) : (
           props.children
@@ -39,4 +44,12 @@ class Button extends React.Component {
   }
 }
 
-export default Button;
+const mapStateToProps = createStructuredSelector({
+  showPopup: selectShowPopup,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  togglePopup: () => dispatch(togglePopup()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Button);
