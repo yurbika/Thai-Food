@@ -29,3 +29,24 @@ export const Info = styled.div`
     font-size: calc(25px + 1vw);
   }
 `;
+
+export const BHContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: start;
+
+  & > * {
+    flex-grow: 1;
+  }
+`;
+
+export const Row = styled.div`
+  display: flex;
+`;
+
+export const RowHeader = styled.span`
+  display: inline-block;
+  flex: 1;
+  margin-right: 5px;
+`;

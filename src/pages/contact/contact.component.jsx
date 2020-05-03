@@ -4,7 +4,14 @@ import React from "react";
 import Background from "../../components/background/background.component";
 
 //styles
-import { Container, Content, Info } from "./contact.styles";
+import {
+  Container,
+  Content,
+  Info,
+  BHContainer,
+  Row,
+  RowHeader,
+} from "./contact.styles";
 
 const Contact = () => (
   <Container>
@@ -17,50 +24,50 @@ const Contact = () => (
         <span>+49 157 6874 3357</span>
       </Info>
 
-      <div role="table" aria-label="Business hours">
-        <div role="row">
-          <span role="rowheader" aria-label="Monday">
+      <BHContainer role="table" aria-label="Business hours">
+        <Row role="row">
+          <RowHeader role="rowheader" aria-label="Monday">
             MON
-          </span>
+          </RowHeader>
           <span role="cell">9:00 A.M. - 10:00 P.M.</span>
-        </div>
-        <div role="row">
-          <span role="rowheader" aria-label="Tuesday">
+        </Row>
+        <Row role="row">
+          <RowHeader role="rowheader" aria-label="Tuesday">
             TUE
-          </span>
+          </RowHeader>
           <span role="cell">9:00 A.M. - 10:00 P.M.</span>
-        </div>
-        <div role="row">
-          <span role="rowheader" aria-label="Wednesday">
+        </Row>
+        <Row role="row">
+          <RowHeader role="rowheader" aria-label="Wednesday">
             WED
-          </span>
+          </RowHeader>
           <span role="cell">9:00 A.M. - 10:00 P.M.</span>
-        </div>
-        <div role="row">
-          <span role="rowheader" aria-label="Thursday">
+        </Row>
+        <Row role="row">
+          <RowHeader role="rowheader" aria-label="Thursday">
             THU
-          </span>
+          </RowHeader>
           <span role="cell">9:00 A.M. - 10:00 P.M.</span>
-        </div>
-        <div role="row">
-          <span role="rowheader" aria-label="Friday">
+        </Row>
+        <Row role="row">
+          <RowHeader role="rowheader" aria-label="Friday">
             FRI
-          </span>
+          </RowHeader>
           <span role="cell">9:00 A.M. - 10:00 P.M.</span>
-        </div>
-        <div role="row">
-          <span role="rowheader" aria-label="Saturday">
+        </Row>
+        <Row role="row">
+          <RowHeader role="rowheader" aria-label="Saturday">
             SAT
-          </span>
+          </RowHeader>
           <span role="cell">12:00 A.M. - 10:00 P.M.</span>
-        </div>
-        <div role="row">
-          <span role="rowheader" aria-label="Sunday">
+        </Row>
+        <Row role="row">
+          <RowHeader role="rowheader" aria-label="Sunday">
             SUN
-          </span>
+          </RowHeader>
           <span role="cell">12:00 A.M. - 10:00 P.M.</span>
-        </div>
-      </div>
+        </Row>
+      </BHContainer>
     </Content>
   </Container>
 );
