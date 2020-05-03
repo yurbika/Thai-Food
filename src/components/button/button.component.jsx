@@ -1,10 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import { Link } from "react-router-dom";
 
 //redux
 import { togglePopup } from "../../redux/popup/popup.action";
 import { selectShowPopup } from "../../redux/popup/popup.selectors";
+
+//assets
+import Logo from "../../assets/logo.png";
 
 //styles
 import {
@@ -37,7 +41,9 @@ class Button extends React.Component {
             <HamburgerMenuItems className={showPopup ? "animate" : ""} />
           </HamburgerMenu>
         ) : (
-          props.children
+          <Link to="/" onClick={() => (showPopup ? togglePopup() : null)}>
+            <img src={Logo} alt="" />
+          </Link>
         )}
       </CustomButtonContainer>
     );
