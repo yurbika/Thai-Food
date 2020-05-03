@@ -1,35 +1,18 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import theme from "../../utils/theme";
-
-const getAdditionalStylesContainer = (props) => {
-  if (props.active)
-    return css`
-      visibility: visible;
-    `;
-};
 
 export const Container = styled.div`
   display: inline-flex;
   flex-direction: column;
   align-content: space-between;
   height: 100vh;
-  visibility: hidden;
-  & > * {
-    font-size: calc(4px + 1vw);
-    @media (max-width: 768px) {
-      font-size: calc(15px + 0.5vw);
-    }
+  font-size: calc(4px + 1vw);
+  visibility: ${(props) => (props.active ? "visible" : "hidden")};
+
+  @media (max-width: 768px) {
+    font-size: calc(15px + 0.5vw);
   }
-
-  ${getAdditionalStylesContainer}
 `;
-
-const getAdditionalStyles = (props) => {
-  if (props.marginValue)
-    return css`
-      margin-top: -${props.marginValue}vh;
-    `;
-};
 
 export const ScrollContainer = styled.div`
   display: inline-flex;
@@ -37,8 +20,7 @@ export const ScrollContainer = styled.div`
   transition: all ${theme.animationTimes["500"] + "ms"} ease-in-out;
   opacity: 1;
   pointer-events: none;
-
-  ${getAdditionalStyles}
+  margin-top: -${(props) => props.marginValue}vh;
 `;
 
 export const FoodNameAndTranslationContainer = styled.span`

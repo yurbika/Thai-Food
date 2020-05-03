@@ -30,7 +30,7 @@ export const Content = styled.div`
   overflow: hidden;
   justify-items: center;
   align-items: center;
-  padding: 120px 20vw;
+  padding: 100px 20vw;
 
   @media (max-width: 768px) {
     padding: 42px 14vw;

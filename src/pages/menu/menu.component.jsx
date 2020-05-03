@@ -111,7 +111,6 @@ class Menu extends React.Component {
   };
 
   handleSliderClasses = (n) => {
-    console.log(n);
     if (this.props.counter !== n && this.props.counter === n - 1)
       return "fade-out fade-in-bottom";
     if (this.props.counter !== n) return "fade-out";
