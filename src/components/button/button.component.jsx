@@ -8,7 +8,7 @@ import { togglePopup } from "../../redux/popup/popup.action";
 import { selectShowPopup } from "../../redux/popup/popup.selectors";
 
 //assets
-import Logo from "../../assets/logo.png";
+import Logo from "../../assets/logo.svg";
 
 //styles
 import {

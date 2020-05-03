@@ -28,10 +28,17 @@ export const CustomButtonContainer = styled.button`
   border: none;
   padding: 10px;
   border-radius: 15px 0 0 15px;
+  overflow: hidden;
 
   img {
     width: 100%;
     height: 100%;
+
+    @media (max-width: 768px) {
+      width: 50px;
+      height: auto;
+      margin-top: -10px;
+    }
   }
 
   a {
