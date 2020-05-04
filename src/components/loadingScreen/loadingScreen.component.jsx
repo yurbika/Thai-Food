@@ -10,7 +10,7 @@ import {
 } from "../../redux/app/app.selectors";
 
 //assets
-import logoWalking from "../../assets/elephant.gif";
+import logoWalking from "../../assets/elephant.webp";
 import BigIcon from "../../assets/big-icon-higherOpacity.svg";
 
 //utils

@@ -15,9 +15,6 @@ import ScrollContainer from "../../components/scroll-container/scroll-container.
 import { selectCounter } from "../../redux/home/home.selectors";
 import { setCounter } from "../../redux/home/home.action";
 
-import { selectFirstMount } from "../../redux/app/app.selectors";
-import { setIsLoading } from "../../redux/app/app.action";
-
 //assets
 //first slider
 import Leaf from "../../assets/home/first-page/leaf.svg";
@@ -92,10 +89,6 @@ class Home extends React.Component {
 
   handleAnimationclassesSecondSlider = () =>
     this.props.counter !== 1 ? "fade-plate-out" : "fade-plate-in";
-
-  componentWillMount() {
-    if (!this.props.firstMount) this.props.setIsLoading(true);
-  }
 
   componentWillUnmount() {
     this.props.setCounter(0);
@@ -266,12 +259,10 @@ class Home extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   counter: selectCounter,
-  firstMount: selectFirstMount,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   setCounter: (num) => dispatch(setCounter(num)),
-  setIsLoading: (boolean) => dispatch(setIsLoading(boolean)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

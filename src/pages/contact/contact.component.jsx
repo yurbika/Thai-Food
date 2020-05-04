@@ -21,7 +21,6 @@ import {
 const Contact = () => (
   <Container>
     <Background className={"background"} />
-
     <Content>
       <ImgContainer>
         <img src={Food} alt="" />
