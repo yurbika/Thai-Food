@@ -10,31 +10,34 @@
 </br>
 
 <div align="center" name="introduction">
-  <img alt="Logo" src="src/readme/Sayu-Logo.png" width="250"/>
+  <img alt="Logo" src="./src/assets/logo.svg" width="250"/>
 </div>
 <h1 align="center">
- sayu-real-estate.herokuapp.com - v1
+ <a href="https://thai-food-live.herokuapp.com/">thai-food-live.herokuapp.com - v1</a>
 </h1>
 <p align="center">
-An application for real estate built with React - Redux - Styled Components - Leaflet - React Router Dom and hosted with <a href="https://heroku.com/" target="_blank">Heroku</a>
+A reinventing of an existing website built with React - Redux - Styled Components - React Router Dom and hosted with <a href="https://heroku.com/" target="_blank">Heroku</a>
 </p>
 <div align="center">
-  <img alt="Logo" src="src/readme/sayu-real-estate-preview.png" />
+  <img alt="Logo" src="src/readme/thai-food-preview.png" />
 </div>
 
 </br>
 
 ## <div name="setup"> 🛠 Set Up </div>
 
-1. Install React ^16.12.0
-2. Install React-Dom ^16.12.0
-3. Install React-Redux ^7.1.3
+1. Install React ^16.13.1
+2. Install React-Dom ^16.13.1
+3. Install React-Redux ^7.2.0
 4. Install Redux ^4.0.5
 5. Install Redux-Logger ^3.0.6
 6. Install React-ID-Generator ^3.0.0
-7. Install React-Leaflet ^2.6.1
-8. Install React-Router-Dom ^5.1.2
-9. Install Styled-Components ^4.4.1
+7. Install React-Router-Dom ^5.1.2
+8. Install Styled-Components ^5.1.0
+9. Install Reselect ^4.0.0
+10. Intall React-aria-live ^2.0.5
+11. Install lodash.chunk ^4.2.0
+12. Install lodash.debounce ^4.14.0
 
 </br>
 
