@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import FocusLock, { AutoFocusInside } from "react-focus-lock";
 
 import "./App.css";
 
@@ -26,10 +27,10 @@ class App extends React.Component {
       <Router>
         <div className="App">
           <Popup active={this.props.showPopup} />
+          <Button menu />
+          <Button left />
+          <Navbar />
           <Suspense fallback={<LoadingScreen />}>
-            <Navbar />
-            <Button menu />
-            <Button left />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/menu" component={Menu} />

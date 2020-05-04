@@ -49,12 +49,12 @@ class Popup extends React.Component {
   render() {
     const { togglePopup, setMenuCounter, ...props } = this.props;
     return (
-      <Container {...props}>
+      <Container {...props} tabIndex={0}>
         <ImgContainer>
           <img src={BigIcon} alt="" />
         </ImgContainer>
 
-        <PopupNavigation>
+        <PopupNavigation aria-label="popup" tabIndex={0}>
           {this.state.normalSize ? (
             this.state.namesArr.map((item, index) => (
               <Link to="/menu" key={ID_GENERATOR("popup-link-")}>
@@ -78,7 +78,7 @@ class Popup extends React.Component {
                 }}
                 key={ID_GENERATOR("popup-link-")}
               >
-                Home
+                <span tabIndex={0}> Home</span>
               </Link>
               <Link
                 to="/menu"
@@ -87,7 +87,7 @@ class Popup extends React.Component {
                 }}
                 key={ID_GENERATOR("popup-link-")}
               >
-                Menu
+                <span tabIndex={0}> Menu</span>
               </Link>
               <Link
                 to="/contact"
@@ -96,7 +96,7 @@ class Popup extends React.Component {
                 }}
                 key={ID_GENERATOR("popup-link-")}
               >
-                Contact
+                <span tabIndex={0}> Contact</span>
               </Link>
             </React.Fragment>
           )}
