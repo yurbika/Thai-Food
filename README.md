@@ -65,8 +65,8 @@ From creating my own real-estate-data to managing state, sayu-real-estate has ev
 
 | Color        | Hex                                                                |
 | ------------ | ------------------------------------------------------------------ |
-| Green        | ![#B4D47B](https://via.placeholder.com/10/FFF7DE?text=+) `#B4D47B` |
-| Brown        | ![#82BF65](https://via.placeholder.com/10/CCA96A?text=+) `#82BF65` |
-| Light Orange | ![#FFCF96](https://via.placeholder.com/10/A69FFF?text=+) `#FFCF96` |
-| Orange       | ![#F2B13E](https://via.placeholder.com/10/681899?text=+) `#F2B13E` |
-| Dark Orange  | ![#E76A0B](https://via.placeholder.com/10/A66ACC?text=+) `#E76A0B` |
+| Green        | ![#B4D47B](https://via.placeholder.com/10/B4D47B?text=+) `#B4D47B` |
+| Brown        | ![#82BF65](https://via.placeholder.com/10/82BF65?text=+) `#82BF65` |
+| Light Orange | ![#FFCF96](https://via.placeholder.com/10/FFCF96?text=+) `#FFCF96` |
+| Orange       | ![#F2B13E](https://via.placeholder.com/10/F2B13E?text=+) `#F2B13E` |
+| Dark Orange  | ![#E76A0B](https://via.placeholder.com/10/E76A0B?text=+) `#E76A0B` |
