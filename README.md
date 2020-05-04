@@ -1,68 +1,72 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📄 Table of Contents
 
-## Available Scripts
+- [Introduction](#introduction)
+- [Set up](#setup)
+- [Ambition](#ambition)
+- [Design](#design)
 
-In the project directory, you can run:
+</br>
+</br>
+</br>
 
-### `npm start`
+<div align="center" name="introduction">
+  <img alt="Logo" src="src/readme/Sayu-Logo.png" width="250"/>
+</div>
+<h1 align="center">
+ sayu-real-estate.herokuapp.com - v1
+</h1>
+<p align="center">
+An application for real estate built with React - Redux - Styled Components - Leaflet - React Router Dom and hosted with <a href="https://heroku.com/" target="_blank">Heroku</a>
+</p>
+<div align="center">
+  <img alt="Logo" src="src/readme/sayu-real-estate-preview.png" />
+</div>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+</br>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## <div name="setup"> 🛠 Set Up </div>
 
-### `npm test`
+1. Install React ^16.12.0
+2. Install React-Dom ^16.12.0
+3. Install React-Redux ^7.1.3
+4. Install Redux ^4.0.5
+5. Install Redux-Logger ^3.0.6
+6. Install React-ID-Generator ^3.0.0
+7. Install React-Leaflet ^2.6.1
+8. Install React-Router-Dom ^5.1.2
+9. Install Styled-Components ^4.4.1
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+</br>
 
-### `npm run build`
+## <div name="ambition"> 🔥 Ambition </div>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p align="center">
+"Practice makes perfect. After a long time of practicing, our work will become natrual, skillfull, swift, and steady. - Bruce Lee"
+</p>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+</br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p>
+This Project is about giving an insight of my profound knowledge in front-end web development/programming. For the last six months i studied the basics of html/css/scss/js/react/redux. In this period of time i created little programs for the subjects i have learned. Thinking ahead i programmed everything reusable, which became very handy in this challenge.
+</p>
 
-### `npm run eject`
+</br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<p>
+From creating my own real-estate-data to managing state, sayu-real-estate has everything. I started with a moodboard in adobe xd and structured a visuale plan for me. Continued with creating a data-set for the website, which contained to work with an api (unsplash). After building the sekleton of the program i started with implementing state management. To round up the project i styled everything responsiv with scss and converted to styled.components.
+</p>
+  
+</br>
+  
+ 
+## <div name="design"> 🔱 Design </div>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p> The Design is about understanding the fundamentals and appling them. In the process of creating the prototype, i wanted to create a modern and welcoming setup.The colours are picked in awareness of the theory of colours to build a warm and trustworthy reputation of Sayu. A fluid UI rounds everything up.</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+| Color        | Hex                                                                |
+| ------------ | ------------------------------------------------------------------ |
+| Green        | ![#B4D47B](https://via.placeholder.com/10/FFF7DE?text=+) `#B4D47B` |
+| Brown        | ![#82BF65](https://via.placeholder.com/10/CCA96A?text=+) `#82BF65` |
+| Light Orange | ![#FFCF96](https://via.placeholder.com/10/A69FFF?text=+) `#FFCF96` |
+| Orange       | ![#F2B13E](https://via.placeholder.com/10/681899?text=+) `#F2B13E` |
+| Dark Orange  | ![#E76A0B](https://via.placeholder.com/10/A66ACC?text=+) `#E76A0B` |
