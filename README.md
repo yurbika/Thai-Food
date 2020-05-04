@@ -4,6 +4,7 @@
 - [Set up](#setup)
 - [Ambition](#ambition)
 - [Design](#design)
+- [License](#license)
 
 </br>
 </br>
@@ -50,18 +51,22 @@ A reinventing of an existing website built with React - Redux - Styled Component
 </br>
 
 <p>
-This Project is about giving an insight of my profound knowledge in front-end web development/programming. For the last six months i studied the basics of html/css/scss/js/react/redux. In this period of time i created little programs for the subjects i have learned. Thinking ahead i programmed everything reusable, which became very handy in this challenge.
+This Project is about animations, transitions and accessibility. 15% of the population has some form of disability, so with that in mind, I used react-aria-live to ensure everything is accessible as possible. The ambition of this project was not only to create a website with fancy animations with a library, but to create my own simple animations and managing them. 
 </p>
 
 </br>
 
 <p>
-From creating my own real-estate-data to managing state, sayu-real-estate has everything. I started with a moodboard in adobe xd and structured a visuale plan for me. Continued with creating a data-set for the website, which contained to work with an api (unsplash). After building the sekleton of the program i started with implementing state management. To round up the project i styled everything responsiv with scss and converted to styled.components.
+I copied from the target website the menu and created my own dataset. After that,
+
+to managing state, sayu-real-estate has everything. Continued with creating a data-set for the website, which contained to work with an api (unsplash). After building the sekleton of the program i started with implementing state management. To round up the project i styled everything responsiv with scss and converted to styled.components.
+
 </p>
   
 </br>
   
- 
+ I started with a moodboard in adobe xd and structured a visuale plan for me. Created the background, recreated the logo,searched for fitting svgs.
+
 ## <div name="design"> 🔱 Design </div>
 
 <p> The Design is about understanding the fundamentals and appling them. In the process of creating the prototype, i wanted to create a modern and welcoming setup.The colours are picked in awareness of the theory of colours to build a warm and trustworthy reputation of Sayu. A fluid UI rounds everything up.</p>
@@ -73,3 +78,17 @@ From creating my own real-estate-data to managing state, sayu-real-estate has ev
 | Light Orange | ![#FFCF96](https://via.placeholder.com/10/FFCF96?text=+) `#FFCF96` |
 | Orange       | ![#F2B13E](https://via.placeholder.com/10/F2B13E?text=+) `#F2B13E` |
 | Dark Orange  | ![#E76A0B](https://via.placeholder.com/10/E76A0B?text=+) `#E76A0B` |
+
+<div align="center">
+  <img alt="prototype preview" src="src/readme/prototype-preview.png" />
+</div>
+
+## <div name="license"> ⚖️ License </div>
+
+Copyright (c) [2020][berkay yurdagül]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
