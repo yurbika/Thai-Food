@@ -40,6 +40,10 @@ A reinventing of an existing website built with React - Redux - Styled Component
 11. Install lodash.chunk ^4.2.0
 12. Install lodash.debounce ^4.14.0
 
+```bash
+npm install lodash.chunk lodash.debounce react-router-dom reselect react-aria-live styled-components react-id-generator redux-logger redux
+```
+
 </br>
 
 ## <div name="ambition"> 🔥 Ambition </div>
@@ -57,19 +61,19 @@ This Project is about animations, transitions and accessibility. 15% of the popu
 </br>
 
 <p>
-I copied from the target website the menu and created my own dataset. After that,
+I copied from the target website a part of the menu and created my own dataset. Thus, I programmed a scalable menu website. Which is also responsiv and supports rotation.
 
-to managing state, sayu-real-estate has everything. Continued with creating a data-set for the website, which contained to work with an api (unsplash). After building the sekleton of the program i started with implementing state management. To round up the project i styled everything responsiv with scss and converted to styled.components.
+I tested the website with chrome vox and to ensure also a pleasing expierince for people with disabilities!
 
 </p>
   
 </br>
-  
- I started with a moodboard in adobe xd and structured a visuale plan for me. Created the background, recreated the logo,searched for fitting svgs.
 
 ## <div name="design"> 🔱 Design </div>
 
-<p> The Design is about understanding the fundamentals and appling them. In the process of creating the prototype, i wanted to create a modern and welcoming setup.The colours are picked in awareness of the theory of colours to build a warm and trustworthy reputation of Sayu. A fluid UI rounds everything up.</p>
+<p>The design was about establishing an thai ambience. Colors were chosen by restaurante logo and a adjusted a little bit to thailands color platte. Also the font supports the tropic enviroment. I started with a moodboard in adobe xd and structured a visuale plan for me. Created the background, recreated the logo,searched for fitting svgs.
+
+I worked with AI to adjust the svgs for my purpose. Also created the background myself, which represents the lotus in the top down view. The big lotus svg a accompanies through out the whole website, to ensure a perfectly clean and beautiful view.</p>
 
 | Color        | Hex                                                                |
 | ------------ | ------------------------------------------------------------------ |
