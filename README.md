@@ -17,7 +17,7 @@
  <a href="https://thai-food-live.herokuapp.com/">thai-food-live.herokuapp.com - v1</a>
 </h1>
 <p align="center">
-A reinventing of an existing website built with React - Redux - Styled Components - React Router Dom and hosted with <a href="https://heroku.com/" target="_blank">Heroku</a>
+A reinventing of an existing <a href="http://www.thaifood2.de/index.html">website</a> built with React - Redux - Styled Components - React Router Dom and hosted with <a href="https://heroku.com/" target="_blank">Heroku</a>
 </p>
 <div align="center">
   <img alt="Logo" src="src/readme/thai-food-preview.png" />
