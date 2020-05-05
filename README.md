@@ -61,12 +61,15 @@ This Project is about animations, transitions and accessibility. 15% of the popu
 </br>
 
 <p>
-I copied from the target website a part of the menu and created my own dataset. Thus, I programmed a scalable menu website. Which is also responsiv and supports rotation.
-
-I tested the website with chrome vox and axe to ensure also a pleasing expierince for people with disabilities!
-
+I copied from the target website a part of the menu and created my own dataset. Thus, I programmed a scalable menu website. Which is also responsiv and supports rotation.To also ensure a pleasing experience for people with disabilities, the website is tested by chrome vox and axe.
 </p>
   
+</br>
+
+<p>
+At the end of this project, i learned alot about animations/transitions and accessibility. Realizing how important our job as developers is, I want to ensure that everybody can enjoy their user experience!
+</p>
+
 </br>
 
 ## <div name="design"> 🔱 Design </div>
