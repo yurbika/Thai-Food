@@ -1,37 +1,4 @@
-import styled, { css, keyframes } from "styled-components";
-import theme from "../../utils/theme";
-
-const fadeInStopOutAnimation = keyframes`
-0%{
-  transform: translateY(-100vh) ;
-  visibility: visible;
-}
-50%{
-  transform: translateY(0) ;
-}
-100%{
-  transform: translateY(100vh);
-  visibility: hidden;
-}
-`;
-
-const getAdditionalStyles = (props) => {
-  if (!props.firstMount && props.isLoading)
-    return css`
-      -webkit-animation-duration: ${theme.animationTimes[2500] + "ms"};
-      animation-duration: ${theme.animationTimes[2500] + "ms"};
-      -webkit-animation-fill-mode: both;
-      animation-fill-mode: both;
-      -webkit-animation-name: ${fadeInStopOutAnimation};
-      animation-name: ${fadeInStopOutAnimation};
-      z-index: 4;
-    `;
-  if (!props.isLoading)
-    return css`
-      transform: translateY(100vh);
-      visibility: hidden;
-    `;
-};
+import styled from "styled-components";
 
 export const Container = styled.div`
   position: fixed;
@@ -43,12 +10,6 @@ export const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  pointer-events: none;
-  transition: transform ${theme.animationTimes[750] + "ms"} ease-in-out,
-    visibility ${theme.animationTimes[750] + "ms"} ease-in-out;
-  z-index: 10;
-
-  ${getAdditionalStyles}
 `;
 
 export const ImgContainer = styled.div`
@@ -59,7 +20,7 @@ export const ImgContainer = styled.div`
   bottom: 0;
   margin: auto;
   z-index: -1;
-  padding: 30px;
+  padding: 90px;
 
   img {
     width: 100%;

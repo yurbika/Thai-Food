@@ -20,6 +20,8 @@ const Menu = lazy(() => import("./pages/menu/menu.component"));
 
 const Contact = lazy(() => import("./pages/contact/contact.component"));
 
+const ErrorPage = lazy(() => import("./pages/error/error.component"));
+
 class App extends React.Component {
   render() {
     return (
@@ -34,6 +36,7 @@ class App extends React.Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/menu" component={Menu} />
               <Route exact path="/contact" component={Contact} />
+              <Route component={ErrorPage} />
             </Switch>
           </Suspense>
         </div>
