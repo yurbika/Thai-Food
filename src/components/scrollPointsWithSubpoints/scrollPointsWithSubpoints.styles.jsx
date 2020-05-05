@@ -5,6 +5,7 @@ export const Container = styled.nav`
   display: inline-flex;
   flex-direction: row;
   align-items: center;
+
   & * {
     margin-right: 5px;
   }
@@ -22,6 +23,7 @@ const getAdditionalStylesTitle = (props) =>
     : "";
 
 export const Title = styled.span`
+  font-size: calc(15px + 0.5vw);
   ${getAdditionalStylesTitle}
 `;
 

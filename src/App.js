@@ -2,7 +2,6 @@ import React, { Suspense, lazy } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
-import FocusLock, { AutoFocusInside } from "react-focus-lock";
 
 import "./App.css";
 
