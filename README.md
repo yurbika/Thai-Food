@@ -63,7 +63,7 @@ This Project is about animations, transitions and accessibility. 15% of the popu
 <p>
 I copied from the target website a part of the menu and created my own dataset. Thus, I programmed a scalable menu website. Which is also responsiv and supports rotation.
 
-I tested the website with chrome vox and to ensure also a pleasing expierince for people with disabilities!
+I tested the website with chrome vox and axe to ensure also a pleasing expierince for people with disabilities!
 
 </p>
   
@@ -71,9 +71,9 @@ I tested the website with chrome vox and to ensure also a pleasing expierince fo
 
 ## <div name="design"> 🔱 Design </div>
 
-<p>The design was about establishing an thai ambience. Colors were chosen by restaurante logo and a adjusted a little bit to thailands color platte. Also the font supports the tropic enviroment. I started with a moodboard in adobe xd and structured a visuale plan for me. Created the background, recreated the logo,searched for fitting svgs.
+<p>The design was about establishing a thai ambience. Colors were chosen by the restaurants logo and a adjusted a little bit to thailands color platte. Also the font supports the tropical environment. I started with a moodboard in adobe xd and structured a visuale plan for me. Created the background, recreated the logo,searched for fitting svgs on the internet.
 
-I worked with AI to adjust the svgs for my purpose. Also created the background myself, which represents the lotus in the top down view. The big lotus svg a accompanies through out the whole website, to ensure a perfectly clean and beautiful view.</p>
+I worked with adobe illustrator to adjust the svgs for my purpose. Furthermore the background is designed by myself. The big lotus svg accompanies throughout the whole website, to ensure a clean and esthetic flair.</p>
 
 | Color        | Hex                                                                |
 | ------------ | ------------------------------------------------------------------ |
