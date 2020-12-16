@@ -14,10 +14,10 @@
   <img alt="Logo" src="./src/assets/logo.svg" width="250"/>
 </div>
 <h1 align="center">
- <a href="https://thai-food-live.herokuapp.com/">thai-food-live.herokuapp.com - v1</a>
+ <a href="https://thai-food.netlify.app/">thai-food.netlify.app - v1</a>
 </h1>
 <p align="center">
-A reinventing of an existing <a href="http://www.thaifood2.de/index.html">website</a> built with React - Redux - Styled Components - React Router Dom and hosted with <a href="https://heroku.com/" target="_blank">Heroku</a>
+A reinventing of an existing <a href="http://www.thaifood2.de/index.html">website</a> built with React - Redux - Styled Components - React Router Dom and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
 </p>
 <div align="center">
   <img alt="Logo" src="src/readme/thai-food-preview.png" />
